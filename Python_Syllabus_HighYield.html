@@ -1,0 +1,2313 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Python Syllabus High Yield Notes</title>
+<style>
+    body {
+        background-color: #1e1e1e;
+        color: #dcddde;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        padding: 40px;
+        max-width: 900px;
+        margin: 0 auto;
+        line-height: 1.6;
+    }
+    h1 { font-size: 24pt; color: #ffffff; border-bottom: 1px solid #3e3e3e; padding-bottom: 8px; }
+    h2 { font-size: 16pt; color: #ff79c6; margin-top: 25px; border-bottom: 1px solid #2d2d2d; padding-bottom: 4px; }
+    h3 { font-size: 13pt; color: #50fa7b; margin-top: 20px; }
+    p, li { color: #dcddde; font-size: 11pt; }
+    ul, ol { padding-left: 25px; }
+    li { margin-bottom: 6px; }
+    
+    /* Obsidian style code block container */
+    pre {
+        background-color: #2d2d2d;
+        border-left: 4px solid #66d9ef;
+        padding: 15px;
+        margin: 15px 0;
+        border-radius: 4px;
+        overflow-x: auto;
+    }
+    /* Target the text inside code blocks to match your screenshot */
+    pre, code {
+        font-family: 'Consolas', 'Courier New', monospace;
+        font-size: 10.5pt;
+        color: #a6e22e; /* Sleek code green */
+    }
+    /* Inline code blocks */
+    p code, li code {
+        background-color: #2d2d2d;
+        color: #e6db74; /* Warm syntax yellow */
+        padding: 2px 6px;
+        border-radius: 3px;
+    }
+    
+    /* Print rule to enforce dark mode background when printing to PDF */
+    @media print {
+        body {
+            background-color: #1e1e1e !important;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+    }
+</style>
+</head>
+<body>
+    <h1>Python Programming — Comprehensive Theory Notes</h1>
+<p><strong>Source:</strong> <em>Core Python Programming</em> — Dr. R. Nageswara Rao<br />
+<strong>Syllabus Coverage:</strong> Units 1–4 (GCE, ET Dept.)</p>
+<hr />
+<h2>UNIT 1 — Introduction to Computers &amp; Python Overview</h2>
+<blockquote>
+<p><em>(Unit 1 in the syllabus covers computers, OS, and problem-solving. The Python textbook begins from Chapter 1. The relevant Python content for Unit 1 is covered below as an introduction before diving into Unit 2 topics.)</em></p>
+</blockquote>
+<hr />
+<h2>UNIT 2 — Introduction to Python, Data Types &amp; Operators</h2>
+<h3>1. Introduction to Python</h3>
+<p><strong>What is Python?</strong><br />
+Python is a programming language that combines the features of C and Java. It offers the elegant procedural style of C and full object-orientation like Java. Python was developed by <strong>Guido Van Rossum</strong> in <strong>1991</strong> at the Center for Mathematics and Computer Science, Netherlands. It is open-source software downloadable from <code>www.python.org</code>.</p>
+<pre class="codehilite"><code class="language-python"># Python program to add two numbers
+a = b = 10
+print(&quot;Sum= &quot;, (a+b))   # Output: Sum=  20
+</code></pre>
+
+<hr />
+<h3>2. Features of Python</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Simple</strong></td>
+<td>Reads like English; easy to understand</td>
+</tr>
+<tr>
+<td><strong>Easy to learn</strong></td>
+<td>Very few keywords; resembles C</td>
+</tr>
+<tr>
+<td><strong>Open source</strong></td>
+<td>Free to download and modify</td>
+</tr>
+<tr>
+<td><strong>High level language</strong></td>
+<td>Uses English words, not machine code</td>
+</tr>
+<tr>
+<td><strong>Dynamically typed</strong></td>
+<td>No variable declaration needed; type determined at runtime</td>
+</tr>
+<tr>
+<td><strong>Platform independent</strong></td>
+<td>Byte code runs on any OS via PVM</td>
+</tr>
+<tr>
+<td><strong>Portable</strong></td>
+<td>Same result on any computer</td>
+</tr>
+<tr>
+<td><strong>Procedure &amp; OOP</strong></td>
+<td>Supports both procedural and object-oriented styles</td>
+</tr>
+<tr>
+<td><strong>Interpreted</strong></td>
+<td>Compiler → byte code → PVM (interpreter) → machine code</td>
+</tr>
+<tr>
+<td><strong>Extensible</strong></td>
+<td>C/C++ code can be integrated (CPython)</td>
+</tr>
+<tr>
+<td><strong>Embeddable</strong></td>
+<td>Python programs can be inserted into C/C++ programs</td>
+</tr>
+<tr>
+<td><strong>Huge library</strong></td>
+<td>Built-in "batteries" (numpy, pandas, matplotlib, etc.)</td>
+</tr>
+<tr>
+<td><strong>Scripting language</strong></td>
+<td>Interpreted, used to support other software</td>
+</tr>
+<tr>
+<td><strong>Database connectivity</strong></td>
+<td>Interfaces with Oracle, MySQL, Sybase</td>
+</tr>
+<tr>
+<td><strong>Scalable</strong></td>
+<td>Moves to new environments and uses their features</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>3. Execution of a Python Program</h3>
+<p><strong>Steps:</strong>
+1. Write source code → saved as <code>filename.py</code>
+2. Python compiler converts source code → <strong>byte code</strong> (<code>.pyc</code> file)
+3. <strong>PVM (Python Virtual Machine)</strong> contains an interpreter that converts byte code → <strong>machine code</strong>
+4. Processor executes machine code → output displayed</p>
+<pre class="codehilite"><code>Source Code (.py) → Python Compiler → Byte Code (.pyc) → PVM (Interpreter) → Machine Code → Output
+</code></pre>
+
+<p><strong>Key commands:</strong></p>
+<pre class="codehilite"><code class="language-bash">python x.py                  # compile + run directly
+python -m py_compile x.py   # generate .pyc file in __pycache__
+python -m dis first.py       # view byte code (disassembler)
+</code></pre>
+
+<p><strong>Byte code:</strong> A fixed set of instructions created by Python developers. Each instruction occupies 1 byte. Platform-independent.</p>
+<p><strong>JIT Compiler:</strong> <em>Just In Time</em> compiler — available in PyPy flavor; converts byte code to machine code faster than the interpreter, improving execution speed.</p>
+<hr />
+<h3>4. Flavors of Python</h3>
+<table>
+<thead>
+<tr>
+<th>Flavor</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CPython</strong></td>
+<td>Standard; written in C; runs on interpreter inside PVM</td>
+</tr>
+<tr>
+<td><strong>Jython</strong></td>
+<td>Compiles Python to Java byte code; runs on JVM</td>
+</tr>
+<tr>
+<td><strong>IronPython</strong></td>
+<td>For .NET framework; written in C#; runs on CLR</td>
+</tr>
+<tr>
+<td><strong>PyPy</strong></td>
+<td>Written in RPython; includes JIT compiler → faster execution</td>
+</tr>
+<tr>
+<td><strong>RubyPython</strong></td>
+<td>Bridge between Ruby and Python interpreters</td>
+</tr>
+<tr>
+<td><strong>StacklessPython</strong></td>
+<td>Supports tasklets and channels for concurrent tasks</td>
+</tr>
+<tr>
+<td><strong>AnacondaPython</strong></td>
+<td>For large-scale data processing and scientific computing</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>5. Python Virtual Machine (PVM)</h3>
+<p>The <strong>PVM</strong> converts byte code into machine code using an <strong>interpreter</strong> inside it. It identifies the processor and OS of the computer, then generates appropriate machine code.</p>
+<ul>
+<li>PVM is often called the <strong>Python interpreter</strong></li>
+<li>Standard PVM (CPython) contains only an interpreter → slower</li>
+<li>PyPy PVM adds a <strong>JIT compiler</strong> → faster</li>
+</ul>
+<p><strong>Memory management:</strong>
+- Everything is an object in Python (strings, lists, functions, modules)
+- <strong>Memory manager</strong> inside PVM allocates heap memory for objects
+- OS allocates actual RAM; a <strong>raw memory allocator</strong> sits on top; then <strong>object-specific allocators</strong> manage different types
+- Programmers do not manually allocate/free memory (no <code>malloc()</code> or <code>free()</code>)</p>
+<hr />
+<h3>6. Frozen Binaries</h3>
+<p>When distributing software, two options exist:
+1. Provide <code>.pyc</code> files + ask user to install PVM
+2. Bundle <code>.pyc</code> files + PVM + libraries into a single executable → called <strong>frozen binaries</strong> (<code>.exe</code> for Windows)</p>
+<p>Tools: <code>py2exe</code> (Windows), <code>pyinstaller</code> (UNIX/Linux), <code>Freeze</code> (UNIX)</p>
+<hr />
+<h3>7. Garbage Collection in Python</h3>
+<p><strong>Garbage collector (gc module):</strong> Deletes unused objects from memory automatically.</p>
+<ul>
+<li>Maintains a <strong>reference count</strong> for each object</li>
+<li>When reference count = 0 → object is removed from memory</li>
+<li>Handles <strong>reference cycles</strong>: A→B→C→A (each has ref count 1 but are unused). GC uses an algorithm to detect and break cycles</li>
+<li>Objects classified into <strong>3 generations</strong> (0 = newest, 2 = oldest); GC targets younger objects first</li>
+<li>GC runs automatically based on a <strong>threshold</strong> (allocations minus deallocations)</li>
+<li>Can be triggered manually using <code>gc.collect()</code></li>
+<li>Manual GC: <strong>time-based</strong> (at intervals) or <strong>event-based</strong> (on events like user disconnect)</li>
+</ul>
+<pre class="codehilite"><code class="language-python">import gc
+print(gc.get_threshold())   # view threshold values
+gc.collect()                 # manually run garbage collector
+</code></pre>
+
+<hr />
+<h3>8. Comparisons: C vs Python</h3>
+<table>
+<thead>
+<tr>
+<th>C</th>
+<th>Python</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Procedure-oriented</td>
+<td>Object-oriented</td>
+</tr>
+<tr>
+<td>Faster execution</td>
+<td>Slower (PyPy is faster but still slower than C)</td>
+</tr>
+<tr>
+<td>Requires type declaration</td>
+<td>No type declaration needed</td>
+</tr>
+<tr>
+<td>Static, weak typing</td>
+<td>Dynamic, strong typing</td>
+</tr>
+<tr>
+<td>Has pointers</td>
+<td>No pointers</td>
+</tr>
+<tr>
+<td>No exception handling</td>
+<td>Robust exception handling</td>
+</tr>
+<tr>
+<td>Has <code>do…while</code>, <code>while</code>, <code>for</code></td>
+<td>Has <code>while</code> and <code>for</code> only</td>
+</tr>
+<tr>
+<td>Has <code>switch</code> statement</td>
+<td>No <code>switch</code> statement</td>
+</tr>
+<tr>
+<td><code>malloc()</code>, <code>free()</code> for memory</td>
+<td>Memory managed automatically by PVM</td>
+</tr>
+<tr>
+<td>No garbage collector</td>
+<td>Automatic garbage collector</td>
+</tr>
+<tr>
+<td>Supports multi-dimensional arrays</td>
+<td>Only 1D arrays (use numpy for multi-D)</td>
+</tr>
+<tr>
+<td>Array index must be positive</td>
+<td>Index can be positive or negative</td>
+</tr>
+<tr>
+<td>No automatic bounds checking</td>
+<td>Python checks array bounds</td>
+</tr>
+<tr>
+<td>Semicolon terminates statements</td>
+<td>Newline terminates; semicolon separates expressions</td>
+</tr>
+<tr>
+<td>Supports inline assignments</td>
+<td>No inline assignments</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>9. Comments in Python</h3>
+<p><strong>Single line comments:</strong> Start with <code>#</code></p>
+<pre class="codehilite"><code class="language-python"># This is a single line comment
+a = 10  # inline comment
+</code></pre>
+
+<p><strong>Multi-line comments:</strong> Use <code>"""</code> (triple double quotes) or <code>'''</code> (triple single quotes)</p>
+<pre class="codehilite"><code class="language-python">&quot;&quot;&quot;
+This is a multi-line comment block.
+It can span several lines.
+&quot;&quot;&quot;
+</code></pre>
+
+<blockquote>
+<p><strong>Note:</strong> Triple quotes are not true comments — they are <strong>string literals</strong> that are garbage-collected if not assigned. They are only called <em>comments</em> by convention.</p>
+</blockquote>
+<hr />
+<h3>10. Docstrings</h3>
+<p>A <strong>docstring</strong> is a string written as the <strong>first statement</strong> in a module, function, class, or method using <code>"""</code> or <code>'''</code>. Used to auto-generate API documentation.</p>
+<pre class="codehilite"><code class="language-python">def add(x, y):
+    &quot;&quot;&quot;
+    This function takes two numbers and finds their sum.
+    It displays the sum as result.
+    &quot;&quot;&quot;
+    print(&quot;Sum= &quot;, (x+y))
+
+def message():
+    '''
+    This function displays a welcome message.
+    '''
+    print(&quot;Welcome to Python&quot;)
+
+add(10, 25)
+message()
+</code></pre>
+
+<p>Generate API documentation:</p>
+<pre class="codehilite"><code class="language-bash">python -m pydoc -w ex    # creates ex.html with function descriptions
+</code></pre>
+
+<hr />
+<h3>11. How Python Sees Variables</h3>
+<p>In other languages, a variable is a memory "box" that stores a value. In Python, a <strong>value is an object</strong> and a <strong>variable is a tag (name)</strong> bound to that object.</p>
+<pre class="codehilite"><code class="language-python">a = 1    # object '1' created; name 'a' bound to it
+a = 2    # new object '2' created; 'a' tag moved; old object '1' collected by GC
+b = a    # both 'b' and 'a' now point to the same object '2'
+</code></pre>
+
+<p>This makes Python memory-efficient: two names can reference the same object.</p>
+<hr />
+<h3>12. Data Types in Python</h3>
+<p>A <strong>datatype</strong> represents the type of data stored in a variable. Built-in datatypes are of 5 categories:</p>
+<h4>None Type</h4>
+<p><code>None</code> represents an object with no value (like <code>null</code> in Java). Only one <code>None</code> object exists in a program. Represents <code>False</code> in Boolean expressions.</p>
+<h4>Numeric Types</h4>
+<p><strong>int:</strong> Integer number, no decimal point. No size limit.</p>
+<pre class="codehilite"><code class="language-python">a = -57        # int type
+</code></pre>
+
+<p><strong>float:</strong> Floating point number (has decimal point). Supports scientific notation.</p>
+<pre class="codehilite"><code class="language-python">num = 55.67998
+x = 22.55e3    # = 22550.0
+</code></pre>
+
+<p><strong>complex:</strong> Written as <code>a + bj</code> or <code>a + bJ</code>. <code>j</code> = √(-1).</p>
+<pre class="codehilite"><code class="language-python">c1 = -1-5.5J
+c2 = 2.5+2.5J
+</code></pre>
+
+<p><strong>Number system literals:</strong></p>
+<pre class="codehilite"><code class="language-python">a = 0b110110    # binary (prefix 0b or 0B)
+b = 0O145       # octal (prefix 0o or 0O)
+c = 0xA180      # hexadecimal (prefix 0x or 0X)
+</code></pre>
+
+<p><strong>Type conversion:</strong></p>
+<pre class="codehilite"><code class="language-python">int(15.56)         # → 15
+float(15)          # → 15.0
+complex(10)        # → (10+0j)
+complex(10, -5)    # → (10-5j)
+int(&quot;1c2&quot;, 16)     # → 450 (hex string to decimal)
+bin(10)            # → '0b1010'
+oct(10)            # → '0o12'
+hex(10)            # → '0xa'
+</code></pre>
+
+<h4>bool Datatype</h4>
+<p>Only two values: <code>True</code> (internally 1) and <code>False</code> (internally 0).</p>
+<pre class="codehilite"><code class="language-python">a = 10 &gt; 5      # a = True
+print(True + True)   # 2
+print(True - False)  # 1
+</code></pre>
+
+<h4>Sequences</h4>
+<p>Six types: <code>str</code>, <code>bytes</code>, <code>bytearray</code>, <code>list</code>, <code>tuple</code>, <code>range</code></p>
+<p><strong>str:</strong> Group of characters in single/double/triple quotes.</p>
+<pre class="codehilite"><code class="language-python">s = 'Welcome to Core Python'
+print(s[0])     # 'W'
+print(s[3:7])   # 'come'
+print(s[-1])    # 'n'
+print(s*2)      # repeats string twice
+</code></pre>
+
+<p><strong>bytes:</strong> Array of byte numbers (0–255). Immutable.</p>
+<pre class="codehilite"><code class="language-python">elements = [10, 20, 0, 40, 15]
+x = bytes(elements)    # convert list to bytes
+print(x[0])            # 10
+# x[0] = 55 → ERROR (immutable)
+</code></pre>
+
+<p><strong>bytearray:</strong> Like bytes but mutable.</p>
+<pre class="codehilite"><code class="language-python">x = bytearray(elements)
+x[0] = 88    # allowed
+</code></pre>
+
+<p><strong>list:</strong> Ordered, mutable, allows mixed types. Written with <code>[ ]</code>.</p>
+<pre class="codehilite"><code class="language-python">lst = [10, -20, 15.5, 'Vijay', &quot;Mary&quot;]
+</code></pre>
+
+<p><strong>tuple:</strong> Like list but immutable. Written with <code>( )</code>.</p>
+<pre class="codehilite"><code class="language-python">tpl = (10, -20, 15.5, 'Vijay')
+# tpl[0] = 99 → ERROR
+</code></pre>
+
+<p><strong>range:</strong> Represents a sequence of numbers. Used with <code>for</code> loops.</p>
+<pre class="codehilite"><code class="language-python">r = range(10)           # 0 to 9
+r = range(30, 40, 2)    # 30, 32, 34, 36, 38
+lst = list(range(10))   # [0, 1, 2, ..., 9]
+</code></pre>
+
+<h4>Sets</h4>
+<p>Unordered collection; no duplicates.</p>
+<p><strong>set:</strong> Mutable.</p>
+<pre class="codehilite"><code class="language-python">s = {10, 20, 30, 20, 50}   # {50, 10, 20, 30} (no order, no duplicates)
+ch = set(&quot;Hello&quot;)           # {'H', 'e', 'l', 'o'}
+s.update([50, 60])          # add elements
+s.remove(50)                # remove element
+# No indexing or slicing on sets
+</code></pre>
+
+<p><strong>frozenset:</strong> Immutable set.</p>
+<pre class="codehilite"><code class="language-python">fs = frozenset({50, 60, 70})
+# fs.update([80]) → ERROR
+</code></pre>
+
+<h4>Mapping Types (dict)</h4>
+<p>Key-value pairs, enclosed in <code>{ }</code>, separated by <code>:</code>.</p>
+<pre class="codehilite"><code class="language-python">d = {10: 'Kamal', 11: 'Pranav', 12: 'Hasini'}
+print(d[10])         # 'Kamal'
+print(d.keys())      # dict_keys([10, 11, 12])
+print(d.values())    # dict_values(['Kamal', 'Pranav', 'Hasini'])
+d[10] = 'Ravi'       # update value
+del d[11]            # delete key-value pair
+</code></pre>
+
+<hr />
+<h3>13. Literals in Python</h3>
+<p>A <strong>literal</strong> is a constant value stored in a variable.</p>
+<table>
+<thead>
+<tr>
+<th>Literal Type</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Integer literal</td>
+<td><code>450</code>, <code>-15</code></td>
+</tr>
+<tr>
+<td>Float literal</td>
+<td><code>3.14286</code>, <code>-10.6</code>, <code>1.25E4</code></td>
+</tr>
+<tr>
+<td>Hexadecimal literal</td>
+<td><code>0x5A1C</code></td>
+</tr>
+<tr>
+<td>Octal literal</td>
+<td><code>0557</code></td>
+</tr>
+<tr>
+<td>Binary literal</td>
+<td><code>0B110101</code></td>
+</tr>
+<tr>
+<td>Complex literal</td>
+<td><code>18+3J</code></td>
+</tr>
+<tr>
+<td>Boolean literal</td>
+<td><code>True</code>, <code>False</code></td>
+</tr>
+<tr>
+<td>String literal</td>
+<td><code>'text'</code>, <code>"text"</code>, <code>'''text'''</code>, <code>"""text"""</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Escape characters:</strong>
+| Escape | Meaning |
+|---|---|
+| <code>\n</code> | New line |
+| <code>\t</code> | Horizontal tab |
+| <code>\\</code> | Single backslash |
+| <code>\'</code> | Single quote |
+| <code>\"</code> | Double quote |
+| <code>\b</code> | Backspace |
+| <code>\r</code> | Enter |
+| <code>\v</code> | Vertical tab |
+| <code>\</code> | Line continuation |</p>
+<hr />
+<h3>14. User-defined Datatypes</h3>
+<p>Arrays, classes, and modules created by programmers are user-defined datatypes.</p>
+<h3>15. Constants in Python</h3>
+<p>No true constant mechanism in Python. By convention, constants are written in <strong>ALL CAPS</strong>:</p>
+<pre class="codehilite"><code class="language-python">MAX_VALUE = 100    # treated as constant by convention, but CAN be changed
+</code></pre>
+
+<hr />
+<h3>16. Identifiers and Reserved Words</h3>
+<p><strong>Identifier:</strong> Name given to a variable, function, class, etc.
+- May contain letters, digits, underscore (<code>_</code>)
+- Must start with a non-numeric character
+- Special symbols <code>?</code>, <code>#</code>, <code>$</code>, <code>%</code>, <code>@</code> are NOT allowed
+- <strong>Case sensitive</strong>: <code>num</code> ≠ <code>Num</code></p>
+<p><strong>Reserved words (keywords):</strong></p>
+<pre class="codehilite"><code>and    del    from    nonlocal  try
+as     elif   global  not       while
+assert else   if      or        with
+break  except import  pass      yield
+class  exec   in      print     False
+continue finally is   raise     True
+def    for    lambda  return
+</code></pre>
+
+<hr />
+<h3>17. Naming Conventions</h3>
+<table>
+<thead>
+<tr>
+<th>Entity</th>
+<th>Convention</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Packages</td>
+<td>All lowercase; words separated by <code>_</code></td>
+</tr>
+<tr>
+<td>Modules</td>
+<td>All lowercase; words separated by <code>_</code></td>
+</tr>
+<tr>
+<td>Classes</td>
+<td>Each word starts with Capital (e.g. <code>MyClass</code>)</td>
+</tr>
+<tr>
+<td>Global/Module variables</td>
+<td>All lowercase with <code>_</code> separator</td>
+</tr>
+<tr>
+<td>Instance variables</td>
+<td>All lowercase; non-public starts with <code>_</code></td>
+</tr>
+<tr>
+<td>Functions</td>
+<td>All lowercase with <code>_</code> separator</td>
+</tr>
+<tr>
+<td>Methods</td>
+<td>All lowercase with <code>_</code> separator</td>
+</tr>
+<tr>
+<td>Method arguments</td>
+<td>Instance methods: first arg = <code>self</code>; class methods: first arg = <code>cls</code></td>
+</tr>
+<tr>
+<td>Constants</td>
+<td>ALL CAPS with <code>_</code> separator (e.g. <code>MAX_VALUE</code>)</td>
+</tr>
+<tr>
+<td>Non-accessible entities</td>
+<td>Double underscore before and after: <code>__init__</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>18. Determining Datatype</h3>
+<pre class="codehilite"><code class="language-python">a = 15
+print(type(a))       # &lt;class 'int'&gt;
+ch = 'A'
+print(type(ch))      # &lt;class 'str'&gt;  (no char type in Python)
+</code></pre>
+
+<hr />
+<h3>19. Operators in Python</h3>
+<p>An <strong>operator</strong> is a symbol that performs an operation on <strong>operands</strong>.</p>
+<ul>
+<li><strong>Unary operator</strong>: acts on one operand (<code>-n</code>)</li>
+<li><strong>Binary operator</strong>: acts on two operands (<code>a + b</code>)</li>
+<li><strong>Ternary operator</strong>: acts on three operands</li>
+</ul>
+<h4>Arithmetic Operators (a=13, b=5)</h4>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Meaning</th>
+<th>Example</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>+</code></td>
+<td>Addition</td>
+<td><code>a+b</code></td>
+<td>18</td>
+</tr>
+<tr>
+<td><code>-</code></td>
+<td>Subtraction</td>
+<td><code>a-b</code></td>
+<td>8</td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>Multiplication</td>
+<td><code>a*b</code></td>
+<td>65</td>
+</tr>
+<tr>
+<td><code>/</code></td>
+<td>Division</td>
+<td><code>a/b</code></td>
+<td>2.6</td>
+</tr>
+<tr>
+<td><code>%</code></td>
+<td>Modulus (remainder)</td>
+<td><code>a%b</code></td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>**</code></td>
+<td>Exponentiation</td>
+<td><code>a**b</code></td>
+<td>371293</td>
+</tr>
+<tr>
+<td><code>//</code></td>
+<td>Floor (integer) division</td>
+<td><code>a//b</code></td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Order of evaluation:</strong> <code>( )</code> → <code>**</code> → <code>* / // %</code> → <code>+ -</code> → Assignment</p>
+<h4>Assignment Operators (x=20, y=10, z=5)</h4>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Meaning</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>=</code></td>
+<td>Assign</td>
+<td><code>z = x+y</code> → z=30</td>
+</tr>
+<tr>
+<td><code>+=</code></td>
+<td>Add &amp; assign</td>
+<td><code>z+=x</code> → z=25</td>
+</tr>
+<tr>
+<td><code>-=</code></td>
+<td>Subtract &amp; assign</td>
+<td><code>z-=x</code> → z=-15</td>
+</tr>
+<tr>
+<td><code>*=</code></td>
+<td>Multiply &amp; assign</td>
+<td><code>z*=x</code> → z=100</td>
+</tr>
+<tr>
+<td><code>/=</code></td>
+<td>Divide &amp; assign</td>
+<td><code>z/=x</code> → z=0.25</td>
+</tr>
+<tr>
+<td><code>%=</code></td>
+<td>Modulus &amp; assign</td>
+<td><code>z%=x</code> → z=5</td>
+</tr>
+<tr>
+<td><code>**=</code></td>
+<td>Power &amp; assign</td>
+<td><code>z**=y</code> → z=9765625</td>
+</tr>
+<tr>
+<td><code>//=</code></td>
+<td>Floor div &amp; assign</td>
+<td><code>z//=y</code> → z=0</td>
+</tr>
+</tbody>
+</table>
+<pre class="codehilite"><code class="language-python">a = b = 1       # assign same value to two variables
+a, b = 1, 2     # assign different values
+# Python has NO ++ or -- operators
+</code></pre>
+
+<h4>Unary Minus Operator</h4>
+<pre class="codehilite"><code class="language-python">n = 10
+print(-n)       # -10
+num = -10
+num = -num
+print(num)      # 10
+</code></pre>
+
+<h4>Relational Operators (a=1, b=2)</h4>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Meaning</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&gt;</code></td>
+<td>Greater than</td>
+<td><code>a&gt;b</code> → False</td>
+</tr>
+<tr>
+<td><code>&gt;=</code></td>
+<td>Greater than or equal</td>
+<td><code>a&gt;=b</code> → False</td>
+</tr>
+<tr>
+<td><code>&lt;</code></td>
+<td>Less than</td>
+<td><code>a&lt;b</code> → True</td>
+</tr>
+<tr>
+<td><code>&lt;=</code></td>
+<td>Less than or equal</td>
+<td><code>a&lt;=b</code> → True</td>
+</tr>
+<tr>
+<td><code>==</code></td>
+<td>Equal to</td>
+<td><code>a==b</code> → False</td>
+</tr>
+<tr>
+<td><code>!=</code></td>
+<td>Not equal to</td>
+<td><code>a!=b</code> → True</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Chaining relational operators:</strong></p>
+<pre class="codehilite"><code class="language-python">x = 15
+print(10 &lt; x &lt; 20)   # True (both must be True)
+print(1 &lt; 2 &lt; 3 &lt; 4) # True
+print(1 &lt; 2 &gt; 3 &lt; 4) # False (2&gt;3 is False)
+</code></pre>
+
+<h4>Logical Operators (x=1, y=2)</h4>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Meaning</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>and</code></td>
+<td>If x is False, return x; else return y</td>
+<td><code>x and y</code> → 2</td>
+</tr>
+<tr>
+<td><code>or</code></td>
+<td>If x is False, return y; else return x</td>
+<td><code>x or y</code> → 1</td>
+</tr>
+<tr>
+<td><code>not</code></td>
+<td>If x is False, return True; else True</td>
+<td><code>not x</code> → False</td>
+</tr>
+</tbody>
+</table>
+<pre class="codehilite"><code class="language-python">x=1; y=2; z=3
+if (x&lt;y and y&lt;z): print('Yes')   # compound condition
+if (x&gt;y or y&lt;z):  print('Yes')   # or condition
+</code></pre>
+
+<h4>Boolean Operators (x=True, y=False)</h4>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Meaning</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>and</code></td>
+<td>True only if both True</td>
+<td><code>x and y</code> → False</td>
+</tr>
+<tr>
+<td><code>or</code></td>
+<td>True if either True</td>
+<td><code>x or y</code> → True</td>
+</tr>
+<tr>
+<td><code>not</code></td>
+<td>Inverts True/False</td>
+<td><code>not x</code> → False</td>
+</tr>
+</tbody>
+</table>
+<h4>Bitwise Operators</h4>
+<p>Operate on individual <strong>bits</strong> (binary representation of integers).</p>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Name</th>
+<th>Example (x=10, y=11)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>~</code></td>
+<td>Complement (NOT)</td>
+<td><code>~x</code> = -11 (flip all bits)</td>
+</tr>
+<tr>
+<td><code>&amp;</code></td>
+<td>AND</td>
+<td><code>x&amp;y</code> = 10</td>
+</tr>
+<tr>
+<td><code>\|</code></td>
+<td>OR</td>
+<td><code>x\|y</code> = 11</td>
+</tr>
+<tr>
+<td><code>^</code></td>
+<td>XOR</td>
+<td><code>x^y</code> = 1</td>
+</tr>
+<tr>
+<td><code>&lt;&lt;</code></td>
+<td>Left shift</td>
+<td><code>x&lt;&lt;2</code> = 40 (multiply by 4)</td>
+</tr>
+<tr>
+<td><code>&gt;&gt;</code></td>
+<td>Right shift</td>
+<td><code>x&gt;&gt;2</code> = 2 (divide by 4)</td>
+</tr>
+</tbody>
+</table>
+<pre class="codehilite"><code class="language-python">x = 10   # = 0000 1010 in binary
+~x       # = -11 (1111 0101 = -11)
+x &lt;&lt; 2   # = 40  (0010 1000)
+x &gt;&gt; 2   # = 2   (0000 0010)
+</code></pre>
+
+<h4>Membership Operators</h4>
+<p>Test whether an element exists in a sequence (string, list, tuple, dict).</p>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>in</code></td>
+<td>Returns True if element is found</td>
+</tr>
+<tr>
+<td><code>not in</code></td>
+<td>Returns True if element is NOT found</td>
+</tr>
+</tbody>
+</table>
+<pre class="codehilite"><code class="language-python">names = [&quot;Rani&quot;, &quot;Yamini&quot;, &quot;Sushmita&quot;]
+for name in names:
+    print(name)
+
+if &quot;Core&quot; in &quot;This is Core Python&quot;:
+    print(&quot;Found&quot;)
+</code></pre>
+
+<h4>Identity Operators</h4>
+<p>Compare <strong>memory locations</strong> (identity numbers) of objects using <code>id()</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>is</code></td>
+<td>True if both refer to same object in memory</td>
+</tr>
+<tr>
+<td><code>is not</code></td>
+<td>True if they refer to different objects</td>
+</tr>
+</tbody>
+</table>
+<pre class="codehilite"><code class="language-python">a = 25; b = 25
+print(a is b)        # True (same object, same id)
+
+one = [1,2,3,4]
+two = [1,2,3,4]
+print(one is two)    # False (different list objects)
+print(one == two)    # True (same values)
+print(id(a))         # identity/memory address number
+</code></pre>
+
+<h4>Operator Precedence (Highest to Lowest)</h4>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>( )</code></td>
+<td>Parenthesis</td>
+</tr>
+<tr>
+<td><code>**</code></td>
+<td>Exponentiation</td>
+</tr>
+<tr>
+<td><code>-, ~</code></td>
+<td>Unary minus, Bitwise complement</td>
+</tr>
+<tr>
+<td><code>*, /, //, %</code></td>
+<td>Multiply, Divide, Floor, Modulus</td>
+</tr>
+<tr>
+<td><code>+, -</code></td>
+<td>Addition, Subtraction</td>
+</tr>
+<tr>
+<td><code>&lt;&lt;, &gt;&gt;</code></td>
+<td>Bitwise shifts</td>
+</tr>
+<tr>
+<td><code>&amp;</code></td>
+<td>Bitwise AND</td>
+</tr>
+<tr>
+<td><code>^</code></td>
+<td>Bitwise XOR</td>
+</tr>
+<tr>
+<td><code>\|</code></td>
+<td>Bitwise OR</td>
+</tr>
+<tr>
+<td><code>&gt;, &gt;=, &lt;, &lt;=, ==, !=</code></td>
+<td>Relational</td>
+</tr>
+<tr>
+<td><code>=, %=, /=, //=, -=, +=, *=, **=</code></td>
+<td>Assignment</td>
+</tr>
+<tr>
+<td><code>is, is not</code></td>
+<td>Identity</td>
+</tr>
+<tr>
+<td><code>in, not in</code></td>
+<td>Membership</td>
+</tr>
+<tr>
+<td><code>not</code></td>
+<td>Logical NOT</td>
+</tr>
+<tr>
+<td><code>or</code></td>
+<td>Logical OR</td>
+</tr>
+<tr>
+<td><code>and</code></td>
+<td>Logical AND</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Associativity:</strong> Almost all operators are <strong>left-to-right</strong> when same precedence.</p>
+<hr />
+<h3>20. Mathematical Functions (math module)</h3>
+<pre class="codehilite"><code class="language-python">import math
+import math as m    # alias
+from math import sqrt, factorial    # specific import
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ceil(x)</code></td>
+<td>Round up to next integer</td>
+<td><code>ceil(4.5)</code> → 5</td>
+</tr>
+<tr>
+<td><code>floor(x)</code></td>
+<td>Round down</td>
+<td><code>floor(4.5)</code> → 4</td>
+</tr>
+<tr>
+<td><code>sqrt(x)</code></td>
+<td>Square root</td>
+<td><code>sqrt(49)</code> → 7.0</td>
+</tr>
+<tr>
+<td><code>pow(x,y)</code></td>
+<td>x to the power y</td>
+<td><code>pow(5,3)</code> → 125.0</td>
+</tr>
+<tr>
+<td><code>factorial(x)</code></td>
+<td>Factorial</td>
+<td><code>factorial(4)</code> → 24</td>
+</tr>
+<tr>
+<td><code>sin(x)</code></td>
+<td>Sine (radians)</td>
+<td><code>sin(0.5)</code> → 0.479</td>
+</tr>
+<tr>
+<td><code>cos(x)</code></td>
+<td>Cosine (radians)</td>
+<td><code>cos(0.5)</code> → 0.877</td>
+</tr>
+<tr>
+<td><code>tan(x)</code></td>
+<td>Tangent (radians)</td>
+<td><code>tan(0.5)</code> → 0.546</td>
+</tr>
+<tr>
+<td><code>degrees(x)</code></td>
+<td>Radians to degrees</td>
+<td><code>degrees(3.14159)</code> → 179.99</td>
+</tr>
+<tr>
+<td><code>radians(x)</code></td>
+<td>Degrees to radians</td>
+<td><code>radians(180)</code> → 3.14159</td>
+</tr>
+<tr>
+<td><code>log(x, base)</code></td>
+<td>Logarithm</td>
+<td><code>log(5.5, 2)</code> → 2.459</td>
+</tr>
+<tr>
+<td><code>log10(x)</code></td>
+<td>Base-10 log</td>
+<td><code>log10(5.2345)</code> → 0.718</td>
+</tr>
+<tr>
+<td><code>exp(x)</code></td>
+<td>e^x</td>
+<td><code>exp(0.5)</code> → 1.648</td>
+</tr>
+<tr>
+<td><code>fabs(x)</code></td>
+<td>Absolute value</td>
+<td><code>fabs(-4.56)</code> → 4.56</td>
+</tr>
+<tr>
+<td><code>trunc(x)</code></td>
+<td>Truncate to int</td>
+<td><code>trunc(15.56)</code> → 15</td>
+</tr>
+<tr>
+<td><code>gcd(x, y)</code></td>
+<td>Greatest common divisor</td>
+<td><code>gcd(25, 30)</code> → 5</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Math constants:</strong> <code>math.pi</code> = 3.14159..., <code>math.e</code> = 2.71828..., <code>math.inf</code>, <code>math.nan</code></p>
+<hr />
+<h3>21. Input and Output</h3>
+<h4>Output — print()</h4>
+<pre class="codehilite"><code class="language-python">print()                             # blank line
+print(&quot;Hello&quot;)                      # print string
+print(&quot;Hello&quot;, end='')              # no newline at end
+print(a, b, sep=',')                # custom separator
+print('x= %i y= %d' % (x, y))     # % formatting
+print('Hello {0}, {1}'.format(name, salary))  # format() method
+print(f'Hello {name}')              # f-string (Python 3.6+)
+print('%.2f' % num)                 # float with 2 decimal places
+</code></pre>
+
+<h4>Input — input()</h4>
+<p><code>input()</code> always returns a <strong>string</strong>. Convert using <code>int()</code> or <code>float()</code>.</p>
+<pre class="codehilite"><code class="language-python">str = input('Enter a string: ')     # accept string
+x = int(input('Enter a number: '))  # accept integer
+x = float(input('Enter a number: ')) # accept float
+ch = input(&quot;Enter a char: &quot;)[0]     # first character only
+
+# Accept multiple values in one line
+a, b = [int(x) for x in input(&quot;Enter two numbers: &quot;).split(',')]
+</code></pre>
+
+<hr />
+<h3>22. Control Statements</h3>
+<p>Control statements change the flow of execution.</p>
+<blockquote>
+<p><strong>Note:</strong> Python does NOT have a <code>switch</code> statement.</p>
+</blockquote>
+<h4>if Statement</h4>
+<pre class="codehilite"><code class="language-python">if condition:
+    statements
+
+# Example
+num = 1
+if num == 1:
+    print(&quot;One&quot;)
+</code></pre>
+
+<h4>Indentation</h4>
+<p>Statements with same indentation belong to the same <strong>suite</strong> (group). Default = 4 spaces.</p>
+<pre class="codehilite"><code class="language-python">if x == 1:
+    print('a')     # 4 spaces — inside if
+    print('b')     # 4 spaces — inside if
+print('end')       # 0 spaces — outside if
+</code></pre>
+
+<h4>if…else Statement</h4>
+<pre class="codehilite"><code class="language-python">if condition:
+    statements1
+else:
+    statements2
+
+# Example
+x = int(input(&quot;Enter a number: &quot;))
+if x % 2 == 0:
+    print(x, &quot;is even&quot;)
+else:
+    print(x, &quot;is odd&quot;)
+</code></pre>
+
+<h4>if…elif…else Statement</h4>
+<pre class="codehilite"><code class="language-python">if condition1:
+    statements1
+elif condition2:
+    statements2
+elif condition3:
+    statements3
+else:
+    statements4
+
+# Example
+num = -5
+if num == 0:
+    print(num, &quot;is zero&quot;)
+elif num &gt; 0:
+    print(num, &quot;is positive&quot;)
+else:
+    print(num, &quot;is negative&quot;)
+</code></pre>
+
+<h4>while Loop</h4>
+<p>Executes as long as the condition is True.</p>
+<pre class="codehilite"><code class="language-python">while condition:
+    statements
+
+# Example: display 1 to 10
+x = 1
+while x &lt;= 10:
+    print(x)
+    x += 1
+
+# Example: even numbers between m and n
+m, n = [int(i) for i in input(&quot;Enter min, max: &quot;).split(',')]
+x = m
+if x % 2 != 0: x = x + 1
+while x &gt;= m and x &lt;= n:
+    print(x)
+    x += 2
+</code></pre>
+
+<h4>for Loop</h4>
+<p>Iterates over elements of a sequence (string, list, tuple, range, etc.).</p>
+<pre class="codehilite"><code class="language-python">for var in sequence:
+    statements
+
+# Example: display characters of string
+str = 'Hello'
+for ch in str:
+    print(ch)
+
+# Example: using range()
+for i in range(1, 11):      # 1 to 10
+    print(i)
+
+for i in range(0, 10, 2):   # 0, 2, 4, 6, 8
+    print(i)
+
+# Example: display list elements
+lst = [10, 20.5, 'A', 'America']
+for element in lst:
+    print(element)
+</code></pre>
+
+<h4>Infinite Loops</h4>
+<pre class="codehilite"><code class="language-python">while True:
+    print(&quot;Hai&quot;)    # runs forever — avoid in programs
+</code></pre>
+
+<p>Press <code>Ctrl+C</code> to stop an infinite loop at the system prompt.</p>
+<h4>Nested Loops</h4>
+<pre class="codehilite"><code class="language-python">for i in range(3):          # outer: 0, 1, 2
+    for j in range(4):      # inner: 0, 1, 2, 3
+        print('i=', i, 'j=', j)
+
+# Star triangle using nested loops
+for i in range(1, 11):
+    for j in range(1, i+1):
+        print('* ', end='')
+    print()
+
+# Elegant single-loop version
+for i in range(1, 11):
+    print('* '*(i))
+</code></pre>
+
+<h4>else Suite with Loops</h4>
+<p>The <code>else</code> block always executes (even if loop body didn't run), UNLESS <code>break</code> was used.</p>
+<pre class="codehilite"><code class="language-python">for element in [1, 2, 3, 4, 5]:
+    if search == element:
+        print('Found')
+        break
+else:
+    print('Not found')    # runs only if no break occurred
+</code></pre>
+
+<h4>break Statement</h4>
+<p>Exits the current loop immediately.</p>
+<pre class="codehilite"><code class="language-python">x = 10
+while x &gt;= 1:
+    print('x=', x)
+    x -= 1
+    if x == 5:
+        break    # exit when x becomes 5
+print(&quot;Out of loop&quot;)
+</code></pre>
+
+<h4>continue Statement</h4>
+<p>Skips the rest of the loop body and goes back to the loop condition.</p>
+<pre class="codehilite"><code class="language-python">x = 0
+while x &lt; 10:
+    x += 1
+    if x &gt; 5:
+        continue    # skip print for x &gt; 5
+    print('x=', x)
+print(&quot;Out of loop&quot;)
+</code></pre>
+
+<h4>pass Statement</h4>
+<p>Does nothing. Used as a placeholder.</p>
+<pre class="codehilite"><code class="language-python">num = [1, 2, 3, -4, -5, -6]
+for i in num:
+    if i &gt; 0:
+        pass        # not interested in positive numbers
+    else:
+        print(i)    # display only negatives
+</code></pre>
+
+<h4>assert Statement</h4>
+<p>Tests a condition; raises <code>AssertionError</code> if False.</p>
+<pre class="codehilite"><code class="language-python">x = int(input('Enter a number greater than 0: '))
+assert x &gt; 0, &quot;Wrong input entered&quot;
+print('You entered:', x)
+
+# With exception handling
+try:
+    assert(x &gt; 0)
+    print('You entered:', x)
+except AssertionError:
+    print(&quot;Wrong input entered&quot;)
+</code></pre>
+
+<h4>return Statement</h4>
+<p>Returns a value from a function (discussed more in Unit 4).</p>
+<pre class="codehilite"><code class="language-python">def sum(a, b):
+    return a + b
+
+res = sum(5, 10)
+print('The result is', res)    # 15
+</code></pre>
+
+<hr />
+<h2>UNIT 3 — Arrays in Python &amp; Strings and Characters</h2>
+<h3>23. Arrays in Python</h3>
+<p><strong>Advantages of arrays:</strong>
+- Store one type of elements efficiently
+- Use less memory than lists for large datasets
+- Faster execution than lists
+- Grow or shrink dynamically in memory
+- Useful for handling collections of elements</p>
+<h4>Creating a 1D Array (array module)</h4>
+<pre class="codehilite"><code class="language-python">from array import *
+
+a = array('i', [5, 6, -7, 8])        # integer array
+arr = array('d', [1.5, -2.2, 3, 5.75])  # double/float array
+arr2 = array('u', ['a', 'b', 'c'])   # unicode character array
+</code></pre>
+
+<p><strong>Type codes:</strong>
+| Code | C Type | Size (bytes) |
+|---|---|---|
+| <code>'b'</code> | signed integer | 1 |
+| <code>'B'</code> | unsigned integer | 1 |
+| <code>'i'</code> | signed integer | 2 |
+| <code>'I'</code> | unsigned integer | 2 |
+| <code>'l'</code> | signed integer | 4 |
+| <code>'L'</code> | unsigned integer | 4 |
+| <code>'f'</code> | floating point | 4 |
+| <code>'d'</code> | double precision float | 8 |
+| <code>'u'</code> | unicode character | 2 |</p>
+<p><strong>Three ways to import:</strong></p>
+<pre class="codehilite"><code class="language-python">import array                          # use as array.array('i', [...])
+import array as ar                    # use as ar.array('i', [...])
+from array import *                   # use directly as array('i', [...])
+</code></pre>
+
+<h4>Indexing and Slicing Arrays</h4>
+<pre class="codehilite"><code class="language-python">x = array('i', [10, 20, 30, 40, 50, 60, 70])
+n = len(x)           # 7
+
+# Indexing
+print(x[0])          # 10
+print(x[-1])         # 70 (last element)
+
+# Slicing: arrayname[start:stop:stride]
+y = x[1:4]           # [20, 30, 40]
+y = x[0:]            # [10, 20, 30, 40, 50, 60, 70]
+y = x[:4]            # [10, 20, 30, 40]
+y = x[-4:]           # [40, 50, 60, 70] (last 4)
+y = x[-4:-1]         # [40, 50, 60]
+y = x[0:7:2]         # [10, 30, 50, 70] (every other)
+
+# Update via slicing
+x[1:3] = array('i', [5, 7])    # replace 1st and 2nd elements
+</code></pre>
+
+<h4>Processing Arrays (array module methods)</h4>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>a.append(x)</code></td>
+<td>Add element at end</td>
+</tr>
+<tr>
+<td><code>a.insert(i, x)</code></td>
+<td>Insert x at position i</td>
+</tr>
+<tr>
+<td><code>a.remove(x)</code></td>
+<td>Remove first occurrence of x</td>
+</tr>
+<tr>
+<td><code>a.pop()</code></td>
+<td>Remove and return last element</td>
+</tr>
+<tr>
+<td><code>a.pop(x)</code></td>
+<td>Remove element x</td>
+</tr>
+<tr>
+<td><code>a.index(x)</code></td>
+<td>Return position of first occurrence of x</td>
+</tr>
+<tr>
+<td><code>a.count(x)</code></td>
+<td>Count occurrences of x</td>
+</tr>
+<tr>
+<td><code>a.reverse()</code></td>
+<td>Reverse the array</td>
+</tr>
+<tr>
+<td><code>a.extend(x)</code></td>
+<td>Append another array or iterable</td>
+</tr>
+<tr>
+<td><code>a.fromlist(lst)</code></td>
+<td>Append items from list</td>
+</tr>
+<tr>
+<td><code>a.tolist()</code></td>
+<td>Convert array to list</td>
+</tr>
+<tr>
+<td><code>a.typecode</code></td>
+<td>Type code character of array</td>
+</tr>
+<tr>
+<td><code>a.itemsize</code></td>
+<td>Size (bytes) of each element</td>
+</tr>
+</tbody>
+</table>
+<pre class="codehilite"><code class="language-python">arr = array('i', [10, 20, 30, 40, 50])
+arr.append(60)
+arr.insert(1, 99)
+arr.remove(20)
+n = arr.pop()
+print(arr.index(30))
+arr.reverse()
+</code></pre>
+
+<h4>Types of Arrays</h4>
+<ul>
+<li><strong>Single dimensional (1D):</strong> One row/column of elements. Python's <code>array</code> module supports only this.</li>
+<li><strong>Multi-dimensional (2D, 3D):</strong> Multiple rows and columns. Requires <strong>numpy</strong> in Python.</li>
+</ul>
+<hr />
+<h3>24. Working with Arrays using numpy</h3>
+<p><strong>numpy</strong> is a package for scientific calculations — handles 1D and multi-dimensional arrays.</p>
+<pre class="codehilite"><code class="language-python">import numpy              # use as numpy.array(...)
+import numpy as np        # use as np.array(...)
+from numpy import *       # use directly as array(...)
+</code></pre>
+
+<h4>Creating Arrays in numpy</h4>
+<p><strong>Using array():</strong></p>
+<pre class="codehilite"><code class="language-python">from numpy import *
+arr = array([10, 20, 30, 40, 50], int)    # integer array
+arr = array([1.5, 2.5, 3, -5.1], float)  # float array
+arr = array(['a', 'b', 'c', 'd'])         # character array
+arr = array(['Delhi', 'Mumbai'], dtype=str) # string array
+</code></pre>
+
+<p><strong>Using linspace():</strong> Evenly spaced points between start and stop.</p>
+<pre class="codehilite"><code class="language-python">a = linspace(0, 10, 5)    # [0., 2.5, 5., 7.5, 10.]
+</code></pre>
+
+<p><strong>Using logspace():</strong> Evenly spaced on logarithmic scale.</p>
+<pre class="codehilite"><code class="language-python">a = logspace(1, 4, 5)    # 5 points from 10^1 to 10^4
+</code></pre>
+
+<p><strong>Using arange():</strong> Like <code>range()</code> but for arrays.</p>
+<pre class="codehilite"><code class="language-python">arange(10)           # [0 1 2 3 4 5 6 7 8 9]
+arange(5, 10)        # [5 6 7 8 9]
+arange(1, 10, 3)     # [1 4 7]
+arange(10, 1, -1)    # [10 9 8 7 6 5 4 3 2]
+arange(0, 10, 1.5)   # [0. 1.5 3. 4.5 6. 7.5 9.]
+</code></pre>
+
+<p><strong>Using zeros() and ones():</strong></p>
+<pre class="codehilite"><code class="language-python">zeros(5, int)     # [0 0 0 0 0]
+ones(5, float)    # [1. 1. 1. 1. 1.]
+</code></pre>
+
+<h4>Mathematical Operations on Arrays (Vectorized)</h4>
+<pre class="codehilite"><code class="language-python">arr = array([10, 20, 30.5, -40])
+print(arr + 5)          # [15. 25. 35.5 -35.]
+print(arr - 5)
+print(arr * 5)
+print(arr / 5)
+print(arr % 5)
+print((arr + 5)**2 - 10)
+
+arr1 = array([10, 20, 30.5, -40])
+arr2 = array([1, 2, 3, 4])
+arr3 = arr1 - arr2    # element-wise subtraction
+</code></pre>
+
+<p><strong>numpy mathematical functions on arrays:</strong>
+| Function | Description |
+|---|---|
+| <code>sin(arr)</code> | Sine of each element |
+| <code>cos(arr)</code> | Cosine of each element |
+| <code>tan(arr)</code> | Tangent of each element |
+| <code>sqrt(arr)</code> | Square root of each element |
+| <code>exp(arr)</code> | e^x for each element |
+| <code>abs(arr)</code> | Absolute value of each element |
+| <code>log(arr)</code> | Natural log of each element |
+| <code>sum(arr)</code> | Sum of all elements |
+| <code>prod(arr)</code> | Product of all elements |
+| <code>min(arr)</code> | Smallest element |
+| <code>max(arr)</code> | Biggest element |
+| <code>mean(arr)</code> | Average |
+| <code>median(arr)</code> | Median |
+| <code>std(arr)</code> | Standard deviation |
+| <code>var(arr)</code> | Variance |
+| <code>sort(arr)</code> | Sorted array |
+| <code>unique(arr)</code> | Unique elements |
+| <code>concatenate([a,b])</code> | Join arrays |
+| <code>argmin(arr)</code> | Index of smallest |
+| <code>argmax(arr)</code> | Index of biggest |</p>
+<pre class="codehilite"><code class="language-python">from numpy import *
+arr = array([10, 20, 30.5, -40])
+print(sin(arr))      # sine of each element
+print(max(arr))      # 30.5
+print(sum(arr))      # 20.5
+print(mean(arr))     # 5.125
+</code></pre>
+
+<h4>Multi-dimensional Arrays (numpy)</h4>
+<p><strong>reshape():</strong> Convert 1D array to 2D or 3D.</p>
+<pre class="codehilite"><code class="language-python">a = array([1, 2, 3, 4, 5, 6])
+b = reshape(a, (2, 3))    # 2 rows, 3 cols → [[1,2,3],[4,5,6]]
+b = reshape(a, (3, 2))    # 3 rows, 2 cols → [[1,2],[3,4],[5,6]]
+
+a = arange(12)
+b = reshape(a, (2, 3, 2))    # 3D: 2 arrays each 3x2
+</code></pre>
+
+<p><strong>Indexing in 2D arrays:</strong></p>
+<pre class="codehilite"><code class="language-python">a = [[1,2,3], [4,5,6], [7,8,9]]
+print(a[0])          # [1, 2, 3] — first row
+print(a[1][2])       # 6 — row 1, col 2
+
+for i in range(len(a)):
+    for j in range(len(a[i])):
+        print(a[i][j], end=' ')
+</code></pre>
+
+<p><strong>Slicing 2D arrays:</strong></p>
+<pre class="codehilite"><code class="language-python">a = reshape(a, (3,3))
+a[:, :]     # all rows, all cols
+a[0, :]     # row 0 only → [1 2 3]
+a[:, 0]     # col 0 only → [1 4 7]
+a[0:1, 0:1] # element at row 0, col 0 → [[1]]
+a[1:2, 1:2] # element at row 1, col 1 → [[5]]
+</code></pre>
+
+<hr />
+<h3>25. Strings and Characters</h3>
+<p>A <strong>string</strong> is a group of characters. Python uses <code>str</code> datatype (no separate <code>char</code> type).</p>
+<h4>Creating Strings</h4>
+<pre class="codehilite"><code class="language-python">s1 = 'Welcome to Core Python learning'
+s2 = &quot;Welcome to Core Python learning&quot;
+str = '''Multi
+line string'''
+str = r&quot;raw \n string&quot;    # raw string: escape chars ignored
+name = u'\u0915\u094b\u0930'    # unicode string
+</code></pre>
+
+<h4>Length of a String</h4>
+<pre class="codehilite"><code class="language-python">str = 'Core Python'
+n = len(str)    # 11
+</code></pre>
+
+<h4>Indexing in Strings</h4>
+<pre class="codehilite"><code class="language-python">str = 'Core Python'
+print(str[0])    # 'C'
+print(str[-1])   # 'n' (last character)
+print(str[-4])   # 't'
+
+# Access forward using while
+i = 0
+while i &lt; len(str):
+    print(str[i], end=' ')
+    i += 1
+
+# Access in reverse
+for i in str[::-1]:
+    print(i, end=' ')
+</code></pre>
+
+<h4>Slicing Strings</h4>
+<p>Format: <code>stringname[start:stop:stepsize]</code></p>
+<pre class="codehilite"><code class="language-python">s = 'Core Python'
+s[0:9:1]     # 'Core Pyth'
+s[0:9:2]     # 'Cr yh'
+s[::]        # 'Core Python' (all)
+s[2:4:1]     # 're'
+s[::2]       # 'Cr yhn'
+s[2::]       # 're Python'
+s[:4:]       # 'Core'
+s[-4:-1]     # 'tho'
+s[-1::-1]    # 'nohtyP eroC' (reverse)
+</code></pre>
+
+<h4>Repeating Strings</h4>
+<pre class="codehilite"><code class="language-python">str = 'Core Python'
+print(str * 2)       # 'Core PythonCore Python'
+s = str[5:7] * 3     # repeat 'Py' 3 times → 'PyPyPy'
+</code></pre>
+
+<h4>Concatenation of Strings</h4>
+<pre class="codehilite"><code class="language-python">s1 = 'Core'
+s2 = 'Python'
+s3 = s1 + s2    # 'CorePython'
+</code></pre>
+
+<h4>Checking Membership</h4>
+<pre class="codehilite"><code class="language-python">str = 'This is Core Python'
+sub = 'Core'
+if sub in str:
+    print(&quot;Found&quot;)
+if sub not in str:
+    print(&quot;Not found&quot;)
+</code></pre>
+
+<h4>Comparing Strings</h4>
+<pre class="codehilite"><code class="language-python">s1 = 'Box'; s2 = 'Boy'
+if s1 == s2: print(&quot;Same&quot;)
+if s1 &lt; s2: print(&quot;s1 comes before s2 in dictionary order&quot;)
+</code></pre>
+
+<h4>Removing Spaces</h4>
+<pre class="codehilite"><code class="language-python">name = ' Mukesh Deshmukh '
+print(name.rstrip())    # remove right spaces → ' Mukesh Deshmukh'
+print(name.lstrip())    # remove left spaces  → 'Mukesh Deshmukh '
+print(name.strip())     # remove both sides   → 'Mukesh Deshmukh'
+</code></pre>
+
+<h4>Finding Substrings</h4>
+<pre class="codehilite"><code class="language-python">str = 'This is a book'
+sub = 'is'
+
+# find() returns -1 if not found; index() raises ValueError
+n = str.find(sub, 0, len(str))     # first occurrence from start
+n = str.rfind(sub)                  # first occurrence from right
+n = str.index(sub, 0, len(str))    # raises ValueError if not found
+
+# Count all occurrences
+n = str.count('is')                 # 2 (found at position 3 and 6)
+n = str.count('e', 0, 3)           # in range 0 to 2
+</code></pre>
+
+<h4>Strings are Immutable</h4>
+<pre class="codehilite"><code class="language-python">str = 'abcd'
+str[0] = 'x'    # TypeError: 'str' object does not support item assignment
+</code></pre>
+
+<p>Reassignment creates a new object:</p>
+<pre class="codehilite"><code class="language-python">s1 = 'one'; s2 = 'two'
+s2 = s1    # s2 now points to 'one'; 'two' collected by GC
+</code></pre>
+
+<h4>Replacing a Substring</h4>
+<pre class="codehilite"><code class="language-python">str = 'That is a beautiful girl'
+str1 = str.replace('girl', 'flower')
+# str is unchanged; str1 = 'That is a beautiful flower'
+</code></pre>
+
+<h4>Splitting and Joining Strings</h4>
+<pre class="codehilite"><code class="language-python"># split(): break string into list
+str = 'one,two,three,four'
+lst = str.split(',')     # ['one', 'two', 'three', 'four']
+
+# join(): merge list into string
+str = ('one', 'two', 'three')
+str1 = &quot;-&quot;.join(str)    # 'one-two-three'
+
+lst = ['apple', 'guava', 'mango']
+str1 = ':'.join(lst)    # 'apple:guava:mango'
+</code></pre>
+
+<h4>Changing Case</h4>
+<pre class="codehilite"><code class="language-python">str = 'Python is the future'
+str.upper()      # 'PYTHON IS THE FUTURE'
+str.lower()      # 'python is the future'
+str.swapcase()   # 'pYTHON IS THE FUTURE'
+str.title()      # 'Python Is The Future'
+</code></pre>
+
+<h4>Checking Start/End</h4>
+<pre class="codehilite"><code class="language-python">str = 'This is Python'
+str.startswith('This')    # True
+str.endswith('Python')    # True
+</code></pre>
+
+<h4>String Testing Methods</h4>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Returns True if…</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>isalnum()</code></td>
+<td>All chars are alphanumeric (A-Z, a-z, 0-9)</td>
+</tr>
+<tr>
+<td><code>isalpha()</code></td>
+<td>All chars are alphabetic</td>
+</tr>
+<tr>
+<td><code>isdigit()</code></td>
+<td>All chars are digits</td>
+</tr>
+<tr>
+<td><code>islower()</code></td>
+<td>All letters are lowercase</td>
+</tr>
+<tr>
+<td><code>isupper()</code></td>
+<td>All letters are uppercase</td>
+</tr>
+<tr>
+<td><code>istitle()</code></td>
+<td>Each word starts with capital</td>
+</tr>
+<tr>
+<td><code>isspace()</code></td>
+<td>String contains only spaces</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>UNIT 4 — Functions, Lists and Tuples</h2>
+<h3>26. Functions</h3>
+<p>A <strong>function</strong> is a named block of statements that performs a specific task. Functions represent <strong>reusable code</strong>.</p>
+<p><strong>Function vs Method:</strong>
+- Function: written individually, called by name
+- Method: written inside a class, called as <code>object.method()</code> or <code>Class.method()</code></p>
+<h4>Defining and Calling a Function</h4>
+<pre class="codehilite"><code class="language-python">def sum(a, b):
+    &quot;&quot;&quot; This function finds sum of two numbers &quot;&quot;&quot;
+    c = a + b
+    print('Sum= ', c)
+
+# Call the function
+sum(10, 15)       # Output: Sum= 25
+sum(1.5, 10.75)   # Output: Sum= 12.25
+</code></pre>
+
+<ul>
+<li><code>def</code> keyword starts function definition</li>
+<li>Parameters in <code>( )</code> receive values from outside</li>
+<li>Body indented with 4 spaces</li>
+<li>Docstring as first statement (optional but recommended)</li>
+</ul>
+<h4>Returning Results</h4>
+<pre class="codehilite"><code class="language-python">def sum(a, b):
+    c = a + b
+    return c
+
+x = sum(10, 15)    # x = 25
+</code></pre>
+
+<p><strong>Returning multiple values:</strong></p>
+<pre class="codehilite"><code class="language-python">def sum_sub(a, b):
+    return a + b, a - b   # returns a tuple
+
+x, y = sum_sub(10, 5)    # x=15, y=5
+</code></pre>
+
+<pre class="codehilite"><code class="language-python">def sum_sub_mul_div(a, b):
+    return a+b, a-b, a*b, a/b
+
+t = sum_sub_mul_div(10, 5)
+for i in t:
+    print(i, end=', ')    # 15, 5, 50, 2.0,
+</code></pre>
+
+<h4>Formal and Actual Arguments</h4>
+<ul>
+<li><strong>Formal arguments:</strong> Parameters in the function definition</li>
+<li><strong>Actual arguments:</strong> Values passed at the time of calling</li>
+</ul>
+<pre class="codehilite"><code class="language-python">def sum(a, b):       # a, b = formal arguments
+    c = a + b
+    print(c)
+
+x = 10; y = 15
+sum(x, y)            # x, y = actual arguments
+</code></pre>
+
+<h4>Types of Actual Arguments</h4>
+<p><strong>1. Positional Arguments:</strong> Passed in exact order, exact number.</p>
+<pre class="codehilite"><code class="language-python">def attach(s1, s2):
+    s3 = s1 + s2
+    print('Total string: ' + s3)
+
+attach('New', 'York')    # → NewYork
+</code></pre>
+
+<p><strong>2. Keyword Arguments:</strong> Identified by parameter names; order doesn't matter.</p>
+<pre class="codehilite"><code class="language-python">def grocery(item, price):
+    print('Item = %s' % item)
+    print('Price = %.2f' % price)
+
+grocery(item='Sugar', price=50.75)
+grocery(price=88.00, item='Oil')    # order changed — still works
+</code></pre>
+
+<p><strong>3. Default Arguments:</strong> Parameter has a default value used if no argument passed.</p>
+<pre class="codehilite"><code class="language-python">def grocery(item, price=40.00):
+    print('Item = %s' % item)
+    print('Price = %.2f' % price)
+
+grocery(item='Sugar', price=50.75)   # uses 50.75
+grocery(item='Sugar')                # uses default 40.00
+</code></pre>
+
+<p><strong>4. Variable Length Arguments (<code>*args</code>):</strong> Accepts any number of values; stored as tuple.</p>
+<pre class="codehilite"><code class="language-python">def add(farg, *args):
+    print('Formal argument=', farg)
+    sum = 0
+    for i in args:
+        sum += i
+    print('Sum of all numbers=', (farg + sum))
+
+add(5, 10)          # formal=5, args=(10,)
+add(5, 10, 20, 30)  # formal=5, args=(10,20,30)
+</code></pre>
+
+<p><strong>Keyword variable length arguments (<code>**kwargs</code>):</strong> Accepts key=value pairs; stored as dict.</p>
+<pre class="codehilite"><code class="language-python">def display(farg, **kwargs):
+    print('Formal argument=', farg)
+    for x, y in kwargs.items():
+        print('key = {}, value = {}'.format(x, y))
+
+display(5, rno=10, name='Prakash')
+</code></pre>
+
+<h4>Local and Global Variables</h4>
+<p><strong>Local variable:</strong> Declared inside a function; available only within that function.</p>
+<pre class="codehilite"><code class="language-python">def myfunction():
+    a = 1       # local variable
+    a += 1
+    print(a)    # 2
+
+myfunction()
+# print(a)    # ERROR: 'a' is not defined outside
+</code></pre>
+
+<p><strong>Global variable:</strong> Declared outside all functions; available to all functions below it.</p>
+<pre class="codehilite"><code class="language-python">a = 1    # global variable
+
+def myfunction():
+    b = 2           # local
+    print('a=', a)  # can access global
+    print('b=', b)  # can access local
+
+myfunction()
+print(a)    # available
+# print(b)  # ERROR
+</code></pre>
+
+<p><strong>Using <code>global</code> keyword to modify a global variable inside a function:</strong></p>
+<pre class="codehilite"><code class="language-python">a = 1
+
+def myfunction():
+    global a      # declare it global
+    print('global a=', a)
+    a = 2         # modify global variable
+    print('modified a=', a)
+
+myfunction()
+print('global a=', a)    # 2 (modified)
+</code></pre>
+
+<p><strong>Using <code>globals()</code> to access global when local has same name:</strong></p>
+<pre class="codehilite"><code class="language-python">a = 1
+def myfunction():
+    a = 2               # local variable
+    x = globals()['a']  # access global 'a'
+    print('global a=', x)
+    print('local a=', a)
+</code></pre>
+
+<h4>Passing a Group of Elements to a Function</h4>
+<pre class="codehilite"><code class="language-python">def calculate(lst):
+    n = len(lst)
+    total = sum(i for i in lst)
+    avg = total / n
+    return total, avg
+
+lst = [int(x) for x in input().split()]
+x, y = calculate(lst)
+print('Total:', x, 'Average:', y)
+</code></pre>
+
+<hr />
+<h3>27. Lists</h3>
+<p>A <strong>list</strong> is like an array but can store <strong>different types of elements</strong>. Lists are <strong>mutable</strong> (can be modified). Written with <code>[ ]</code>.</p>
+<h4>Creating Lists</h4>
+<pre class="codehilite"><code class="language-python">num = [10, 20, 30, 40, 50]
+names = [&quot;Raju&quot;, &quot;Vani&quot;, &quot;Gopal&quot;]
+x = [10, 20, 10.5, 2.55, &quot;Ganesh&quot;, 'Vishnu']   # mixed types
+e_lst = []                                        # empty list
+student = [10, 'Venu gopal', 'M', 50, 55, 62]  # realistic example
+</code></pre>
+
+<h4>Creating Lists using range()</h4>
+<pre class="codehilite"><code class="language-python">lst = list(range(10))       # [0, 1, 2, ..., 9]
+lst = list(range(4, 9, 2))  # [4, 6, 8]
+lst = range(5, 10)          # range object (use in loop or list())
+</code></pre>
+
+<h4>Indexing and Slicing Lists</h4>
+<pre class="codehilite"><code class="language-python">student = [10, 'Venu gopal', 'M', 50, 55, 62, 74, 66]
+print(student[0])         # 10
+print(student[1])         # 'Venu gopal'
+print(student[-1])        # 66 (last element)
+print(student[0:3:1])     # [10, 'Venu gopal', 'M']
+print(student[:3:])       # [10, 'Venu gopal', 'M']
+print(student[::])        # entire list
+</code></pre>
+
+<h4>Updating Lists (Mutable)</h4>
+<pre class="codehilite"><code class="language-python">lst = list(range(1, 5))    # [1, 2, 3, 4]
+
+lst.append(9)              # [1, 2, 3, 4, 9]
+lst[1] = 8                 # update element → [1, 8, 3, 4, 9]
+lst[1:3] = 10, 11          # update slice → [1, 10, 11, 4, 9]
+del lst[1]                 # delete by index → [1, 11, 4, 9]
+lst.remove(11)             # delete by value → [1, 4, 9]
+</code></pre>
+
+<h4>Concatenation and Repetition</h4>
+<pre class="codehilite"><code class="language-python">x = [10, 20, 30, 40, 50]
+y = [100, 110, 120]
+print(x + y)   # [10, 20, 30, 40, 50, 100, 110, 120]
+print(x * 2)   # [10, 20, 30, 40, 50, 10, 20, 30, 40, 50]
+</code></pre>
+
+<h4>Membership in Lists</h4>
+<pre class="codehilite"><code class="language-python">x = [10, 20, 30, 40, 50]
+a = 20
+print(a in x)       # True
+print(a not in x)   # False
+</code></pre>
+
+<h4>Aliasing and Cloning Lists</h4>
+<pre class="codehilite"><code class="language-python">x = [10, 20, 30, 40, 50]
+y = x            # aliasing: y is another name for x; changes to x affect y
+y = x[:]         # cloning: independent copy; changes to x don't affect y
+y = x.copy()     # same as cloning
+</code></pre>
+
+<h4>Methods to Process Lists</h4>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>len(lst)</code></td>
+<td>Number of elements</td>
+</tr>
+<tr>
+<td><code>max(lst)</code></td>
+<td>Biggest element</td>
+</tr>
+<tr>
+<td><code>min(lst)</code></td>
+<td>Smallest element</td>
+</tr>
+<tr>
+<td><code>lst.append(x)</code></td>
+<td>Add element at end</td>
+</tr>
+<tr>
+<td><code>lst.insert(i, x)</code></td>
+<td>Insert x at position i</td>
+</tr>
+<tr>
+<td><code>lst.copy()</code></td>
+<td>Return a copy</td>
+</tr>
+<tr>
+<td><code>lst.extend(lst1)</code></td>
+<td>Append lst1 to lst</td>
+</tr>
+<tr>
+<td><code>lst.count(x)</code></td>
+<td>Count occurrences of x</td>
+</tr>
+<tr>
+<td><code>lst.remove(x)</code></td>
+<td>Remove first occurrence of x</td>
+</tr>
+<tr>
+<td><code>lst.pop()</code></td>
+<td>Remove and return last element</td>
+</tr>
+<tr>
+<td><code>lst.sort()</code></td>
+<td>Sort ascending</td>
+</tr>
+<tr>
+<td><code>lst.sort(reverse=True)</code></td>
+<td>Sort descending</td>
+</tr>
+<tr>
+<td><code>lst.reverse()</code></td>
+<td>Reverse the list</td>
+</tr>
+<tr>
+<td><code>lst.clear()</code></td>
+<td>Delete all elements</td>
+</tr>
+<tr>
+<td><code>lst.index(x)</code></td>
+<td>First occurrence position of x</td>
+</tr>
+</tbody>
+</table>
+<pre class="codehilite"><code class="language-python">num = [10, 20, 30, 40, 50]
+num.append(60)
+num.insert(0, 5)
+num1 = num.copy()
+num.extend(num1)
+n = num.count(50)
+num.remove(50)
+num.pop()
+num.sort()
+num.reverse()
+num.clear()
+</code></pre>
+
+<h4>Finding Biggest and Smallest Elements</h4>
+<pre class="codehilite"><code class="language-python">x = [20, 10, 5, 20, 15]
+big = x[0]; small = x[0]
+for i in range(1, len(x)):
+    if x[i] &gt; big: big = x[i]
+    if x[i] &lt; small: small = x[i]
+print('Max:', big, 'Min:', small)
+
+# Or simply:
+print(max(x))    # 20
+print(min(x))    # 5
+</code></pre>
+
+<h4>Sorting the List — Bubble Sort</h4>
+<pre class="codehilite"><code class="language-python"># bubble sort
+for i in range(n-1):
+    for j in range(n-1-i):
+        if x[j] &gt; x[j+1]:
+            x[j], x[j+1] = x[j+1], x[j]    # swap
+# Or simply:
+x.sort()
+</code></pre>
+
+<h4>Nested Lists (Lists within Lists)</h4>
+<pre class="codehilite"><code class="language-python">b = [10, 20, 30, [80, 90]]
+print(b[3])       # [80, 90]
+print(b[3][0])    # 80
+</code></pre>
+
+<p><strong>Using nested lists as matrices:</strong></p>
+<pre class="codehilite"><code class="language-python">mat = [[1,2,3], [4,5,6], [7,8,9]]   # 3x3 matrix
+for r in mat:
+    for c in r:
+        print(c, end=' ')
+    print()
+
+# Using indexing
+for i in range(len(mat)):
+    for j in range(len(mat[i])):
+        print('%d ' % mat[i][j], end='')
+    print()
+</code></pre>
+
+<p><strong>Matrix addition:</strong></p>
+<pre class="codehilite"><code class="language-python">m3 = [4*[0] for i in range(3)]   # 3x4 zero matrix
+for i in range(3):
+    for j in range(4):
+        m3[i][j] = m1[i][j] + m2[i][j]
+</code></pre>
+
+<h4>List Comprehensions</h4>
+<p>Compact way to create lists from iterables.</p>
+<pre class="codehilite"><code class="language-python">squares = [x**2 for x in range(1, 11)]
+# [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+
+even_squares = [x**2 for x in range(1, 11) if x % 2 == 0]
+# [4, 16, 36, 64, 100]
+
+lst = [i+j for i in [10, 20, 30] for j in [1, 2, 3, 4]]
+# [11, 12, 13, 14, 21, ...]
+
+lst = [w[0] for w in ['Apple', 'Grapes', 'Banana']]
+# ['A', 'G', 'B']
+
+num3 = [i for i in num1 if i not in num2]   # elements in num1 but not num2
+</code></pre>
+
+<hr />
+<h3>28. Tuples</h3>
+<p>A <strong>tuple</strong> is like a list but <strong>immutable</strong> (cannot be modified). Written with <code>( )</code>.</p>
+<p>Use tuples to store data that should not change.</p>
+<h4>Creating Tuples</h4>
+<pre class="codehilite"><code class="language-python">tup1 = ()                                        # empty tuple
+tup2 = (10,)                                     # single element (MUST have comma)
+tup3 = (10, 20, -30.1, 40.5, 'Hyderabad')       # mixed types
+tup4 = (10, 20, 30)                              # integers only
+tup5 = 1, 2, 3, 4                                # no brackets → still a tuple
+
+# From a list
+list = [1, 2, 3]
+tpl = tuple(list)    # (1, 2, 3)
+
+# Using range()
+tpl = tuple(range(4, 9, 2))    # (4, 6, 8)
+</code></pre>
+
+<h4>Accessing Tuple Elements</h4>
+<p><strong>Indexing:</strong></p>
+<pre class="codehilite"><code class="language-python">tup = (50, 60, 70, 80, 90, 100)
+print(tup[0])     # 50
+print(tup[5])     # 100
+print(tup[-1])    # 100 (last)
+print(tup[-6])    # 50 (first from end)
+</code></pre>
+
+<p><strong>Slicing:</strong></p>
+<pre class="codehilite"><code class="language-python">print(tup[:])         # (50, 60, 70, 80, 90, 100)
+print(tup[1:4])       # (60, 70, 80)
+print(tup[::2])       # (50, 70, 90) — alternate elements
+print(tup[::-2])      # (100, 80, 60) — reverse alternate
+print(tup[-4:-1])     # (70, 80, 90)
+</code></pre>
+
+<p><strong>Extracting into variables:</strong></p>
+<pre class="codehilite"><code class="language-python">student = (10, 'Vinay kumar', 50, 60, 65, 61, 70)
+rno, name = student[0:2]      # rno=10, name='Vinay kumar'
+marks = student[2:7]          # (50, 60, 65, 61, 70)
+</code></pre>
+
+<h4>Basic Operations on Tuples</h4>
+<pre class="codehilite"><code class="language-python">student = (10, 'Vinaykumar', 50, 60, 65, 61, 70)
+
+# Length
+len(student)    # 7
+
+# Concatenation
+student1 = student + fees_tuple
+
+# Repetition
+fees = (25000.00,) * 4    # (25000.0, 25000.0, 25000.0, 25000.0)
+
+# Membership
+'Vinay kumar' in student1   # True
+'Vinay kumar' not in student1  # False
+
+tpl = (10, 11, 12)
+tpl1 = tpl * 3    # (10, 11, 12, 10, 11, 12, 10, 11, 12)
+</code></pre>
+
+<h4>Functions to Process Tuples</h4>
+<table>
+<thead>
+<tr>
+<th>Function/Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>len(tpl)</code></td>
+<td>Number of elements</td>
+</tr>
+<tr>
+<td><code>min(tpl)</code></td>
+<td>Smallest element</td>
+</tr>
+<tr>
+<td><code>max(tpl)</code></td>
+<td>Biggest element</td>
+</tr>
+<tr>
+<td><code>tpl.count(x)</code></td>
+<td>Count occurrences of x</td>
+</tr>
+<tr>
+<td><code>tpl.index(x)</code></td>
+<td>First occurrence position of x (raises <code>ValueError</code> if not found)</td>
+</tr>
+<tr>
+<td><code>sorted(tpl)</code></td>
+<td>Sort ascending (returns list)</td>
+</tr>
+<tr>
+<td><code>sorted(tpl, reverse=True)</code></td>
+<td>Sort descending</td>
+</tr>
+</tbody>
+</table>
+<pre class="codehilite"><code class="language-python">num = eval(input(&quot;Enter elements in (): &quot;))   # accepts tuple from keyboard
+sum = 0
+n = len(num)
+for i in range(n):
+    sum += num[i]
+print('Sum:', sum, 'Average:', sum/n)
+</code></pre>
+
+<p><strong>Finding an element with index():</strong></p>
+<pre class="codehilite"><code class="language-python">str = input('Enter elements separated by commas: ').split(',')
+lst = [int(num) for num in str]
+tup = tuple(lst)
+ele = int(input('Enter element to search: '))
+try:
+    pos = tup.index(ele)
+    print('Found at position:', pos+1)
+except ValueError:
+    print('Element not found')
+</code></pre>
+
+<hr />
+<h2>Quick Reference Code Snippets</h2>
+<pre class="codehilite"><code class="language-python"># Fibonacci series
+f1 = 0; f2 = 1
+n = int(input('How many Fibonaccis? '))
+print(f1, '\n', f2, sep='')
+c = 2
+while c &lt; n:
+    f = f1 + f2
+    print(f)
+    f1, f2 = f2, f
+    c += 1
+
+# Prime number check
+def prime(n):
+    x = 1
+    for i in range(2, n):
+        if n % i == 0:
+            x = 0; break
+    return x
+
+# Factorial
+def fact(n):
+    prod = 1
+    while n &gt;= 1:
+        prod *= n
+        n -= 1
+    return prod
+
+# Linear search in array
+for i in range(len(x)):
+    if s == x[i]:
+        print('Found at Position=', i+1)
+
+# Check if number is in range
+x = int(input('Enter a number: '))
+if x &gt;= 1 and x &lt;= 10:
+    print(&quot;Between 1 and 10&quot;)
+
+# Accept multiple values in one line
+a, b = [int(x) for x in input(&quot;Enter two numbers: &quot;).split(',')]
+
+# Create 2D matrix from lists
+mat = [[1,2,3], [4,5,6], [7,8,9]]
+for i in range(len(mat)):
+    for j in range(len(mat[i])):
+        print(mat[i][j], end=' ')
+    print()
+</code></pre>
+
+<hr />
+<p><em>End of Notes — Units 1 to 4 covered as per syllabus</em></p>
+</body>
+</html>
