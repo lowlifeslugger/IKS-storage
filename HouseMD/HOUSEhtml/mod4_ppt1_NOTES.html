@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mod4_ppt1_NOTES</title>
+    
+    <style>
+        :root {
+            --bg-main: #1e1e1e;
+            --bg-sidebar: #181818;
+            --text-normal: #dcddde;
+            --text-muted: #72767d;
+            --accent: #7f5af0;
+            --code-bg: #2d3139;
+            --table-border: #36393f;
+            --interactive-hover: #2f3136;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-normal);
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Fixed Navigation Outline panel */
+        .sidebar {
+            width: 280px;
+            background-color: var(--bg-sidebar);
+            border-right: 1px solid var(--table-border);
+            display: flex;
+            flex-direction: column;
+            padding: 20px 12px;
+            overflow-y: auto;
+        }
+        .sidebar h3 {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            padding-left: 10px;
+        }
+        .sidebar a {
+            color: var(--text-normal);
+            text-decoration: none;
+            font-size: 13.5px;
+            padding: 6px 10px;
+            margin: 2px 0;
+            border-radius: 4px;
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            transition: background 0.15s, color 0.15s;
+        }
+        .sidebar a:hover {
+            background-color: var(--interactive-hover);
+            color: var(--accent);
+        }
+
+        /* Central Workspace Area */
+        .workspace {
+            flex: 1;
+            padding: 40px 60px;
+            overflow-y: auto;
+            line-height: 1.6;
+        }
+        .content-container {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        h1, h2, h3, h4 { color: #ffffff; font-weight: 600; margin-top: 26px; margin-bottom: 12px; }
+        h1 { border-bottom: 1px solid var(--table-border); padding-bottom: 8px; font-size: 30px; }
+        h2 { font-size: 22px; color: var(--accent); border-left: 3px solid var(--accent); padding-left: 10px; }
+        h3 { font-size: 17px; }
+        p { margin-bottom: 14px; color: var(--text-normal); }
+
+        /* Document Matrix Grids */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            background-color: #252525;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        th, td { padding: 12px 16px; border: 1px solid var(--table-border); text-align: left; }
+        th { background-color: #2a2a2a; color: #ffffff; font-weight: 700; }
+        tr:nth-child(even) { background-color: #222222; }
+
+        /* Block & Inline Code Syntax */
+        pre {
+            background-color: var(--code-bg);
+            padding: 16px;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 18px 0;
+            border-left: 4px solid var(--accent);
+        }
+        code { font-family: 'Consolas', 'Courier New', Courier, monospace; font-size: 14px; color: #e34c26; }
+        .inline-code { background-color: var(--code-bg); padding: 2px 6px; border-radius: 4px; color: #ff79c6; font-size: 13px; }
+    </style>
+    
+</head>
+<body>
+    <div class="sidebar">
+        <h3>Outline Index</h3>
+        <a href="#section-0" style="padding-left: 10px;">Unit 4 — Functions, Lists & Tuples</a>
+<a href="#section-1" style="padding-left: 24px;">• Functions</a>
+<a href="#section-2" style="padding-left: 24px;">• Function vs Method</a>
+<a href="#section-3" style="padding-left: 24px;">• Defining a Function</a>
+<a href="#section-4" style="padding-left: 24px;">• Calling a Function</a>
+<a href="#section-5" style="padding-left: 24px;">• Returning Results from a Function</a>
+<a href="#section-6" style="padding-left: 24px;">• Returning Multiple Values</a>
+<a href="#section-7" style="padding-left: 24px;">• Formal vs Actual Arguments</a>
+<a href="#section-8" style="padding-left: 24px;">• 4 Types of Actual Arguments</a>
+<a href="#section-9" style="padding-left: 38px;">• 1. Positional Arguments</a>
+<a href="#section-10" style="padding-left: 38px;">• 2. Keyword Arguments</a>
+<a href="#section-11" style="padding-left: 38px;">• 3. Default Arguments</a>
+<a href="#section-12" style="padding-left: 38px;">• 4. Variable Length Arguments — `*args`</a>
+<a href="#section-13" style="padding-left: 38px;">• 4b. Keyword Variable Length Arguments — `**kwargs`</a>
+<a href="#section-14" style="padding-left: 24px;">• Local and Global Variables</a>
+<a href="#section-15" style="padding-left: 24px;">• Passing a Group of Elements to a Function</a>
+<a href="#section-16" style="padding-left: 24px;">• Lists</a>
+<a href="#section-17" style="padding-left: 38px;">• Creating Lists</a>
+<a href="#section-18" style="padding-left: 38px;">• Slicing Lists</a>
+<a href="#section-19" style="padding-left: 38px;">• Accessing Elements</a>
+<a href="#section-20" style="padding-left: 38px;">• Updating Lists</a>
+<a href="#section-21" style="padding-left: 38px;">• List Operations</a>
+<a href="#section-22" style="padding-left: 38px;">• List Methods</a>
+<a href="#section-23" style="padding-left: 38px;">• Sorting Without sort() — Swap Method</a>
+<a href="#section-24" style="padding-left: 24px;">• Tuples</a>
+<a href="#section-25" style="padding-left: 38px;">• Creating Tuples</a>
+<a href="#section-26" style="padding-left: 38px;">• Accessing Tuple Elements</a>
+<a href="#section-27" style="padding-left: 38px;">• Tuple Operations</a>
+<a href="#section-28" style="padding-left: 38px;">• Tuple Immutability</a>
+<a href="#section-29" style="padding-left: 24px;">• Lists vs Tuples — Comparison</a>
+
+    </div>
+    <div class="workspace">
+        <div class="content-container">
+            <h1 id='section-0'>Unit 4 — Functions, Lists & Tuples</h1>
+<p>> Goa College of Engineering | Computer Engineering</p>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-1'>Functions</h2>
+<br>
+<p>A <strong>function</strong> is a group of statements that performs a specific task.</p>
+<br>
+<p><strong>Types:</strong></p>
+<p>- <strong>Built-in functions</strong> — <code class="inline-code">print()</code>, <code class="inline-code">sqrt()</code>, <code class="inline-code">len()</code>, etc.</p>
+<p>- <strong>User-defined functions</strong> — created by the programmer.</p>
+<br>
+<p><strong>Advantages:</strong></p>
+<p>- Reusable — write once, use anywhere.</p>
+<p>- Provides modularity to programs.</p>
+<p>- Easy code maintenance.</p>
+<p>- Reduces program length.</p>
+<p>- Easier to locate and fix errors.</p>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-2'>Function vs Method</h2>
+<br>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Written individually in a Python program</td>
+<td>Written inside a class</td>
+</tr>
+<tr>
+<td>Called using its name: <code>function_name()</code></td>
+<td>Called using an object: <code>object.method()</code></td>
+</tr>
+</tbody>
+</table>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-3'>Defining a Function</h2>
+<br>
+<pre><code class="language-python"># Syntax
+def function_name(parameters):
+    """Docstring: optional description"""
+    # function body (suite)
+    statement(s)
+</code></pre>
+<br>
+<p>- <code class="inline-code">def</code> keyword starts the definition.</p>
+<p>- <strong>Parameter</strong> — a variable that receives data from outside the function.</p>
+<p>- Colon <code class="inline-code">:</code> marks the beginning of the function body.</p>
+<p>- <strong>Docstring</strong> — optional description of what the function does.</p>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-4'>Calling a Function</h2>
+<br>
+<p>A function runs only when it is <strong>called by its name</strong>.</p>
+<br>
+<pre><code class="language-python"># Example — sum of two numbers
+def add(a, b):
+    result = a + b
+    print("Sum =", result)
+
+# Call the function
+add(5, 3)       # Output: Sum = 8
+add(10, 20)     # Output: Sum = 30
+
+# Dynamic typing — Python determines type at runtime
+def add(a, b):
+    print("Sum =", a + b)
+
+add(5, 3)        # Sum = 8   (integers)
+add(5.5, 3.2)    # Sum = 8.7 (floats)
+add("Hello ", "World")  # Sum = Hello World (strings)
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-5'>Returning Results from a Function</h2>
+<br>
+<p>Use <code class="inline-code">return</code> to send a result back to the caller.</p>
+<br>
+<pre><code class="language-python"># Return a single value
+def add(a, b):
+    return a + b
+
+result = add(5, 3)
+print(result)     # 8
+
+# Even or odd
+def check_even_odd(n):
+    if n % 2 == 0:
+        return "Even"
+    else:
+        return "Odd"
+
+print(check_even_odd(4))    # Even
+print(check_even_odd(7))    # Odd
+
+# Factorial
+def factorial(n):
+    fact = 1
+    for i in range(1, n + 1):
+        fact *= i
+    return fact
+
+for i in range(1, 11):
+    print(f"{i}! = {factorial(i)}")
+# Output:
+# 1! = 1
+# 2! = 2
+# 3! = 6
+# ...
+# 10! = 3628800
+
+# Prime check
+def is_prime(n):
+    x = 1
+    for i in range(2, n):
+        if n % i == 0:
+            x = 0
+            break
+    return x
+
+n = int(input("Enter number: "))
+if is_prime(n):
+    print(n, "is prime")
+else:
+    print(n, "is not prime")
+
+# Trace for n=5:
+# range(2,5) → i = 2, 3, 4
+# 5%2≠0, 5%3≠0, 5%4≠0 → x stays 1 → return 1 → "5 is prime"
+
+# Trace for n=4:
+# range(2,4) → i = 2, 3
+# 4%2==0 → x=0 → break → return 0 → "4 is not prime"
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-6'>Returning Multiple Values</h2>
+<br>
+<p>Python functions can return multiple values as a <strong>tuple</strong>.</p>
+<br>
+<pre><code class="language-python"># Return three values
+def multi_return():
+    a = 10
+    b = 20
+    c = 30
+    return a, b, c     # returns tuple (10, 20, 30)
+
+x, y, z = multi_return()
+print(x, y, z)    # 10 20 30
+
+# Arithmetic operations — return 4 values
+def arithmetic(a, b):
+    add = a + b
+    sub = a - b
+    mul = a * b
+    div = a / b
+    return add, sub, mul, div
+
+a, s, m, d = arithmetic(10, 2)
+print(f"Add={a}, Sub={s}, Mul={m}, Div={d}")
+# Add=12, Sub=8, Mul=20, Div=5.0
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-7'>Formal vs Actual Arguments</h2>
+<br>
+<p>- <strong>Formal arguments</strong> — parameters listed in the function <strong>definition</strong>.</p>
+<p>- <strong>Actual arguments</strong> — values passed during the function <strong>call</strong>.</p>
+<br>
+<pre><code class="language-python">def display(name, age):    # name, age = formal arguments
+    print(name, age)
+
+display("Alice", 25)       # "Alice", 25 = actual arguments
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-8'>4 Types of Actual Arguments</h2>
+<br>
+<h3 id='section-9'>1. Positional Arguments</h3>
+<br>
+<p>Number and position must match exactly with the definition.</p>
+<br>
+<pre><code class="language-python">def display(name, age, city):
+    print(f"Name: {name}, Age: {age}, City: {city}")
+
+display("Alice", 25, "Goa")    # correct — matches order
+# display(25, "Alice", "Goa")  # wrong result — wrong order
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h3 id='section-10'>2. Keyword Arguments</h3>
+<br>
+<p>Identified by parameter name — order doesn't matter.</p>
+<br>
+<pre><code class="language-python">def display(name, age, city):
+    print(f"Name: {name}, Age: {age}, City: {city}")
+
+display(age=25, city="Goa", name="Alice")    # order doesn't matter
+# Output: Name: Alice, Age: 25, City: Goa
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h3 id='section-11'>3. Default Arguments</h3>
+<br>
+<p>A parameter assumes a default value if none is passed.</p>
+<br>
+<pre><code class="language-python">def greet(name, msg="Hello"):
+    print(f"{msg}, {name}!")
+
+greet("Alice")                  # Hello, Alice!   (uses default)
+greet("Bob", "Good morning")    # Good morning, Bob!   (overrides default)
+
+# Another example
+def power(base, exp=2):
+    return base ** exp
+
+print(power(3))      # 9   (3²)
+print(power(3, 3))   # 27  (3³)
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h3 id='section-12'>4. Variable Length Arguments — `*args`</h3>
+<br>
+<p>Accepts any number of positional arguments.</p>
+<br>
+<pre><code class="language-python">def total(*nums):
+    s = 0
+    for n in nums:
+        s += n
+    return s
+
+print(total(1, 2, 3))           # 6
+print(total(10, 20, 30, 40))    # 100
+print(total(5))                 # 5
+
+# Display all passed values
+def show(*args):
+    for val in args:
+        print(val)
+
+show("apple", "banana", "cherry")
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h3 id='section-13'>4b. Keyword Variable Length Arguments — `**kwargs`</h3>
+<br>
+<p>Accepts any number of <strong>keyword</strong> arguments as key-value pairs.</p>
+<br>
+<pre><code class="language-python">def show_info(**details):
+    for key, value in details.items():
+        print(f"{key}: {value}")
+
+show_info(name="Alice", age=25, city="Goa")
+# Output:
+# name: Alice
+# age: 25
+# city: Goa
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-14'>Local and Global Variables</h2>
+<br>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Scope</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Local</strong></td>
+<td>Inside the function only</td>
+<td>Declared inside a function; destroyed when function ends.</td>
+</tr>
+<tr>
+<td><strong>Global</strong></td>
+<td>Entire program below declaration</td>
+<td>Declared outside all functions; accessible everywhere.</td>
+</tr>
+</tbody>
+</table>
+<br>
+<pre><code class="language-python">x = 100    # global variable
+
+def func():
+    x = 50    # local variable (same name; SHADOWS global)
+    print("Inside function:", x)    # 50
+
+func()
+print("Outside function:", x)    # 100 (global unchanged)
+
+# When local and global have same name:
+# → function uses LOCAL variable by default
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-15'>Passing a Group of Elements to a Function</h2>
+<br>
+<pre><code class="language-python"># Total and average of a group of numbers
+def calc(nums):
+    total = sum(nums)
+    avg = total / len(nums)
+    print("Total:", total, "  Average:", avg)
+
+numbers = [10, 20, 30, 40, 50]
+calc(numbers)
+# Output: Total: 150   Average: 30.0
+
+# Display a group of strings
+def display_names(names):
+    for name in names:
+        print(name)
+
+names = ["Alice", "Bob", "Charlie"]
+display_names(names)
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-16'>Lists</h2>
+<br>
+<p>A <strong>list</strong> stores a group of elements that can be of <strong>different types</strong>. Lists are <strong>mutable</strong> — their contents can be changed.</p>
+<br>
+<p>> Lists are more versatile than arrays. Arrays store only one type; lists store any mix.</p>
+<br>
+<h3 id='section-17'>Creating Lists</h3>
+<br>
+<pre><code class="language-python"># Empty list
+lst = []
+
+# List with mixed types
+student = ["Alice", 20, 9.5, "Goa"]
+
+# Using range()
+lst1 = list(range(5))            # [0, 1, 2, 3, 4]
+lst2 = list(range(2, 5))         # [2, 3, 4]
+lst3 = list(range(5, 11, 2))     # [5, 7, 9]
+</code></pre>
+<br>
+<h3 id='section-18'>Slicing Lists</h3>
+<br>
+<p><strong>Format:</strong> <code class="inline-code">[start : stop : step]</code></p>
+<br>
+<pre><code class="language-python">x = [10, 20, 30, 40, 50]
+
+x[1:3]       # [20, 30]
+x[::2]       # [10, 30, 50]
+x[::-1]      # [50, 40, 30, 20, 10]  — reverse
+x[2:]        # [30, 40, 50]
+x[:3]        # [10, 20, 30]
+</code></pre>
+<br>
+<h3 id='section-19'>Accessing Elements</h3>
+<br>
+<pre><code class="language-python">lst = [10, 20, 30, 40, 50]
+
+# Using while loop
+i = 0
+while i &lt; len(lst):
+    print(lst[i])
+    i += 1
+
+# Using for loop
+for item in lst:
+    print(item)
+
+# Display in reverse order
+for i in range(len(lst) - 1, -1, -1):
+    print(lst[i])
+</code></pre>
+<br>
+<h3 id='section-20'>Updating Lists</h3>
+<br>
+<pre><code class="language-python">lst = [10, 20, 30, 40, 50]
+
+lst.append(60)             # [10, 20, 30, 40, 50, 60]
+lst[1] = 200               # update single: [10, 200, 30, 40, 50, 60]
+lst[1:3] = [20, 30]        # update range: [10, 20, 30, 40, 50, 60]
+del lst[0]                 # delete first: [20, 30, 40, 50, 60]
+lst.reverse()              # reverse in-place: [60, 50, 40, 30, 20]
+</code></pre>
+<br>
+<h3 id='section-21'>List Operations</h3>
+<br>
+<pre><code class="language-python">a = [1, 2, 3]
+b = [4, 5, 6]
+
+# Concatenation
+c = a + b        # [1, 2, 3, 4, 5, 6]
+
+# Repetition
+d = a * 3        # [1, 2, 3, 1, 2, 3, 1, 2, 3]
+</code></pre>
+<br>
+<h3 id='section-22'>List Methods</h3>
+<br>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>append(x)</code></td>
+<td>Add <code>x</code> at the end</td>
+</tr>
+<tr>
+<td><code>insert(i, x)</code></td>
+<td>Insert <code>x</code> at index <code>i</code></td>
+</tr>
+<tr>
+<td><code>remove(x)</code></td>
+<td>Remove first occurrence of <code>x</code></td>
+</tr>
+<tr>
+<td><code>pop(i)</code></td>
+<td>Remove and return element at index <code>i</code></td>
+</tr>
+<tr>
+<td><code>clear()</code></td>
+<td>Remove all elements</td>
+</tr>
+<tr>
+<td><code>sort()</code></td>
+<td>Sort ascending in-place</td>
+</tr>
+<tr>
+<td><code>sort(reverse=True)</code></td>
+<td>Sort descending in-place</td>
+</tr>
+<tr>
+<td><code>reverse()</code></td>
+<td>Reverse in-place</td>
+</tr>
+<tr>
+<td><code>index(x)</code></td>
+<td>Return index of first occurrence of <code>x</code></td>
+</tr>
+<tr>
+<td><code>count(x)</code></td>
+<td>Count occurrences of <code>x</code></td>
+</tr>
+<tr>
+<td><code>extend(lst)</code></td>
+<td>Append all elements of another iterable</td>
+</tr>
+<tr>
+<td><code>copy()</code></td>
+<td>Return a shallow copy</td>
+</tr>
+</tbody>
+</table>
+<br>
+<pre><code class="language-python">lst = [3, 1, 4, 1, 5, 9, 2]
+
+print(max(lst))         # 9
+print(min(lst))         # 1
+
+lst.sort()
+print(lst)              # [1, 1, 2, 3, 4, 5, 9]
+
+lst.sort(reverse=True)
+print(lst)              # [9, 5, 4, 3, 2, 1, 1]
+</code></pre>
+<br>
+<h3 id='section-23'>Sorting Without sort() — Swap Method</h3>
+<br>
+<pre><code class="language-python">lst = [5, 3, 8, 1, 4]
+n = len(lst)
+
+for i in range(n - 1):
+    for j in range(n - 1 - i):
+        if lst[j] &gt; lst[j + 1]:
+            lst[j], lst[j + 1] = lst[j + 1], lst[j]
+
+print(lst)    # [1, 3, 4, 5, 8]
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-24'>Tuples</h2>
+<br>
+<p>A <strong>tuple</strong> stores a group of elements that can be of <strong>different types</strong>. Tuples are <strong>immutable</strong> — once created, elements cannot be changed.</p>
+<br>
+<p>> Use tuples to store data that must NOT be modified.</p>
+<br>
+<h3 id='section-25'>Creating Tuples</h3>
+<br>
+<pre><code class="language-python"># Standard tuple
+tp1 = (10, 20, 30)
+
+# Without parentheses (also valid)
+tp2 = 10, 20, 30
+
+# Single-element tuple — MUST have trailing comma
+tp3 = (42,)          # correct — this IS a tuple
+tp4 = (42)           # WRONG  — this is just the integer 42
+
+# Empty tuple
+tp5 = ()
+
+# From a list
+tp6 = tuple([10, 20, 30])
+</code></pre>
+<br>
+<h3 id='section-26'>Accessing Tuple Elements</h3>
+<br>
+<pre><code class="language-python">tp = (10, 20, 30, 40, 50)
+
+print(tp[0])        # 10    (first)
+print(tp[-1])       # 50    (last)
+print(tp[1:3])      # (20, 30)
+print(tp[::2])      # (10, 30, 50)
+
+# Using for loop
+for item in tp:
+    print(item)
+
+# Using while loop
+i = 0
+while i &lt; len(tp):
+    print(tp[i])
+    i += 1
+</code></pre>
+<br>
+<h3 id='section-27'>Tuple Operations</h3>
+<br>
+<pre><code class="language-python">t1 = (1, 2, 3)
+t2 = (4, 5, 6)
+
+len(t1)             # 3
+t1 + t2             # (1, 2, 3, 4, 5, 6)   — concatenation
+t1 * 3              # (1, 2, 3, 1, 2, 3, 1, 2, 3)  — repetition
+3 in t1             # True   — membership check
+7 not in t1         # True
+
+# in and not in operators
+print(10 in (10, 20, 30))      # True
+print(50 not in (10, 20, 30))  # True
+</code></pre>
+<br>
+<h3 id='section-28'>Tuple Immutability</h3>
+<br>
+<pre><code class="language-python">tp = (10, 20, 30)
+print(tp[0])         # 10
+
+# tp[0] = 99         # TypeError: 'tuple' object does not support item assignment
+
+# Tuples CANNOT use: append(), insert(), remove(), pop(), clear()
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-29'>Lists vs Tuples — Comparison</h2>
+<br>
+
+        </div>
+    </div>
+</body>
+</html>

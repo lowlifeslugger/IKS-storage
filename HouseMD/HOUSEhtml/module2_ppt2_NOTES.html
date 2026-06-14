@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>module2_ppt2_NOTES</title>
+    
+    <style>
+        :root {
+            --bg-main: #1e1e1e;
+            --bg-sidebar: #181818;
+            --text-normal: #dcddde;
+            --text-muted: #72767d;
+            --accent: #7f5af0;
+            --code-bg: #2d3139;
+            --table-border: #36393f;
+            --interactive-hover: #2f3136;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-normal);
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Fixed Navigation Outline panel */
+        .sidebar {
+            width: 280px;
+            background-color: var(--bg-sidebar);
+            border-right: 1px solid var(--table-border);
+            display: flex;
+            flex-direction: column;
+            padding: 20px 12px;
+            overflow-y: auto;
+        }
+        .sidebar h3 {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            padding-left: 10px;
+        }
+        .sidebar a {
+            color: var(--text-normal);
+            text-decoration: none;
+            font-size: 13.5px;
+            padding: 6px 10px;
+            margin: 2px 0;
+            border-radius: 4px;
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            transition: background 0.15s, color 0.15s;
+        }
+        .sidebar a:hover {
+            background-color: var(--interactive-hover);
+            color: var(--accent);
+        }
+
+        /* Central Workspace Area */
+        .workspace {
+            flex: 1;
+            padding: 40px 60px;
+            overflow-y: auto;
+            line-height: 1.6;
+        }
+        .content-container {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        h1, h2, h3, h4 { color: #ffffff; font-weight: 600; margin-top: 26px; margin-bottom: 12px; }
+        h1 { border-bottom: 1px solid var(--table-border); padding-bottom: 8px; font-size: 30px; }
+        h2 { font-size: 22px; color: var(--accent); border-left: 3px solid var(--accent); padding-left: 10px; }
+        h3 { font-size: 17px; }
+        p { margin-bottom: 14px; color: var(--text-normal); }
+
+        /* Document Matrix Grids */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            background-color: #252525;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        th, td { padding: 12px 16px; border: 1px solid var(--table-border); text-align: left; }
+        th { background-color: #2a2a2a; color: #ffffff; font-weight: 700; }
+        tr:nth-child(even) { background-color: #222222; }
+
+        /* Block & Inline Code Syntax */
+        pre {
+            background-color: var(--code-bg);
+            padding: 16px;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 18px 0;
+            border-left: 4px solid var(--accent);
+        }
+        code { font-family: 'Consolas', 'Courier New', Courier, monospace; font-size: 14px; color: #e34c26; }
+        .inline-code { background-color: var(--code-bg); padding: 2px 6px; border-radius: 4px; color: #ff79c6; font-size: 13px; }
+    </style>
+    
+</head>
+<body>
+    <div class="sidebar">
+        <h3>Outline Index</h3>
+        <a href="#section-0" style="padding-left: 10px;">Unit 2 — Data Types in Python</a>
+<a href="#section-1" style="padding-left: 24px;">• Comments in Python</a>
+<a href="#section-2" style="padding-left: 24px;">• Docstrings</a>
+<a href="#section-3" style="padding-left: 24px;">• Variables and Identifiers</a>
+<a href="#section-4" style="padding-left: 24px;">• Built-in Data Types (5 Categories)</a>
+<a href="#section-5" style="padding-left: 24px;">• 1. NoneType</a>
+<a href="#section-6" style="padding-left: 24px;">• 2. Numeric Types</a>
+<a href="#section-7" style="padding-left: 38px;">• int</a>
+<a href="#section-8" style="padding-left: 38px;">• float</a>
+<a href="#section-9" style="padding-left: 38px;">• complex</a>
+<a href="#section-10" style="padding-left: 38px;">• Number System Representations</a>
+<a href="#section-11" style="padding-left: 38px;">• Type Conversion (Explicit)</a>
+<a href="#section-12" style="padding-left: 24px;">• bool Type</a>
+<a href="#section-13" style="padding-left: 24px;">• 3. Sequences</a>
+<a href="#section-14" style="padding-left: 38px;">• str (String)</a>
+<a href="#section-15" style="padding-left: 38px;">• bytes</a>
+<a href="#section-16" style="padding-left: 38px;">• bytearray</a>
+<a href="#section-17" style="padding-left: 38px;">• list</a>
+<a href="#section-18" style="padding-left: 38px;">• tuple</a>
+<a href="#section-19" style="padding-left: 38px;">• range</a>
+<a href="#section-20" style="padding-left: 24px;">• 4. Sets</a>
+<a href="#section-21" style="padding-left: 38px;">• set</a>
+<a href="#section-22" style="padding-left: 38px;">• frozenset</a>
+<a href="#section-23" style="padding-left: 24px;">• 5. Mappings — dict</a>
+<a href="#section-24" style="padding-left: 24px;">• Literals in Python</a>
+<a href="#section-25" style="padding-left: 24px;">• Determining Datatype</a>
+<a href="#section-26" style="padding-left: 24px;">• User-Defined Datatypes</a>
+<a href="#section-27" style="padding-left: 24px;">• Naming Conventions</a>
+<a href="#section-28" style="padding-left: 24px;">• Summary of Datatypes</a>
+
+    </div>
+    <div class="workspace">
+        <div class="content-container">
+            <h1 id='section-0'>Unit 2 — Data Types in Python</h1>
+<p>> Goa College of Engineering | Computer Engineering</p>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-1'>Comments in Python</h2>
+<br>
+<pre><code class="language-python"># This is a single-line comment (starts with #)
+# Everything after # on the same line is a comment
+# Comments are non-executable — compiler and PVM skip them
+</code></pre>
+<br>
+<pre><code class="language-python">"""
+This is a multiline string used as a comment.
+(Triple double quotes)
+"""
+
+'''
+This is also a multiline string.
+(Triple single quotes)
+'''
+</code></pre>
+<br>
+<p>> <strong>Important:</strong> Triple-quoted strings are NOT true comments — they are regular strings that can span multiple lines. Using them as comments <strong>wastes interpreter time</strong> by consuming memory. Use <code class="inline-code">#</code> for true comments.</p>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-2'>Docstrings</h2>
+<br>
+<p>When a triple-quoted string is written as the <strong>first statement</strong> in a module, function, or method, it becomes a <strong>docstring</strong> (documentation string).</p>
+<br>
+<p>- Docstrings are used to create <strong>API documentation files</strong> (text or HTML).</p>
+<p>- API doc files describe all features of a software, language, or product.</p>
+<br>
+<pre><code class="language-python">def add(a, b):
+    """Returns the sum of a and b."""
+    return a + b
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-3'>Variables and Identifiers</h2>
+<br>
+<pre><code class="language-python"># In C/Java — explicit type declaration required:
+# int a;
+# a = 10;
+
+# In Python — no declaration needed:
+a = 10        # Python automatically determines type
+b = 15
+</code></pre>
+<br>
+<p><strong>Identifier</strong> — A name given to a variable, function, class, etc.</p>
+<br>
+<p><strong>Rules:</strong></p>
+<p>- Can include letters, numbers, and underscore <code class="inline-code">_</code>.</p>
+<p>- Must start with a non-numeric character.</p>
+<p>- Special symbols (<code class="inline-code">?</code>, <code class="inline-code">#</code>, <code class="inline-code">$</code>, <code class="inline-code">%</code>, <code class="inline-code">@</code>) are NOT allowed.</p>
+<p>- Case-sensitive: <code class="inline-code">Num</code> and <code class="inline-code">num</code> are different identifiers.</p>
+<br>
+<p><strong>Constants</strong> — Indicated by ALL_CAPS (convention only, not enforced by Python):</p>
+<br>
+<pre><code class="language-python">MAX_SIZE = 100
+PI = 3.14159
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-4'>Built-in Data Types (5 Categories)</h2>
+<br>
+<pre><code class="language-python">Built-in Datatypes
+├── 1. NoneType
+├── 2. Numeric Types
+│       ├── int
+│       ├── float
+│       └── complex
+├── 3. Sequences
+│       ├── str
+│       ├── bytes
+│       ├── bytearray
+│       ├── list
+│       ├── tuple
+│       └── range
+├── 4. Sets
+│       ├── set
+│       └── frozenset
+└── 5. Mappings
+        └── dict
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-5'>1. NoneType</h2>
+<br>
+<p>Represents an object with no value. Used as default argument value in functions. Evaluates to <code class="inline-code">False</code> in Boolean context.</p>
+<br>
+<pre><code class="language-python">def greet(name=None):
+    if name is None:
+        print("Hello, Stranger!")
+    else:
+        print(f"Hello, {name}!")
+
+greet()          # Output: Hello, Stranger!
+greet("Alice")   # Output: Hello, Alice!
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-6'>2. Numeric Types</h2>
+<br>
+<h3 id='section-7'>int</h3>
+<br>
+<pre><code class="language-python">a = 50         # positive integer
+b = -200       # negative integer
+c = 0          # zero
+
+# No size limit in Python for integers
+</code></pre>
+<br>
+<h3 id='section-8'>float</h3>
+<br>
+<pre><code class="language-python">num = 55.7
+x = -3.5667
+y = 2.5E4      # scientific notation = 25000.0
+z = 2.5e-3     # = 0.0025
+</code></pre>
+<br>
+<h3 id='section-9'>complex</h3>
+<br>
+<pre><code class="language-python">c1 = 3 + 5j    # real=3, imaginary=5
+c2 = -1 - 5.5J # J and j are both valid
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h3 id='section-10'>Number System Representations</h3>
+<br>
+<pre><code class="language-python"># Binary — prefix 0b or 0B
+a = 0b11110001
+b = 0B11100110
+
+# Hexadecimal — prefix 0x or 0X
+c = 0xA180
+d = 0X11fb91
+
+# Octal — prefix 0o or 0O
+e = 0o145
+f = 0O773
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h3 id='section-11'>Type Conversion (Explicit)</h3>
+<br>
+<pre><code class="language-python"># Basic conversions
+int(3.7)          # → 3     (truncates, doesn't round)
+float(5)          # → 5.0
+complex(3)        # → (3+0j)
+complex(3, 5)     # → (3+5j)
+
+# Number system conversions
+bin(10)           # → '0b1010'    (decimal to binary string)
+oct(10)           # → '0o12'     (decimal to octal string)
+hex(10)           # → '0xa'      (decimal to hex string)
+
+# String with base to decimal
+int('1010', 2)    # binary string  → 10
+int('A', 16)      # hex string     → 10
+int('12', 8)      # octal string   → 10
+int('5', 8)       # octal 5        → 5
+int('0010', 2)    # binary 0010    → 2
+int('E', 16)      # hex E          → 14
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-12'>bool Type</h2>
+<br>
+<pre><code class="language-python"># Only two values
+x = True     # = 1
+y = False    # = 0
+
+# Boolean from conditions
+print(5 &gt; 3)     # True
+print(5 &lt; 3)     # False
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-13'>3. Sequences</h2>
+<br>
+<h3 id='section-14'>str (String)</h3>
+<br>
+<pre><code class="language-python">s1 = 'welcome to python'
+s2 = "welcome to python"
+s3 = """multiline
+string"""
+
+# Embedding quotes
+s4 = 'welcome to "Core Python" learning'
+s5 = "welcome to 'Core Python' learning"
+
+# Indexing — starts from 0
+s1[0]       # 'w'   (first character)
+s1[-1]      # 'n'   (last character)
+
+# Slicing — [start : stop : step]
+s1[0:5]     # 'welco'
+s1[::-1]    # reverse entire string
+s1[::2]     # every other character
+
+# Repetition
+s1 * 2      # repeat string twice
+
+# Concatenation
+"hello" + " world"   # 'hello world'
+
+# String operations — string examples
+s = 'hello world'
+print(s[0])        # 'h'
+print(s[:5])       # 'hello'
+print(s[6:])       # 'world'
+print(s[-1])       # 'd'
+print(s[::-1])     # 'dlrow olleh'
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h3 id='section-15'>bytes</h3>
+<br>
+<pre><code class="language-python"># Group of byte numbers (0–255); IMMUTABLE — cannot modify elements
+b = bytes([10, 20, 30, 40])
+
+print(b[0])     # 10
+print(b[1])     # 20
+# b[0] = 99    # ERROR — bytes are immutable
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h3 id='section-16'>bytearray</h3>
+<br>
+<pre><code class="language-python"># Same as bytes but MUTABLE — can modify elements
+ba = bytearray([10, 20, 0, 40, 15])
+
+ba[0] = 99     # allowed
+ba[1] = 88     # allowed
+print(ba)      # bytearray(b'X\x00(..)')
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h3 id='section-17'>list</h3>
+<br>
+<pre><code class="language-python"># MUTABLE; can store MIXED types; dynamic size; uses [ ]
+lst = [10, 20, "abc", "xyz"]
+
+print(lst)        # [10, 20, 'abc', 'xyz']
+print(lst[0])     # 10        (first)
+print(lst[0:2])   # [10, 20]  (first two)
+print(lst[1:3])   # [20, 'abc'] (second and third)
+print(lst[-1])    # 'xyz'     (last)
+print(lst * 2)    # list repeated twice
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h3 id='section-18'>tuple</h3>
+<br>
+<pre><code class="language-python"># IMMUTABLE — read-only list; uses ( )
+tp = (10, 20, "abc", "xyz")
+
+print(tp)         # (10, 20, 'abc', 'xyz')
+print(tp[0])      # 10
+print(tp[0:2])    # (10, 20)
+print(tp[-1])     # 'xyz'
+print(tp * 2)     # tuple repeated twice
+
+# tp[0] = 99      # TypeError — cannot modify tuple elements
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h3 id='section-19'>range</h3>
+<br>
+<pre><code class="language-python"># Represents a sequence of numbers
+r1 = range(10)           # 0, 1, 2, ..., 9
+r2 = range(30, 40, 2)    # 30, 32, 34, 36, 38
+
+# Display using for loop
+for i in range(10):
+    print(i)
+
+# Create list from range
+lst = list(range(5))     # [0, 1, 2, 3, 4]
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-20'>4. Sets</h2>
+<br>
+<h3 id='section-21'>set</h3>
+<br>
+<pre><code class="language-python"># UNORDERED; NO DUPLICATES; MUTABLE; uses { }
+s = {10, 20, 30, 50}
+
+s.update([60, 70])    # add elements
+s.remove(20)          # remove element
+
+# s[0]   # ERROR — sets are unordered; no indexing
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h3 id='section-22'>frozenset</h3>
+<br>
+<pre><code class="language-python"># IMMUTABLE set — cannot add or remove elements
+s = {10, 20, 30, 50}
+fs = frozenset(s)
+print(fs)             # frozenset({10, 20, 30, 50})
+
+# Create from string
+fs2 = frozenset("abcdefg")
+print(fs2)            # frozenset({'a', 'b', 'c', 'd', 'e', 'f', 'g'})
+
+# fs.update(...)      # ERROR — frozenset is immutable
+# fs.remove(...)      # ERROR
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-23'>5. Mappings — dict</h2>
+<br>
+<pre><code class="language-python"># KEY-VALUE pairs; colon (:) separates key and value; uses { }
+d = {10: 'Rohan', 11: 'Krishna', 12: 'Ram'}
+
+# Access value by key
+print(d[10])          # 'Rohan'
+
+# Get all keys and values
+print(d.keys())       # dict_keys([10, 11, 12])
+print(d.values())     # dict_values(['Rohan', 'Krishna', 'Ram'])
+
+# Update a value
+d[10] = 'Raj'
+
+# Delete a key-value pair
+del d[11]
+
+# Create empty dict and add entries
+d = {}
+d[1] = 'Alice'
+d[2] = 'Bob'
+print(d)              # {1: 'Alice', 2: 'Bob'}
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-24'>Literals in Python</h2>
+<br>
+<p>A <strong>literal</strong> is a constant value stored directly into a variable.</p>
+<br>
+<pre><code class="language-python"># Numeric literals
+a = 10          # integer literal
+b = 3.14        # float literal
+
+# Boolean literals
+c = True
+d = False
+
+# String literals
+s1 = 'hello'           # single quotes
+s2 = "world"           # double quotes
+s3 = '''multiline
+string'''              # triple quotes — spans multiple lines
+s4 = """also
+multiline"""
+
+# Multiline with backslash continuation
+s5 = "this is a long " \
+     "string joined"
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-25'>Determining Datatype</h2>
+<br>
+<pre><code class="language-python">a = 10
+b = 3.14
+c = 3 + 5j
+d = True
+e = "hello"
+f = [1, 2, 3]
+
+print(type(a))    # &lt;class 'int'&gt;
+print(type(b))    # &lt;class 'float'&gt;
+print(type(c))    # &lt;class 'complex'&gt;
+print(type(d))    # &lt;class 'bool'&gt;
+print(type(e))    # &lt;class 'str'&gt;
+print(type(f))    # &lt;class 'list'&gt;
+
+# Python has no 'char' datatype — individual characters are str
+ch = 'B'
+print(type(ch))   # &lt;class 'str'&gt;
+print(ch == 'B')  # True
+print(ch == 'b')  # False
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-26'>User-Defined Datatypes</h2>
+<br>
+<p>Datatypes created by programmers — e.g., <strong>arrays</strong>, <strong>classes</strong>.</p>
+<br>
+<pre><code class="language-python"># Example: class (user-defined datatype)
+class Student:
+    def __init__(self, name, roll):
+        self.name = name
+        self.roll = roll
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-27'>Naming Conventions</h2>
+<br>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Convention</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Package</td>
+<td>all lowercase with <code>_</code></td>
+<td><code>my_package</code></td>
+</tr>
+<tr>
+<td>Module</td>
+<td>all lowercase with <code>_</code></td>
+<td><code>my_module</code></td>
+</tr>
+<tr>
+<td>Class</td>
+<td>CapitalizedWords (CamelCase)</td>
+<td><code>MyClass</code></td>
+</tr>
+<tr>
+<td>Global/module variable</td>
+<td>all lowercase with <code>_</code></td>
+<td><code>global_var</code></td>
+</tr>
+<tr>
+<td>Instance variable</td>
+<td>all lowercase with <code>_</code></td>
+<td><code>instance_var</code></td>
+</tr>
+<tr>
+<td>Function</td>
+<td>all lowercase with <code>_</code></td>
+<td><code>my_function()</code></td>
+</tr>
+<tr>
+<td>Instance method first arg</td>
+<td><code>self</code></td>
+<td><code>def method(self):</code></td>
+</tr>
+<tr>
+<td>Class method first arg</td>
+<td><code>cls</code></td>
+<td><code>def method(cls):</code></td>
+</tr>
+<tr>
+<td>Constant</td>
+<td>ALL_CAPS with <code>_</code></td>
+<td><code>MAX_SIZE</code>, <code>PI</code></td>
+</tr>
+</tbody>
+</table>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-28'>Summary of Datatypes</h2>
+<br>
+
+        </div>
+    </div>
+</body>
+</html>

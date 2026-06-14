@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>strings_NOTES</title>
+    
+    <style>
+        :root {
+            --bg-main: #1e1e1e;
+            --bg-sidebar: #181818;
+            --text-normal: #dcddde;
+            --text-muted: #72767d;
+            --accent: #7f5af0;
+            --code-bg: #2d3139;
+            --table-border: #36393f;
+            --interactive-hover: #2f3136;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-normal);
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Fixed Navigation Outline panel */
+        .sidebar {
+            width: 280px;
+            background-color: var(--bg-sidebar);
+            border-right: 1px solid var(--table-border);
+            display: flex;
+            flex-direction: column;
+            padding: 20px 12px;
+            overflow-y: auto;
+        }
+        .sidebar h3 {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            padding-left: 10px;
+        }
+        .sidebar a {
+            color: var(--text-normal);
+            text-decoration: none;
+            font-size: 13.5px;
+            padding: 6px 10px;
+            margin: 2px 0;
+            border-radius: 4px;
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            transition: background 0.15s, color 0.15s;
+        }
+        .sidebar a:hover {
+            background-color: var(--interactive-hover);
+            color: var(--accent);
+        }
+
+        /* Central Workspace Area */
+        .workspace {
+            flex: 1;
+            padding: 40px 60px;
+            overflow-y: auto;
+            line-height: 1.6;
+        }
+        .content-container {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        h1, h2, h3, h4 { color: #ffffff; font-weight: 600; margin-top: 26px; margin-bottom: 12px; }
+        h1 { border-bottom: 1px solid var(--table-border); padding-bottom: 8px; font-size: 30px; }
+        h2 { font-size: 22px; color: var(--accent); border-left: 3px solid var(--accent); padding-left: 10px; }
+        h3 { font-size: 17px; }
+        p { margin-bottom: 14px; color: var(--text-normal); }
+
+        /* Document Matrix Grids */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            background-color: #252525;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        th, td { padding: 12px 16px; border: 1px solid var(--table-border); text-align: left; }
+        th { background-color: #2a2a2a; color: #ffffff; font-weight: 700; }
+        tr:nth-child(even) { background-color: #222222; }
+
+        /* Block & Inline Code Syntax */
+        pre {
+            background-color: var(--code-bg);
+            padding: 16px;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 18px 0;
+            border-left: 4px solid var(--accent);
+        }
+        code { font-family: 'Consolas', 'Courier New', Courier, monospace; font-size: 14px; color: #e34c26; }
+        .inline-code { background-color: var(--code-bg); padding: 2px 6px; border-radius: 4px; color: #ff79c6; font-size: 13px; }
+    </style>
+    
+</head>
+<body>
+    <div class="sidebar">
+        <h3>Outline Index</h3>
+        <a href="#section-0" style="padding-left: 10px;">Strings and Characters in Python</a>
+<a href="#section-1" style="padding-left: 24px;">• What is a String?</a>
+<a href="#section-2" style="padding-left: 24px;">• Creating Strings</a>
+<a href="#section-3" style="padding-left: 24px;">• Escape Characters</a>
+<a href="#section-4" style="padding-left: 24px;">• Raw Strings</a>
+<a href="#section-5" style="padding-left: 24px;">• Unicode Strings</a>
+<a href="#section-6" style="padding-left: 24px;">• Length of a String</a>
+<a href="#section-7" style="padding-left: 24px;">• Indexing in Strings</a>
+<a href="#section-8" style="padding-left: 24px;">• Slicing Strings</a>
+<a href="#section-9" style="padding-left: 24px;">• Repeating Strings</a>
+<a href="#section-10" style="padding-left: 24px;">• Concatenating Strings</a>
+<a href="#section-11" style="padding-left: 24px;">• Checking Membership</a>
+<a href="#section-12" style="padding-left: 24px;">• Comparing Strings</a>
+<a href="#section-13" style="padding-left: 24px;">• Removing Spaces</a>
+<a href="#section-14" style="padding-left: 24px;">• Finding Substrings</a>
+<a href="#section-15" style="padding-left: 24px;">• Finding All Occurrences</a>
+<a href="#section-16" style="padding-left: 24px;">• Counting Substrings</a>
+<a href="#section-17" style="padding-left: 24px;">• Strings are Immutable</a>
+<a href="#section-18" style="padding-left: 24px;">• Replacing a String</a>
+<a href="#section-19" style="padding-left: 24px;">• Splitting and Joining Strings</a>
+<a href="#section-20" style="padding-left: 38px;">• split() — Break string into list</a>
+<a href="#section-21" style="padding-left: 38px;">• join() — Combine list/tuple into single string</a>
+<a href="#section-22" style="padding-left: 24px;">• Changing Case</a>
+<a href="#section-23" style="padding-left: 24px;">• Checking Starting and Ending</a>
+<a href="#section-24" style="padding-left: 24px;">• String Testing Methods</a>
+
+    </div>
+    <div class="workspace">
+        <div class="content-container">
+            <h1 id='section-0'>Strings and Characters in Python</h1>
+<p>> Goa College of Engineering | Computer Engineering</p>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-1'>What is a String?</h2>
+<br>
+<p>A <strong>string</strong> represents a group of characters. Most real-world data — names, addresses, vehicle numbers, credit card numbers — are strings.</p>
+<br>
+<p>In Python, the <code class="inline-code">str</code> datatype represents strings. There is <strong>no separate <code class="inline-code">char</code> type</strong> — individual characters are also <code class="inline-code">str</code>.</p>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-2'>Creating Strings</h2>
+<br>
+<pre><code class="language-python"># Single quotes and double quotes are interchangeable
+s1 = 'welcome to Core Python learning'
+s2 = "welcome to Core Python learning"
+
+# Triple quotes — spans multiple lines
+s3 = """Welcome to Core Python,
+a book on Python language that discusses
+all important concepts in a lucid manner."""
+
+s4 = '''Also works with
+triple single quotes.'''
+
+# Embedding quotes — use opposite quote types
+s5 = 'welcome to "Core Python" learning'   # single outer, double inner
+s6 = "welcome to 'Core Python' learning"   # double outer, single inner
+
+print(s5)    # welcome to "Core Python" learning
+print(s6)    # welcome to 'Core Python' learning
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-3'>Escape Characters</h2>
+<br>
+<table>
+<thead>
+<tr>
+<th>Escape</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>\n</code></td>
+<td>New line</td>
+</tr>
+<tr>
+<td><code>\t</code></td>
+<td>Horizontal tab space</td>
+</tr>
+<tr>
+<td><code>\r</code></td>
+<td>Enter / carriage return</td>
+</tr>
+<tr>
+<td><code>\\</code></td>
+<td>Displays single <code>\</code></td>
+</tr>
+<tr>
+<td><code>\a</code></td>
+<td>Bell / alert</td>
+</tr>
+<tr>
+<td><code>\b</code></td>
+<td>Backspace</td>
+</tr>
+</tbody>
+</table>
+<br>
+<pre><code class="language-python">s = "Welcome to\tCore Python\nlearning"
+print(s)
+# Output:
+# Welcome to    Core Python
+# learning
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-4'>Raw Strings</h2>
+<br>
+<p>Add <code class="inline-code">r</code> before the string to treat escape characters as <strong>literal characters</strong> (no effect applied).</p>
+<br>
+<pre><code class="language-python">s = r"Welcome to\tCore Python\nlearning"
+print(s)
+# Output: Welcome to\tCore Python\nlearning
+# (no tab or newline — shown as-is)
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-5'>Unicode Strings</h2>
+<br>
+<p>Add <code class="inline-code">u</code> before the string to create a Unicode string.</p>
+<br>
+<pre><code class="language-python"># Display "Core Python" in Hindi
+name = u'\u0915\u094b\u0930 \u092a\u0948\u0925\u0964\u0928'
+print(name)    # कोर पैथ.न (Hindi script)
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-6'>Length of a String</h2>
+<br>
+<pre><code class="language-python">s = 'Core Python'
+n = len(s)
+print(n)    # 11
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-7'>Indexing in Strings</h2>
+<br>
+<pre><code class="language-python">s = 'Core Python'
+     0123456789 10     ← positive indices
+    -11      ...  -1   ← negative indices
+</code></pre>
+<br>
+<pre><code class="language-python">s = 'Core Python'
+
+print(s[0])     # 'C'   — first character
+print(s[1])     # 'o'
+print(s[5])     # 'P'
+print(s[-1])    # 'n'   — last character
+print(s[-2])    # 'o'
+print(s[-6])    # 'P'   (6th from end)
+
+# Access each character using while loop (forward)
+n = len(s)
+i = 0
+while i &lt; n:
+    print(s[i], end=' ')
+    i += 1
+
+print()   # new line
+
+# Access in reverse using while loop
+i = -1
+while i &gt;= -n:
+    print(s[i], end=' ')
+    i -= 1
+
+print()
+
+# Using for loop
+for i in s:
+    print(i, end=' ')
+
+print()
+
+# Reverse using for loop and slicing
+for i in s[::-1]:
+    print(i, end=' ')
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-8'>Slicing Strings</h2>
+<br>
+<p><strong>Format:</strong> <code class="inline-code">stringname[start : stop : stepsize]</code></p>
+<br>
+<p>- If <code class="inline-code">start</code> is omitted → defaults to 0.</p>
+<p>- If <code class="inline-code">stop</code> is omitted → defaults to last character.</p>
+<p>- If <code class="inline-code">stepsize</code> is omitted → defaults to 1.</p>
+<br>
+<pre><code class="language-python">s = 'Core Python'
+#    0123456789 10
+
+s[0:9:1]      # 'Core Pyth'   — from 0 to 8, step 1
+s[0:9:2]      # 'Cr yh'       — from 0 to 8, step 2
+s[::]         # 'Core Python' — entire string
+s[2:4:1]      # 're'          — from index 2 to 3
+s[::2]        # 'Cr yhn'      — every other character
+s[2::]        # 're Python'   — from index 2 to end
+s[:4:1]       # 'Core'        — from 0 to 3
+
+# Negative indexing in slicing
+s[-4:-1]      # 'tho'         — from -4 to -2
+s[-6::]       # 'Python'      — from -6 to end
+s[-1:-4:-1]   # 'noh'         — right to left
+s[-1::-1]     # 'nohtyP eroC' — full reverse
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-9'>Repeating Strings</h2>
+<br>
+<pre><code class="language-python">s = 'Core Python'
+
+print(s * 2)            # Core PythonCore Python
+
+# Repeat a slice
+sub = s[5:7] * 3        # s[5:7] = 'Py'
+print(sub)              # PyPyPy
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-10'>Concatenating Strings</h2>
+<br>
+<pre><code class="language-python">s1 = 'Core '
+s2 = 'Python'
+s3 = s1 + s2            # concatenate
+print(s3)               # Core Python
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-11'>Checking Membership</h2>
+<br>
+<pre><code class="language-python">s = 'This is Core Python'
+
+# in — returns True if found
+if 'Core' in s:
+    print("Core is found in main string")
+
+# not in — returns True if NOT found
+if 'Java' not in s:
+    print("Java is not found")
+
+# Program — check user-entered substring
+str_main = input('Enter main string: ')
+sub = input('Enter sub string: ')
+
+if sub in str_main:
+    print(sub + ' is found in main string')
+else:
+    print(sub + ' is not found in the main string')
+</code></pre>
+<br>
+<p>> <strong>Note:</strong> <code class="inline-code">in</code> and <code class="inline-code">not in</code> are case-sensitive. <code class="inline-code">'core'</code> ≠ <code class="inline-code">'Core'</code>.</p>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-12'>Comparing Strings</h2>
+<br>
+<p>Use relational operators: <code class="inline-code">==</code>, <code class="inline-code">!=</code>, <code class="inline-code"><</code>, <code class="inline-code">></code>, <code class="inline-code"><=</code>, <code class="inline-code">>=</code>.</p>
+<br>
+<p>Python compares strings in <strong>dictionary (lexicographic) order</strong> — 'A' < 'B' < 'C' ... < 'a' < 'b' ...</p>
+<br>
+<pre><code class="language-python">s1 = 'Box'
+s2 = 'Boy'
+
+if s1 == s2:
+    print("Both are same")
+elif s1 &lt; s2:
+    print("s1 comes before s2")    # Output: s1 comes before s2
+else:
+    print("s1 comes after s2")
+
+# 'Box' &lt; 'Boy' because at index 2: 'x' &lt; 'y' in ASCII
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-13'>Removing Spaces</h2>
+<br>
+<pre><code class="language-python">name = '  Mukesh Deshmukh  '   # spaces before and after
+
+print(name.rstrip())    # '  Mukesh Deshmukh'   — removes RIGHT spaces
+print(name.lstrip())    # 'Mukesh Deshmukh  '   — removes LEFT spaces
+print(name.strip())     # 'Mukesh Deshmukh'     — removes BOTH sides
+
+# These do NOT remove spaces in the MIDDLE of the string
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-14'>Finding Substrings</h2>
+<br>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>find(sub, start, end)</code></td>
+<td>Returns index of first occurrence; <code>-1</code> if not found</td>
+</tr>
+<tr>
+<td><code>rfind(sub, start, end)</code></td>
+<td>Same, but searches from RIGHT to LEFT</td>
+</tr>
+<tr>
+<td><code>index(sub, start, end)</code></td>
+<td>Returns index; raises <code>ValueError</code> if not found</td>
+</tr>
+<tr>
+<td><code>rindex(sub, start, end)</code></td>
+<td>Same, but searches from RIGHT to LEFT</td>
+</tr>
+</tbody>
+</table>
+<br>
+<pre><code class="language-python">s = 'This is a book'
+
+# find() — returns index or -1
+n = s.find('is', 0, len(s))
+print(n)    # 2   (first 'is' at index 2)
+
+# rfind() — search from right
+n = s.rfind('is')
+print(n)    # 5   (second 'is' at index 5)
+
+# index() — raises ValueError if not found
+try:
+    n = s.index('is', 0, len(s))
+    print(n)    # 2
+except ValueError:
+    print("Not found")
+
+# Program — find first occurrence
+str_main = input('Enter main string: ')
+sub = input('Enter sub string: ')
+n = str_main.find(sub, 0, len(str_main))
+
+if n == -1:
+    print("Sub string not found")
+else:
+    print("Sub string found at position:", n + 1)   # +1 for 1-based position
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-15'>Finding All Occurrences</h2>
+<br>
+<pre><code class="language-python"># Version 1 — using flag and manual logic
+str_main = input('Enter main string: ')
+sub = input('Enter sub string: ')
+i = 0
+n = len(str_main)
+flag = False
+
+while i &lt; n:
+    pos = str_main.find(sub, i, n)
+    if pos != -1:
+        print("Found at position:", pos + 1)
+        flag = True
+        i = pos + 1       # continue search from next position
+    else:
+        i += 1
+
+if not flag:
+    print("Sub string not found")
+
+# Version 2 — cleaner (using pos = -1 trick)
+str_main = input('Enter main string: ')
+sub = input('Enter sub string: ')
+pos = -1
+n = len(str_main)
+flag = False
+
+while True:
+    pos = str_main.find(sub, pos + 1, n)
+    if pos == -1:
+        break
+    print("Found at position:", pos + 1)
+    flag = True
+
+if not flag:
+    print("Not found")
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-16'>Counting Substrings</h2>
+<br>
+<pre><code class="language-python"># count(substring) — returns number of occurrences
+str_main = 'New Delhi is in Delhi'
+
+print(str_main.count('Delhi'))              # 2   — count in entire string
+print(str_main.count('e', 0, 3))           # 1   — count in range 0 to 2
+print(str_main.count('e', 0, len(str_main)))  # 3   — count in full string
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-17'>Strings are Immutable</h2>
+<br>
+<p>Strings <strong>cannot be modified</strong> — any attempt to change a character raises a <code class="inline-code">TypeError</code>.</p>
+<br>
+<pre><code class="language-python">s = 'abcd'
+print(s[0])       # 'a'
+
+# s[0] = 'x'     # TypeError: 'str' object does not support item assignment
+
+# What LOOKS like modification is actually creating a new object
+s1 = 'one'
+s2 = 'two'
+
+s2 = s1           # s2 now POINTS to 'one'; 'two' is garbage collected
+print(s2)         # 'one'
+print(s1)         # 'one'
+print(id(s1) == id(s2))    # True — both refer to same object
+</code></pre>
+<br>
+<p><strong>Why immutable?</strong></p>
+<p>- <strong>Performance</strong> — Fixed size in memory at creation; faster allocation and access.</p>
+<p>- <strong>Security</strong> — Modifications create new objects with new identity, so tampering is detectable.</p>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-18'>Replacing a String</h2>
+<br>
+<pre><code class="language-python"># replace(old, new) — returns NEW string; original unchanged
+s = 'That is a beautiful girl'
+s1 = s.replace('girl', 'flower')
+
+print(s)     # That is a beautiful girl    (unchanged)
+print(s1)    # That is a beautiful flower  (new string)
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-19'>Splitting and Joining Strings</h2>
+<br>
+<h3 id='section-20'>split() — Break string into list</h3>
+<br>
+<pre><code class="language-python"># Split at commas
+s = 'one, two, three, four'
+lst = s.split(',')
+print(lst)    # ['one', ' two', ' three', ' four']
+
+# Split at spaces (default — splits at any whitespace)
+s = 'hello world python'
+words = s.split()
+print(words)  # ['hello', 'world', 'python']
+
+# Program — accept numbers separated by space
+str_input = input('Enter numbers separated by space: ')
+lst = str_input.split()
+for i in lst:
+    print(i)
+# Input: 10 20 30 40
+# Output: 10  20  30  40
+</code></pre>
+<br>
+<h3 id='section-21'>join() — Combine list/tuple into single string</h3>
+<br>
+<pre><code class="language-python"># Format: separator.join(sequence)
+
+# Tuple of strings joined with hyphen
+words = ('one', 'two', 'three')
+result = '-'.join(words)
+print(result)    # one-two-three
+
+# List joined with colon
+cities = ['apple', 'guava', 'grapes', 'mango']
+result = ':'.join(cities)
+print(result)    # apple:guava:grapes:mango
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-22'>Changing Case</h2>
+<br>
+<pre><code class="language-python">s = 'Python is the future'
+
+print(s.upper())        # PYTHON IS THE FUTURE
+print(s.lower())        # python is the future
+print(s.swapcase())     # pYTHON IS THE FUTURE  (swap each letter's case)
+print(s.title())        # Python Is The Future   (capitalize first letter of each word)
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-23'>Checking Starting and Ending</h2>
+<br>
+<pre><code class="language-python">s = 'This is Python'
+
+# startswith()
+print(s.startswith('This'))     # True
+print(s.startswith('Hello'))    # False
+
+# endswith()
+print(s.endswith('Python'))     # True
+print(s.endswith('Java'))       # False
+</code></pre>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-24'>String Testing Methods</h2>
+<br>
+<p>Return <code class="inline-code">True</code> or <code class="inline-code">False</code> based on content.</p>
+<br>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Returns True if...</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>isalnum()</code></td>
+<td>All characters are alphanumeric (A–Z, a–z, 0–9)</td>
+</tr>
+<tr>
+<td><code>isalpha()</code></td>
+<td>All characters are alphabetic</td>
+</tr>
+<tr>
+<td><code>isdigit()</code></td>
+<td>All characters are digits</td>
+</tr>
+<tr>
+<td><code>islower()</code></td>
+<td>All characters are lowercase</td>
+</tr>
+<tr>
+<td><code>isupper()</code></td>
+<td>All characters are uppercase</td>
+</tr>
+<tr>
+<td><code>isspace()</code></td>
+<td>All characters are whitespace</td>
+</tr>
+<tr>
+<td><code>istitle()</code></td>
+<td>String is in title case</td>
+</tr>
+</tbody>
+</table>
+<br>
+<pre><code class="language-python">s1 = 'Python3'
+s2 = '12345'
+s3 = 'hello'
+s4 = 'HELLO'
+s5 = 'Hello World'
+
+print(s1.isalnum())    # True  — only letters and digits
+print(s1.isalpha())    # False — has digit '3'
+print(s2.isdigit())    # True
+print(s3.islower())    # True
+print(s4.isupper())    # True
+print(s5.istitle())    # True  — each word starts with capital
+print('  '.isspace())  # True
+</code></pre>
+
+        </div>
+    </div>
+</body>
+</html>

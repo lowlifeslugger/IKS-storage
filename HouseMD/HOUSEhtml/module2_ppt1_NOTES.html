@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>module2_ppt1_NOTES</title>
+    
+    <style>
+        :root {
+            --bg-main: #1e1e1e;
+            --bg-sidebar: #181818;
+            --text-normal: #dcddde;
+            --text-muted: #72767d;
+            --accent: #7f5af0;
+            --code-bg: #2d3139;
+            --table-border: #36393f;
+            --interactive-hover: #2f3136;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-normal);
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Fixed Navigation Outline panel */
+        .sidebar {
+            width: 280px;
+            background-color: var(--bg-sidebar);
+            border-right: 1px solid var(--table-border);
+            display: flex;
+            flex-direction: column;
+            padding: 20px 12px;
+            overflow-y: auto;
+        }
+        .sidebar h3 {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            padding-left: 10px;
+        }
+        .sidebar a {
+            color: var(--text-normal);
+            text-decoration: none;
+            font-size: 13.5px;
+            padding: 6px 10px;
+            margin: 2px 0;
+            border-radius: 4px;
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            transition: background 0.15s, color 0.15s;
+        }
+        .sidebar a:hover {
+            background-color: var(--interactive-hover);
+            color: var(--accent);
+        }
+
+        /* Central Workspace Area */
+        .workspace {
+            flex: 1;
+            padding: 40px 60px;
+            overflow-y: auto;
+            line-height: 1.6;
+        }
+        .content-container {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        h1, h2, h3, h4 { color: #ffffff; font-weight: 600; margin-top: 26px; margin-bottom: 12px; }
+        h1 { border-bottom: 1px solid var(--table-border); padding-bottom: 8px; font-size: 30px; }
+        h2 { font-size: 22px; color: var(--accent); border-left: 3px solid var(--accent); padding-left: 10px; }
+        h3 { font-size: 17px; }
+        p { margin-bottom: 14px; color: var(--text-normal); }
+
+        /* Document Matrix Grids */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            background-color: #252525;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        th, td { padding: 12px 16px; border: 1px solid var(--table-border); text-align: left; }
+        th { background-color: #2a2a2a; color: #ffffff; font-weight: 700; }
+        tr:nth-child(even) { background-color: #222222; }
+
+        /* Block & Inline Code Syntax */
+        pre {
+            background-color: var(--code-bg);
+            padding: 16px;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 18px 0;
+            border-left: 4px solid var(--accent);
+        }
+        code { font-family: 'Consolas', 'Courier New', Courier, monospace; font-size: 14px; color: #e34c26; }
+        .inline-code { background-color: var(--code-bg); padding: 2px 6px; border-radius: 4px; color: #ff79c6; font-size: 13px; }
+    </style>
+    
+</head>
+<body>
+    <div class="sidebar">
+        <h3>Outline Index</h3>
+        <a href="#section-0" style="padding-left: 10px;">Unit 2 — Introduction to Python</a>
+<a href="#section-1" style="padding-left: 24px;">• What is Python?</a>
+<a href="#section-2" style="padding-left: 24px;">• Features of Python</a>
+<a href="#section-3" style="padding-left: 24px;">• Execution of a Python Program</a>
+<a href="#section-4" style="padding-left: 24px;">• Memory Management in Python</a>
+<a href="#section-5" style="padding-left: 24px;">• Garbage Collection in Python</a>
+<a href="#section-6" style="padding-left: 24px;">• C vs Python — Comparison</a>
+
+    </div>
+    <div class="workspace">
+        <div class="content-container">
+            <h1 id='section-0'>Unit 2 — Introduction to Python</h1>
+<p>> Goa College of Engineering | Computer Engineering</p>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-1'>What is Python?</h2>
+<br>
+<p>Python combines the elegant style of <strong>C</strong> with the class/object features of <strong>Java</strong>, but with far fewer lines of code than either.</p>
+<br>
+<pre><code class="language-python"># Python program to add two numbers
+a = b = 10
+print("Sum =", a + b)   # Output: Sum = 20
+</code></pre>
+<br>
+<p>- Developed by <strong>Guido Van Rossum</strong> in <strong>1991</strong>.</p>
+<p>- <strong>Open source</strong> — freely downloadable from [www.python.org](http://www.python.org).</p>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-2'>Features of Python</h2>
+<br>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Simple</strong></td>
+<td>Reads like English sentences. Easy to develop and understand.</td>
+</tr>
+<tr>
+<td><strong>Easy to learn</strong></td>
+<td>Very few keywords; simple structure; resembles C. Migrating from C is easy.</td>
+</tr>
+<tr>
+<td><strong>Open source</strong></td>
+<td>Free to download and use — no licensing cost.</td>
+</tr>
+<tr>
+<td><strong>High level language</strong></td>
+<td>Uses English words; abstracts hardware details from the programmer.</td>
+</tr>
+<tr>
+<td><strong>Dynamically typed</strong></td>
+<td>No type declarations. A name can be assigned to one type, then later to another.</td>
+</tr>
+<tr>
+<td><strong>Platform independent</strong></td>
+<td>Works on UNIX, Linux, Windows, Mac — write once, run anywhere.</td>
+</tr>
+<tr>
+<td><strong>Portable</strong></td>
+<td>Produces same result on any computer (platform independent).</td>
+</tr>
+<tr>
+<td><strong>Procedure & Object Oriented</strong></td>
+<td>Supports both procedural (functions) and OOP (classes, objects, inheritance).</td>
+</tr>
+<tr>
+<td><strong>Interpreted</strong></td>
+<td>Source code compiled to byte code, then executed line-by-line by PVM.</td>
+</tr>
+<tr>
+<td><strong>Extensible</strong></td>
+<td>C/C++ programs can be integrated into Python and run using PVM.</td>
+</tr>
+<tr>
+<td><strong>Embeddable</strong></td>
+<td>Python programs can be inserted into C/C++ programs.</td>
+</tr>
+<tr>
+<td><strong>Huge library</strong></td>
+<td>Large standard library + third-party packages (<code>numpy</code>, <code>w3lib</code>, etc.).</td>
+</tr>
+<tr>
+<td><strong>Database connectivity</strong></td>
+<td>Interfaces to connect Python programs to all major databases.</td>
+</tr>
+<tr>
+<td><strong>Scalable</strong></td>
+<td>Programs scale across platforms and leverage new platform features.</td>
+</tr>
+<tr>
+<td><strong>Batteries included</strong></td>
+<td>Pre-built packages immediately available. <code>numpy</code> for arrays, <code>w3lib</code> for web functions.</td>
+</tr>
+</tbody>
+</table>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-3'>Execution of a Python Program</h2>
+<br>
+<pre><code class="language-python">Source code  (.py)
+      ↓
+ Python Compiler
+      ↓
+  Byte code  (.pyc)
+      ↓
+PVM — Interpreter
+      ↓
+ Machine code  (0s and 1s)
+      ↓
+   Processor → Output
+</code></pre>
+<br>
+<p>- <strong>Source code</strong> — Written by programmer as <code class="inline-code">x.py</code>.</p>
+<p>- <strong>Byte code</strong> — Fixed set of instructions; 1 byte per instruction; stored in <code class="inline-code">x.pyc</code>.</p>
+<p>- <strong>PVM (Python Virtual Machine)</strong> — Converts byte code to machine code using an interpreter; sends to processor.</p>
+<p>- <strong>Interpreter</strong> — Translates source line by line; hence slower than compiled languages.</p>
+<p>- <strong>JIT (Just-in-Time) Compiler</strong> — Sometimes added to PVM to improve execution speed.</p>
+<br>
+<p>> Note: All steps (source → byte code → machine code → output) are internally completed before the final result is displayed.</p>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-4'>Memory Management in Python</h2>
+<br>
+<p>- In <strong>C</strong>, programmers manually allocate/deallocate memory using <code class="inline-code">malloc()</code> and <code class="inline-code">free()</code>.</p>
+<p>- In <strong>Python</strong>, memory allocation and deallocation are done <strong>automatically by PVM</strong>.</p>
+<p>- Everything in Python is an <strong>object</strong> — strings, functions, integers.</p>
+<p>- Objects are stored in the <strong>heap</strong>. Heap size adjusts dynamically based on RAM availability.</p>
+<br>
+<p><strong>Memory management layers:</strong></p>
+<br>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Operating System</strong></td>
+<td>Allocates RAM for any program.</td>
+</tr>
+<tr>
+<td><strong>Raw Memory Allocator</strong></td>
+<td>Checks whether enough memory is available for storing objects.</td>
+</tr>
+<tr>
+<td><strong>Object-Specific Allocators</strong></td>
+<td>Handle each type differently — e.g., integers stored differently from strings.</td>
+</tr>
+</tbody>
+</table>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-5'>Garbage Collection in Python</h2>
+<br>
+<p>The <strong>garbage collector</strong> (module <code class="inline-code">gc</code>) deletes objects from memory that are no longer used in the program.</p>
+<br>
+<p><strong>How it works:</strong></p>
+<p>- Maintains a <strong>reference count</strong> for each object.</p>
+<p>- When reference count = 0 → object is deleted from memory.</p>
+<p>- Can detect and remove <strong>reference cycles</strong>.</p>
+<br>
+<p><strong>Three Generations:</strong></p>
+<br>
+<table>
+<thead>
+<tr>
+<th>Generation</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Generation 0</strong></td>
+<td>Newly created objects.</td>
+</tr>
+<tr>
+<td><strong>Generation 1</strong></td>
+<td>Objects that survived one garbage collection pass.</td>
+</tr>
+<tr>
+<td><strong>Generation 2</strong></td>
+<td>Long-lived, older objects.</td>
+</tr>
+</tbody>
+</table>
+<br>
+<p>- GC prefers deleting younger unreferenced objects over older ones.</p>
+<p>- GC runs automatically based on a <strong>threshold</strong> value.</p>
+<p>- In cases of reference cycles, it's better to <strong>run GC manually</strong>.</p>
+<br>
+<p>---</p>
+<br>
+<h2 id='section-6'>C vs Python — Comparison</h2>
+<br>
+
+        </div>
+    </div>
+</body>
+</html>
