@@ -1,0 +1,5 @@
+this folder full of .md files is for easier AI consumption
+so that less tokens are used and you can get maximum ROI from any token based AI systems as
+.md files are whats used to natively train ai
+
+-- Milburn
