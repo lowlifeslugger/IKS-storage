@@ -16,6 +16,7 @@ https://raw.githack.com/lowlifeslugger/Basics-of-Python-Computing/main/Python_Co
 | **Mod 3 - PPT 1 (Arrays)** | [Open Interactive Guide](https://raw.githack.com/lowlifeslugger/Basics-of-Python-Computing/main/HouseMD/HOUSEhtml/module3_ppt1_NOTES.html) |
 | **Strings Core Mechanics** | [Open Interactive Guide](https://raw.githack.com/lowlifeslugger/Basics-of-Python-Computing/main/HouseMD/HOUSEhtml/strings_NOTES.html) |
 | **Mod 4 - PPT 1** | [Open Interactive Guide](https://raw.githack.com/lowlifeslugger/Basics-of-Python-Computing/main/HouseMD/HOUSEhtml/mod4_ppt1_NOTES.html) |
-
+Question bank
+https://raw.githack.com/lowlifeslugger/Basics-of-Python-Computing/main/Question_Bank.html
 All the best suckers
 contact me milburnfernandes7@gmail.com
