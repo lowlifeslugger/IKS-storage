@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question_Bank</title>
+    <style>
+        :root {
+            --bg-main: #1e1e1e;
+            --bg-alt: #2a2a2a;
+            --text-normal: #dcddde;
+            --text-muted: #b3b3b3;
+            --accent: #7928ca;
+            --h1-color: #ff79c6;
+            --h2-color: #8be9fd;
+            --h3-color: #50fa7b;
+            --h4-color: #ffb86c;
+            --code-bg: #2d3139;
+            --border: #3e3e3e;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-normal);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 850px;
+            margin: 40px auto;
+            padding: 0 24px;
+            letter-spacing: 0.2px;
+        }
+
+        /* Obsidian Header Styles */
+        h1, h2, h3, h4 {
+            font-weight: 600;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        h1 { color: var(--h1-color); border-bottom: 1px solid var(--border); padding-bottom: 8px; font-size: 2.2em; }
+        h2 { color: var(--h2-color); font-size: 1.75em; }
+        h3 { color: var(--h3-color); font-size: 1.4em; }
+        h4 { color: var(--h4-color); font-size: 1.15em; }
+
+        a {
+            color: #8be9fd;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Paragraphs and Lists */
+        p, li {
+            color: var(--text-normal);
+            font-size: 16px;
+        }
+        
+        ul, ol {
+            padding-left: 24px;
+        }
+
+        li {
+            margin-bottom: 0.25em;
+        }
+
+        /* Callouts / Blockquotes style */
+        blockquote {
+            border-left: 4px solid var(--h1-color);
+            background-color: var(--bg-alt);
+            margin: 1.5em 0;
+            padding: 10px 20px;
+            border-radius: 4px;
+        }
+        blockquote p {
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        /* Obsidian-like Code Blocks */
+        pre {
+            background-color: var(--code-bg);
+            border: 1px solid var(--border);
+            padding: 14px;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
+        code {
+            background-color: var(--code-bg);
+            color: #f1fa8c;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-family: 'Fira Code', Consolas, Monaco, monospace;
+            font-size: 0.9em;
+        }
+        pre code {
+            background-color: transparent;
+            padding: 0;
+            color: var(--text-normal);
+        }
+
+        /* Markdown Tables styling */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+            background-color: var(--bg-alt);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 12px 15px;
+            border: 1px solid var(--border);
+            text-align: left;
+        }
+        th {
+            background-color: #252525;
+            color: var(--h2-color);
+            font-weight: 600;
+        }
+        tr:nth-child(even) {
+            background-color: #222222;
+        }
+
+        /* Task lists [ ] [x] custom styling */
+        input[type="checkbox"] {
+            margin-right: 8px;
+            accent-color: var(--h3-color);
+            transform: scale(1.1);
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+<h1 id="python-programming-complete-question-bank">Python Programming — Complete Question Bank</h1>
+<h3 id="goa-college-of-engineering-computer-engineering">Goa College of Engineering | Computer Engineering</h3>
+<h3 id="covers-unit-1-computers-os-unit-2-python-unit-3-arrays-unit-4-functions-lists-tuples-strings">Covers: Unit 1 (Computers &amp; OS) · Unit 2 (Python) · Unit 3 (Arrays) · Unit 4 (Functions, Lists, Tuples) · Strings</h3>
+<hr />
+<blockquote>
+<p><strong>Legend:</strong>
+- 🔵 <strong>Theory</strong> — Definition / explanation / comparison question
+- 🟢 <strong>Coding</strong> — Write a program / predict output / trace
+- ⭐ <strong>Important</strong> — Frequently examined</p>
+</blockquote>
+<hr />
+<h1 id="unit-1-introduction-to-computers">UNIT 1 — Introduction to Computers</h1>
+<h2 id="section-a-short-theory-questions-2-marks">Section A — Short Theory Questions (2 marks)</h2>
+<p><strong>Q1.</strong> 🔵 Define a computer. State its two principal characteristics.</p>
+<p><strong>Q2.</strong> 🔵 What is word length? What are the commonly used word lengths in modern computers?</p>
+<p><strong>Q3.</strong> 🔵 Distinguish between a supercomputer and a mainframe computer.</p>
+<p><strong>Q4.</strong> 🔵 Define the term "access time" as it applies to hard disks. What are the three factors that determine it?</p>
+<p><strong>Q5.</strong> 🔵 What is a bitmap? How is it related to scanners?</p>
+<p><strong>Q6.</strong> 🔵 Define OCR. Why is it needed when scanning text?</p>
+<p><strong>Q7.</strong> 🔵 What is a magstripe on a credit card? What is it made of?</p>
+<p><strong>Q8.</strong> 🔵 State two differences between CD-R and CD-RW.</p>
+<p><strong>Q9.</strong> 🔵 What is dot pitch in a monitor? How does it affect image quality?</p>
+<p><strong>Q10.</strong> 🔵 Differentiate between impact and non-impact printers. Give one example of each.</p>
+<p><strong>Q11.</strong> 🔵 What is microcode in the context of a CPU's control unit?</p>
+<p><strong>Q12.</strong> 🔵 What are registers? Where are they located?</p>
+<p><strong>Q13.</strong> 🔵 Differentiate between sequential access and random/direct access storage.</p>
+<p><strong>Q14.</strong> 🔵 What is a head crash in a hard disk? What causes it?</p>
+<p><strong>Q15.</strong> 🔵 State the difference between passive matrix LCD and active matrix LCD (TFT).</p>
+<hr />
+<h2 id="section-b-long-theory-questions-5-marks">Section B — Long Theory Questions (5 marks)</h2>
+<p><strong>Q16.</strong> 🔵 ⭐ Describe the seven characteristics of a computer in detail.</p>
+<p><strong>Q17.</strong> 🔵 ⭐ Explain the anatomy of a digital computer. Describe each component with its role.</p>
+<p><strong>Q18.</strong> 🔵 ⭐ Describe the two main parts of the CPU (Control Unit and ALU) with their functions.</p>
+<p><strong>Q19.</strong> 🔵 ⭐ Explain primary memory in detail. Discuss RAM (types), Cache Memory (levels), and ROM.</p>
+<p><strong>Q20.</strong> 🔵 Explain secondary memory. Discuss magnetic tapes, magnetic disks (hard and floppy), and optical disks with their characteristics.</p>
+<p><strong>Q21.</strong> 🔵 Describe all types of keyboard keys with examples for each type.</p>
+<p><strong>Q22.</strong> 🔵 ⭐ Explain the different types of mice. What type is most commonly used and why?</p>
+<p><strong>Q23.</strong> 🔵 Explain how a scanner works. What factors affect scanner quality?</p>
+<p><strong>Q24.</strong> 🔵 Describe the types of scanners. How does a barcode reader work?</p>
+<p><strong>Q25.</strong> 🔵 ⭐ Explain CRT monitors and flat panel monitors (LCD passive, LCD active/TFT, LED). Compare their advantages and disadvantages.</p>
+<p><strong>Q26.</strong> 🔵 Classify monitors based on (a) color and (b) signal type. Give characteristics and examples for each.</p>
+<p><strong>Q27.</strong> 🔵 Describe the seven characteristics of a monitor.</p>
+<p><strong>Q28.</strong> 🔵 ⭐ Explain all types of printers with their working mechanism, advantages, and disadvantages.</p>
+<hr />
+<h1 id="unit-1-operating-systems">UNIT 1 — Operating Systems</h1>
+<h2 id="section-a-short-theory-questions-2-marks_1">Section A — Short Theory Questions (2 marks)</h2>
+<p><strong>Q29.</strong> 🔵 What is the primary purpose of an operating system?</p>
+<p><strong>Q30.</strong> 🔵 What is virtual storage in an OS? How does it increase effective memory?</p>
+<p><strong>Q31.</strong> 🔵 Differentiate between batch processing and online processing in an OS.</p>
+<p><strong>Q32.</strong> 🔵 What is preemptive multitasking? How is it different from cooperative multitasking?</p>
+<p><strong>Q33.</strong> 🔵 What is multithreading? How is it different from multiprocessing?</p>
+<p><strong>Q34.</strong> 🔵 What is an RTOS? Give two real-world applications.</p>
+<p><strong>Q35.</strong> 🔵 Name two mainframe operating systems and their developer.</p>
+<hr />
+<h2 id="section-b-long-theory-questions-5-marks_1">Section B — Long Theory Questions (5 marks)</h2>
+<p><strong>Q36.</strong> 🔵 ⭐ List and explain all six functions of an operating system with examples.</p>
+<p><strong>Q37.</strong> 🔵 ⭐ Classify operating systems based on (a) use and (b) capabilities/features. Explain each type with examples.</p>
+<p><strong>Q38.</strong> 🔵 Compare multi-user, multiprocessing, multitasking, and multithreading operating systems.</p>
+<hr />
+<h1 id="unit-2-introduction-to-python">UNIT 2 — Introduction to Python</h1>
+<h2 id="section-a-short-theory-questions-2-marks_2">Section A — Short Theory Questions (2 marks)</h2>
+<p><strong>Q39.</strong> 🔵 Who developed Python and in what year? What two languages does it combine features from?</p>
+<p><strong>Q40.</strong> 🔵 What does "dynamically typed" mean in Python?</p>
+<p><strong>Q41.</strong> 🔵 What is the PVM? What is its role in Python execution?</p>
+<p><strong>Q42.</strong> 🔵 What is the difference between <code>.py</code> and <code>.pyc</code> files?</p>
+<p><strong>Q43.</strong> 🔵 What is byte code in Python? What is its size per instruction?</p>
+<p><strong>Q44.</strong> 🔵 What is a JIT compiler? Why is it sometimes added to PVM?</p>
+<p><strong>Q45.</strong> 🔵 How does Python handle memory allocation differently from C?</p>
+<p><strong>Q46.</strong> 🔵 What is garbage collection in Python? Which module represents it?</p>
+<p><strong>Q47.</strong> 🔵 What are the three generations of objects in Python's garbage collector?</p>
+<p><strong>Q48.</strong> 🔵 What does "batteries included" mean in Python?</p>
+<p><strong>Q49.</strong> 🔵 State two differences between C's <code>for</code> loop and Python's <code>for</code> loop.</p>
+<p><strong>Q50.</strong> 🔵 What is the difference between "platform independent" and "portable"?</p>
+<hr />
+<h2 id="section-b-long-theory-questions-5-marks_2">Section B — Long Theory Questions (5 marks)</h2>
+<p><strong>Q51.</strong> 🔵 ⭐ List and explain all features of Python.</p>
+<p><strong>Q52.</strong> 🔵 ⭐ Explain the execution of a Python program step by step with a diagram.</p>
+<p><strong>Q53.</strong> 🔵 ⭐ Explain memory management in Python. Discuss the three memory layers.</p>
+<p><strong>Q54.</strong> 🔵 ⭐ Explain garbage collection in Python. What are the three generations? How does reference counting work?</p>
+<p><strong>Q55.</strong> 🔵 ⭐ Compare C and Python on at least 10 points in a tabular format.</p>
+<hr />
+<h2 id="section-c-coding-questions">Section C — Coding Questions</h2>
+<p><strong>Q56.</strong> 🟢 Write a Python program to add two numbers and display their sum.</p>
+<p><strong>Q57.</strong> 🟢 ⭐ Predict the output:</p>
+<pre class="codehilite"><code class="language-python">import gc
+print(gc.get_threshold())
+</code></pre>
+
+<hr />
+<h1 id="unit-2-data-types">UNIT 2 — Data Types</h1>
+<h2 id="section-a-short-theory-questions-2-marks_3">Section A — Short Theory Questions (2 marks)</h2>
+<p><strong>Q58.</strong> 🔵 What is the difference between a comment and a docstring in Python?</p>
+<p><strong>Q59.</strong> 🔵 Why are triple-quoted strings not recommended as comments in Python?</p>
+<p><strong>Q60.</strong> 🔵 What is NoneType? When does it evaluate to False?</p>
+<p><strong>Q61.</strong> 🔵 State the difference between <code>bytes</code> and <code>bytearray</code>.</p>
+<p><strong>Q62.</strong> 🔵 What is the difference between <code>set</code> and <code>frozenset</code>?</p>
+<p><strong>Q63.</strong> 🔵 What is a literal? Give one example of each type of literal in Python.</p>
+<p><strong>Q64.</strong> 🔵 What is the difference between <code>list</code> and <code>tuple</code>?</p>
+<p><strong>Q65.</strong> 🔵 State the rules for writing identifiers in Python.</p>
+<p><strong>Q66.</strong> 🔵 What is the naming convention for constants in Python? Why doesn't Python enforce it?</p>
+<p><strong>Q67.</strong> 🔵 What does <code>type()</code> return? Give two examples.</p>
+<p><strong>Q68.</strong> 🔵 Does Python have a <code>char</code> datatype? How are individual characters represented?</p>
+<p><strong>Q69.</strong> 🔵 What is the range of values that can be stored in a <code>bytes</code> or <code>bytearray</code> object?</p>
+<hr />
+<h2 id="section-b-long-theory-questions-5-marks_3">Section B — Long Theory Questions (5 marks)</h2>
+<p><strong>Q70.</strong> 🔵 ⭐ List and explain all five categories of built-in datatypes in Python with examples and subtypes.</p>
+<p><strong>Q71.</strong> 🔵 ⭐ Explain numeric datatypes in Python: <code>int</code>, <code>float</code>, <code>complex</code>. Include number system representations and type conversions.</p>
+<p><strong>Q72.</strong> 🔵 Explain all six sequence datatypes in Python with examples.</p>
+<p><strong>Q73.</strong> 🔵 Explain <code>set</code> and <code>frozenset</code> datatypes with their key differences and operations.</p>
+<p><strong>Q74.</strong> 🔵 Explain the <code>dict</code> datatype. How are key-value pairs created, accessed, updated, and deleted?</p>
+<p><strong>Q75.</strong> 🔵 Explain naming conventions for packages, modules, classes, functions, variables, and constants in Python.</p>
+<hr />
+<h2 id="section-c-coding-questions_1">Section C — Coding Questions</h2>
+<p><strong>Q76.</strong> 🟢 ⭐ Write a Python program to demonstrate <code>int</code>, <code>float</code>, <code>complex</code>, <code>bool</code>, and <code>str</code> types, print each value and its type using <code>type()</code>.</p>
+<p><strong>Q77.</strong> 🟢 Write a Python program to:
+- Convert decimal 10 to binary, octal, and hexadecimal.
+- Convert binary <code>'1010'</code>, octal <code>'12'</code>, and hex <code>'A'</code> to decimal.</p>
+<p><strong>Q78.</strong> 🟢 Predict the output:</p>
+<pre class="codehilite"><code class="language-python">a = 10
+b = 3.14
+c = 3 + 5j
+print(type(a), type(b), type(c))
+print(int(b), float(a), complex(a))
+</code></pre>
+
+<p><strong>Q79.</strong> 🟢 Write a Python program to create:
+- A <code>bytes</code> array with elements <code>[10, 20, 30, 40]</code> and display all elements.
+- A <code>bytearray</code> with elements <code>[10, 20, 0, 40, 15]</code>, modify the first two elements to <code>99</code> and <code>88</code>, then display all elements.</p>
+<p><strong>Q80.</strong> 🟢 Write a Python program to demonstrate set operations — create a set, add elements using <code>update()</code>, remove an element, and show that indexing is not allowed.</p>
+<p><strong>Q81.</strong> 🟢 Write a Python program to:
+- Create a <code>frozenset</code> from a set <code>{10, 20, 30, 50}</code>.
+- Create a <code>frozenset</code> from the string <code>"abcdefg"</code>.
+- Print both.</p>
+<p><strong>Q82.</strong> 🟢 Write a Python program to create a dictionary with roll numbers as keys and student names as values. Demonstrate: access, update, delete, <code>keys()</code>, <code>values()</code>.</p>
+<p><strong>Q83.</strong> 🟢 ⭐ Predict the output:</p>
+<pre class="codehilite"><code class="language-python">s = {10, 20, 30, 10, 20}
+print(s)
+print(len(s))
+
+t = (1, 2, 3)
+print(t * 2)
+print(t + (4, 5))
+</code></pre>
+
+<p><strong>Q84.</strong> 🟢 Write a Python program to create a list with elements <code>[10, 20, "abc", "xyz"]</code> and:
+a) Print all elements
+b) Print first element
+c) Print first two elements
+d) Print second and third elements
+e) Print last element
+f) Print list two times</p>
+<p><strong>Q85.</strong> 🟢 Predict the output:</p>
+<pre class="codehilite"><code class="language-python">a = 0b1010
+b = 0xFF
+c = 0o17
+print(a, b, c)
+print(type(a))
+</code></pre>
+
+<hr />
+<h1 id="unit-2-operators">UNIT 2 — Operators</h1>
+<h2 id="section-a-short-theory-questions-2-marks_4">Section A — Short Theory Questions (2 marks)</h2>
+<p><strong>Q86.</strong> 🔵 What is the difference between <code>/</code> and <code>//</code> operators in Python?</p>
+<p><strong>Q87.</strong> 🔵 Does Python have <code>++</code> and <code>--</code> operators? What should be used instead?</p>
+<p><strong>Q88.</strong> 🔵 What does the <code>**</code> operator do? Give an example.</p>
+<p><strong>Q89.</strong> 🔵 What is the difference between <code>==</code> and <code>is</code> operators?</p>
+<p><strong>Q90.</strong> 🔵 Explain the <code>in</code> and <code>not in</code> operators with an example.</p>
+<p><strong>Q91.</strong> 🔵 What is the result of <code>not 0</code> and <code>not 2</code> in Python? Explain why.</p>
+<p><strong>Q92.</strong> 🔵 What does <code>~n</code> evaluate to in Python? Give the formula.</p>
+<p><strong>Q93.</strong> 🔵 State the precedence of <code>**</code>, <code>*</code>, <code>+</code>, and <code>()</code> from highest to lowest.</p>
+<p><strong>Q94.</strong> 🔵 What is associativity? Is <code>**</code> left-to-right or right-to-left?</p>
+<p><strong>Q95.</strong> 🔵 What is the purpose of the <code>math</code> module? Why can't it be used with complex numbers?</p>
+<hr />
+<h2 id="section-b-long-theory-questions-5-marks_4">Section B — Long Theory Questions (5 marks)</h2>
+<p><strong>Q96.</strong> 🔵 ⭐ Explain all nine types of operators in Python with examples.</p>
+<p><strong>Q97.</strong> 🔵 ⭐ Explain all six bitwise operators with their truth tables.</p>
+<p><strong>Q98.</strong> 🔵 Explain operator precedence in Python with a complete table (highest to lowest).</p>
+<p><strong>Q99.</strong> 🔵 Explain the <code>math</code> module — how to import it (all 4 methods) and list at least 8 mathematical functions with examples.</p>
+<hr />
+<h2 id="section-c-coding-questions_2">Section C — Coding Questions</h2>
+<p><strong>Q100.</strong> 🟢 ⭐ Evaluate the following step by step and find the value of <code>d</code>:</p>
+<pre class="codehilite"><code class="language-python">x, y, z, a, b, c = 1, 2, 3, 2, 2, 3
+d = (x + y) * z ** a // b + c
+</code></pre>
+
+<p><strong>Q101.</strong> 🟢 Predict the output:</p>
+<pre class="codehilite"><code class="language-python">x = 20
+y = 10
+x += y
+print(x)
+x -= y
+print(x)
+x *= y
+print(x)
+x //= y
+print(x)
+x **= 2
+print(x)
+</code></pre>
+
+<p><strong>Q102.</strong> 🟢 ⭐ Perform the following bitwise operations manually (convert to binary, apply, convert back):
+a) <code>13 &amp; 14</code>
+b) <code>13 | 14</code>
+c) <code>13 ^ 14</code>
+d) <code>10 &lt;&lt; 1</code> and <code>10 &lt;&lt; 2</code>
+e) <code>10 &gt;&gt; 1</code> and <code>10 &gt;&gt; 2</code>
+f) <code>~2</code></p>
+<p><strong>Q103.</strong> 🟢 Predict the output:</p>
+<pre class="codehilite"><code class="language-python">a = 5
+b = 3
+print(a &amp; b)
+print(a | b)
+print(a ^ b)
+print(a &lt;&lt; 2)
+print(a &gt;&gt; 1)
+print(~a)
+</code></pre>
+
+<p><strong>Q104.</strong> 🟢 Predict the output:</p>
+<pre class="codehilite"><code class="language-python">x = 1
+y = 2
+print(1 and 2)
+print(0 and 2)
+print(1 or 2)
+print(0 or 2)
+print(not 2)
+print(not 0)
+</code></pre>
+
+<p><strong>Q105.</strong> 🟢 Predict the output:</p>
+<pre class="codehilite"><code class="language-python">a = 25
+b = 25
+lst1 = [1, 2, 3]
+lst2 = [1, 2, 3]
+
+print(a is b)
+print(lst1 is lst2)
+print(lst1 == lst2)
+print(id(a) == id(b))
+</code></pre>
+
+<p><strong>Q106.</strong> 🟢 Write a Python program to calculate the area of a circle using <code>math.pi</code>. Accept radius from the user.</p>
+<p><strong>Q107.</strong> 🟢 Predict the output:</p>
+<pre class="codehilite"><code class="language-python">import math
+print(math.ceil(4.3))
+print(math.floor(4.9))
+print(math.sqrt(25))
+print(math.factorial(5))
+print(math.pow(2, 10))
+print(~3)
+print(3 ** 2 // 2 + 3)
+</code></pre>
+
+<p><strong>Q108.</strong> 🟢 Predict the output:</p>
+<pre class="codehilite"><code class="language-python">lst = [10, 20, 30, 40, 50]
+print(20 in lst)
+print(25 not in lst)
+for i in lst:
+    if i &gt; 30:
+        print(i)
+</code></pre>
+
+<hr />
+<h1 id="unit-2-control-statements">UNIT 2 — Control Statements</h1>
+<h2 id="section-a-short-theory-questions-2-marks_5">Section A — Short Theory Questions (2 marks)</h2>
+<p><strong>Q109.</strong> 🔵 What is indentation in Python? What is the default number of spaces?</p>
+<p><strong>Q110.</strong> 🔵 What is the purpose of the <code>pass</code> statement?</p>
+<p><strong>Q111.</strong> 🔵 What is the difference between <code>break</code> and <code>continue</code>?</p>
+<p><strong>Q112.</strong> 🔵 When does the <code>else</code> suite of a loop execute? When does it NOT execute?</p>
+<p><strong>Q113.</strong> 🔵 What is an infinite loop? Give one example.</p>
+<p><strong>Q114.</strong> 🔵 What is an <code>AssertionError</code>? How is it raised?</p>
+<p><strong>Q115.</strong> 🔵 What is the difference between <code>while</code> and <code>for</code> loops in Python?</p>
+<p><strong>Q116.</strong> 🔵 What is a nested loop? Give a practical example of when it's used.</p>
+<hr />
+<h2 id="section-b-long-theory-questions-5-marks_5">Section B — Long Theory Questions (5 marks)</h2>
+<p><strong>Q117.</strong> 🔵 ⭐ List and explain all control statements available in Python.</p>
+<p><strong>Q118.</strong> 🔵 Explain the <code>while</code> loop with syntax, flowchart description, and an example with a trace table.</p>
+<p><strong>Q119.</strong> 🔵 Explain the <code>for</code> loop with syntax and examples using: (a) a string, (b) <code>range()</code>, (c) a list.</p>
+<p><strong>Q120.</strong> 🔵 Explain <code>break</code>, <code>continue</code>, and <code>pass</code> statements with examples and output.</p>
+<hr />
+<h2 id="section-c-coding-questions_3">Section C — Coding Questions</h2>
+<p><strong>Q121.</strong> 🟢 ⭐ Write a Python program to display numbers from 1 to 10 using a <code>while</code> loop. Show a trace table.</p>
+<p><strong>Q122.</strong> 🟢 Write a Python program to display even numbers from 100 to 200 using a <code>while</code> loop.</p>
+<p><strong>Q123.</strong> 🟢 Write a Python program to accept <code>m</code> and <code>n</code> from the user and display all even numbers from <code>m</code> to <code>n</code>.</p>
+<p><strong>Q124.</strong> 🟢 ⭐ Predict the output:</p>
+<pre class="codehilite"><code class="language-python">x = 10
+while x &gt;= 1:
+    if x == 5:
+        break
+    print(x)
+    x -= 1
+</code></pre>
+
+<p><strong>Q125.</strong> 🟢 ⭐ Predict the output:</p>
+<pre class="codehilite"><code class="language-python">x = 10
+while x &gt;= 1:
+    x -= 1
+    if x == 5:
+        continue
+    print(x)
+</code></pre>
+
+<p><strong>Q126.</strong> 🟢 Write a Python program to display each character of the string <code>"Python"</code> using a <code>for</code> loop.</p>
+<p><strong>Q127.</strong> 🟢 Write a Python program to display numbers from 10 to 1 in descending order using <code>range()</code>.</p>
+<p><strong>Q128.</strong> 🟢 Write a Python program to display elements of a list and find their sum using a <code>for</code> loop.</p>
+<p><strong>Q129.</strong> 🟢 ⭐ Write a Python program to display the following pattern:</p>
+<pre class="codehilite"><code>*
+* *
+* * *
+* * * *
+* * * * *
+</code></pre>
+
+<p><strong>Q130.</strong> 🟢 ⭐ Write a Python program to display the following centered triangle (n=5):</p>
+<pre class="codehilite"><code>    *
+   * *
+  * * *
+ * * * *
+* * * * *
+</code></pre>
+
+<p><strong>Q131.</strong> 🟢 Write a Python program to display a 5×5 square of asterisks.</p>
+<p><strong>Q132.</strong> 🟢 Predict the output:</p>
+<pre class="codehilite"><code class="language-python">for i in range(5):
+    print(i)
+else:
+    print(&quot;Loop done&quot;)
+</code></pre>
+
+<p><strong>Q133.</strong> 🟢 Write a Python program to search for a number in a list using a <code>for</code> loop and <code>else</code> suite. Display "Found!" or "Not found".</p>
+<p><strong>Q134.</strong> 🟢 Write a Python program to display only negative numbers from a list using the <code>pass</code> statement.</p>
+<p><strong>Q135.</strong> 🟢 Write a Python program using <code>assert</code> to ensure the user enters a number greater than zero. Handle <code>AssertionError</code> using <code>try-except</code>.</p>
+<p><strong>Q136.</strong> 🟢 ⭐ Write a Python program to display the prime number series up to 30.</p>
+<p><strong>Q137.</strong> 🟢 ⭐ Write a Python program to generate the Fibonacci series for n terms. Trace the execution for n=6.</p>
+<p><strong>Q138.</strong> 🟢 Predict the output:</p>
+<pre class="codehilite"><code class="language-python">for i in range(3):
+    for j in range(4):
+        print(i, j, end=&quot;  &quot;)
+    print()
+</code></pre>
+
+<p><strong>Q139.</strong> 🟢 Write a Python program using a <code>while</code> loop to accept numbers from the user until they enter <code>0</code>, then display the sum of all entered numbers.</p>
+<p><strong>Q140.</strong> 🟢 Predict the output:</p>
+<pre class="codehilite"><code class="language-python">x = 1
+while x &gt;= 1:
+    print(x, end=&quot; &quot;)
+    x += 1
+    if x &gt; 5:
+        break
+</code></pre>
+
+<hr />
+<h1 id="unit-3-arrays">UNIT 3 — Arrays</h1>
+<h2 id="section-a-short-theory-questions-2-marks_6">Section A — Short Theory Questions (2 marks)</h2>
+<p><strong>Q141.</strong> 🔵 What is an array? How is it different from a list?</p>
+<p><strong>Q142.</strong> 🔵 State three advantages of arrays over lists.</p>
+<p><strong>Q143.</strong> 🔵 What is a type code in Python's <code>array</code> module? Give two examples.</p>
+<p><strong>Q144.</strong> 🔵 What is the difference between single-dimensional and multi-dimensional arrays?</p>
+<p><strong>Q145.</strong> 🔵 Why must we use NumPy for multi-dimensional arrays in Python?</p>
+<p><strong>Q146.</strong> 🔵 What are vectorized operations in NumPy? State two advantages.</p>
+<p><strong>Q147.</strong> 🔵 What does <code>array.tolist()</code> do?</p>
+<p><strong>Q148.</strong> 🔵 What is the difference between <code>append()</code> and <code>insert()</code> in arrays?</p>
+<hr />
+<h2 id="section-b-long-theory-questions-5-marks_6">Section B — Long Theory Questions (5 marks)</h2>
+<p><strong>Q149.</strong> 🔵 ⭐ Explain the three ways to import the <code>array</code> module with examples.</p>
+<p><strong>Q150.</strong> 🔵 ⭐ Explain indexing and slicing on arrays with examples including negative indices.</p>
+<p><strong>Q151.</strong> 🔵 List and explain all methods available for processing arrays in Python.</p>
+<p><strong>Q152.</strong> 🔵 Explain bubble sort with a step-by-step example. Why is swapping important?</p>
+<p><strong>Q153.</strong> 🔵 Explain sequential search. Compare using a manual loop vs <code>index()</code> method.</p>
+<p><strong>Q154.</strong> 🔵 ⭐ Explain NumPy arrays — how to import, create (with different types), and perform vectorized mathematical operations.</p>
+<hr />
+<h2 id="section-c-coding-questions_4">Section C — Coding Questions</h2>
+<p><strong>Q155.</strong> 🟢 ⭐ Write a Python program using <code>from array import *</code> to:
+a) Create an integer array <code>[10, 20, 30, 40, 50]</code>
+b) Display all elements using a <code>for</code> loop
+c) Display using index access in a <code>while</code> loop</p>
+<p><strong>Q156.</strong> 🟢 Write a Python program to create an array named <code>arr1</code> with elements <code>[10, 20, 30, 40]</code>. Create another array <code>arr2</code> by multiplying each element by 5. Print <code>arr2</code>.</p>
+<p><strong>Q157.</strong> 🟢 ⭐ Predict the output:</p>
+<pre class="codehilite"><code class="language-python">from array import *
+x = array('i', [10, 20, 30, 40, 50, 60, 70])
+print(x[1:4])
+print(x[::2])
+print(x[::-1])
+print(x[-3:-1])
+</code></pre>
+
+<p><strong>Q158.</strong> 🟢 Write a Python program to demonstrate array processing methods: <code>append()</code>, <code>insert()</code>, <code>remove()</code>, <code>pop()</code>, <code>index()</code>, <code>reverse()</code>, <code>count()</code>.</p>
+<p><strong>Q159.</strong> 🟢 Write a Python program to store students' marks in an array and find total marks and percentage.</p>
+<p><strong>Q160.</strong> 🟢 ⭐ Write a Python program to sort an integer array using <strong>bubble sort</strong>. Show step-by-step swapping. Input: <code>[5, 3, 8, 1, 9, 2]</code>.</p>
+<p><strong>Q161.</strong> 🟢 Write a Python program to search for a given element in an array using <strong>sequential search</strong> (without <code>index()</code> method). Display its position if found.</p>
+<p><strong>Q162.</strong> 🟢 Write a Python program to search for a given element using the <code>index()</code> method. Handle <code>ValueError</code> if element is not found.</p>
+<p><strong>Q163.</strong> 🟢 Predict the output:</p>
+<pre class="codehilite"><code class="language-python">from array import *
+a = array('i', [1, 2, 3, 4, 5])
+a.append(6)
+a.insert(0, 0)
+a.remove(3)
+print(list(a))
+print(a.count(2))
+print(a.index(4))
+</code></pre>
+
+<p><strong>Q164.</strong> 🟢 Write a Python program using NumPy to:
+a) Create an integer array <code>[1, 2, 3, 4]</code>
+b) Create a float array
+c) Create a string array <code>['Delhi', 'Goa', 'Mumbai']</code>
+d) Print each array and its dtype</p>
+<p><strong>Q165.</strong> 🟢 ⭐ Write a Python program using NumPy to perform the following vectorized operations on <code>a = [1, 2, 3, 4]</code> and <code>b = [10, 20, 30, 40]</code>:
+a) <code>a + b</code>
+b) <code>a * b</code>
+c) <code>a ** 2</code>
+d) <code>b / a</code>
+e) <code>np.sqrt(a)</code>
+f) <code>np.sum(a)</code>, <code>np.mean(a)</code>, <code>np.max(a)</code>, <code>np.min(a)</code></p>
+<p><strong>Q166.</strong> 🟢 Predict the output:</p>
+<pre class="codehilite"><code class="language-python">import numpy as np
+a = np.array([1, 2, 3, 4])
+print(a + 10)
+print(a * 2)
+print(a ** 2)
+print(np.sum(a))
+print(np.mean(a))
+</code></pre>
+
+<hr />
+<h1 id="unit-4-functions">UNIT 4 — Functions</h1>
+<h2 id="section-a-short-theory-questions-2-marks_7">Section A — Short Theory Questions (2 marks)</h2>
+<p><strong>Q167.</strong> 🔵 What is the difference between a function and a method in Python?</p>
+<p><strong>Q168.</strong> 🔵 What is a formal argument? What is an actual argument?</p>
+<p><strong>Q169.</strong> 🔵 What is a default argument? Give one example.</p>
+<p><strong>Q170.</strong> 🔵 What is a variable length argument? What symbol is used to define it?</p>
+<p><strong>Q171.</strong> 🔵 What is the difference between <code>*args</code> and <code>**kwargs</code>?</p>
+<p><strong>Q172.</strong> 🔵 What is a local variable? What is a global variable?</p>
+<p><strong>Q173.</strong> 🔵 When a local and global variable have the same name, which one does the function use?</p>
+<p><strong>Q174.</strong> 🔵 How can a Python function return multiple values? In what form are they returned?</p>
+<p><strong>Q175.</strong> 🔵 What is dynamic typing in the context of functions?</p>
+<p><strong>Q176.</strong> 🔵 State four advantages of using functions.</p>
+<hr />
+<h2 id="section-b-long-theory-questions-5-marks_7">Section B — Long Theory Questions (5 marks)</h2>
+<p><strong>Q177.</strong> 🔵 ⭐ Explain the four types of actual arguments in Python with syntax and examples.</p>
+<p><strong>Q178.</strong> 🔵 ⭐ Explain local and global variables with a program that demonstrates what happens when both have the same name.</p>
+<p><strong>Q179.</strong> 🔵 Explain how a function returns multiple values. How are they received by the caller?</p>
+<p><strong>Q180.</strong> 🔵 Explain <code>*args</code> (variable length) and <code>**kwargs</code> (keyword variable length) arguments with programs and output.</p>
+<hr />
+<h2 id="section-c-coding-questions_5">Section C — Coding Questions</h2>
+<p><strong>Q181.</strong> 🟢 ⭐ Write a Python function <code>add(a, b)</code> that finds the sum of two numbers and displays the result (without return). Call the function.</p>
+<p><strong>Q182.</strong> 🟢 Write a Python function <code>add(a, b)</code> that <strong>returns</strong> the sum. Receive and print the result.</p>
+<p><strong>Q183.</strong> 🟢 ⭐ Write a Python function to check whether a given number is <strong>even or odd</strong>. Return the result.</p>
+<p><strong>Q184.</strong> 🟢 ⭐ Write a Python function to find the <strong>factorial</strong> of a number. Call it in a loop to display factorials from 1 to 10.</p>
+<p><strong>Q185.</strong> 🟢 ⭐ Write a Python function <code>is_prime(n)</code> that returns <code>1</code> if <code>n</code> is prime and <code>0</code> if not. Trace the function for <code>n=5</code> and <code>n=4</code>.</p>
+<p><strong>Q186.</strong> 🟢 Write a Python function that <strong>returns multiple values</strong> — the addition, subtraction, multiplication, and division of two numbers. Receive all four values and print them.</p>
+<p><strong>Q187.</strong> 🟢 ⭐ Write a Python program to demonstrate all four types of actual arguments:
+a) Positional arguments
+b) Keyword arguments
+c) Default arguments
+d) Variable length arguments (<code>*args</code>)</p>
+<p><strong>Q188.</strong> 🟢 Write a Python program to demonstrate <code>**kwargs</code> — accept any number of keyword arguments and display each key-value pair.</p>
+<p><strong>Q189.</strong> 🟢 Predict the output:</p>
+<pre class="codehilite"><code class="language-python">x = 100
+
+def func():
+    x = 50
+    print(&quot;Inside:&quot;, x)
+
+func()
+print(&quot;Outside:&quot;, x)
+</code></pre>
+
+<p><strong>Q190.</strong> 🟢 Write a function to accept a list of numbers and return their <strong>total and average</strong>.</p>
+<p><strong>Q191.</strong> 🟢 Write a function to accept a list of strings and display each string.</p>
+<p><strong>Q192.</strong> 🟢 Predict the output:</p>
+<pre class="codehilite"><code class="language-python">def greet(name, msg=&quot;Hello&quot;):
+    print(msg + &quot;, &quot; + name + &quot;!&quot;)
+
+greet(&quot;Alice&quot;)
+greet(&quot;Bob&quot;, &quot;Good morning&quot;)
+greet(msg=&quot;Hi&quot;, name=&quot;Charlie&quot;)
+</code></pre>
+
+<p><strong>Q193.</strong> 🟢 Predict the output:</p>
+<pre class="codehilite"><code class="language-python">def total(*nums):
+    s = 0
+    for n in nums:
+        s += n
+    return s
+
+print(total(1, 2, 3))
+print(total(10, 20, 30, 40))
+print(total(5))
+</code></pre>
+
+<hr />
+<h1 id="unit-4-lists">UNIT 4 — Lists</h1>
+<h2 id="section-a-short-theory-questions-2-marks_8">Section A — Short Theory Questions (2 marks)</h2>
+<p><strong>Q194.</strong> 🔵 What is a list in Python? How is it different from an array?</p>
+<p><strong>Q195.</strong> 🔵 What does "mutable" mean? Are lists mutable?</p>
+<p><strong>Q196.</strong> 🔵 What is the syntax for slicing a list? What are the default values of start, stop, and step?</p>
+<p><strong>Q197.</strong> 🔵 What does <code>lst.sort(reverse=True)</code> do?</p>
+<p><strong>Q198.</strong> 🔵 What is the difference between <code>remove()</code> and <code>pop()</code> in lists?</p>
+<p><strong>Q199.</strong> 🔵 What does <code>extend()</code> do? How is it different from <code>append()</code>?</p>
+<p><strong>Q200.</strong> 🔵 How do you create a list using <code>range()</code>? Give an example that creates <code>[5, 7, 9]</code>.</p>
+<hr />
+<h2 id="section-b-long-theory-questions-5-marks_8">Section B — Long Theory Questions (5 marks)</h2>
+<p><strong>Q201.</strong> 🔵 ⭐ Explain slicing operations on lists with the format <code>[start:stop:step]</code>. Give at least 6 examples.</p>
+<p><strong>Q202.</strong> 🔵 ⭐ List and explain all methods available for processing lists in Python with examples.</p>
+<p><strong>Q203.</strong> 🔵 Explain how to update, delete, and reverse elements of a list with programs.</p>
+<hr />
+<h2 id="section-c-coding-questions_6">Section C — Coding Questions</h2>
+<p><strong>Q204.</strong> 🟢 ⭐ Write a Python program to:
+- Create a list with elements from 0 to 9 using <code>range()</code>
+- Append <code>10</code>
+- Update 4th element to <code>40</code>
+- Update 2nd and 3rd elements to <code>20</code> and <code>30</code>
+- Delete first element
+- Reverse the list
+- Display the list after each operation</p>
+<p><strong>Q205.</strong> 🟢 Write a Python program to access elements of a list using (a) <code>while</code> loop and (b) <code>for</code> loop.</p>
+<p><strong>Q206.</strong> 🟢 ⭐ Predict the output:</p>
+<pre class="codehilite"><code class="language-python">lst = [10, 20, 30, 40, 50]
+print(lst[1:3])
+print(lst[::2])
+print(lst[::-1])
+print(lst[-2:])
+print(lst[:3])
+</code></pre>
+
+<p><strong>Q207.</strong> 🟢 Write a Python program to display elements of a list in <strong>reverse order</strong> without using <code>reverse()</code>.</p>
+<p><strong>Q208.</strong> 🟢 Write a Python program to concatenate two lists and repeat a list 3 times.</p>
+<p><strong>Q209.</strong> 🟢 ⭐ Write a Python program to find the biggest and smallest elements of a list (a) using <code>max()</code> and <code>min()</code> and (b) WITHOUT using <code>max()</code> and <code>min()</code>.</p>
+<p><strong>Q210.</strong> 🟢 ⭐ Write a Python program to sort a list using the <code>sort()</code> method (ascending and descending).</p>
+<p><strong>Q211.</strong> 🟢 ⭐ Write a Python program to sort a list <strong>without using the <code>sort()</code> method</strong> — use swapping logic.</p>
+<p><strong>Q212.</strong> 🟢 Predict the output:</p>
+<pre class="codehilite"><code class="language-python">lst = [3, 1, 4, 1, 5, 9, 2, 6]
+lst.sort()
+print(lst)
+lst.sort(reverse=True)
+print(lst)
+print(max(lst))
+print(min(lst))
+print(lst.count(1))
+print(lst.index(4))
+</code></pre>
+
+<p><strong>Q213.</strong> 🟢 Write a Python program to create lists using range in the following ways:
+- Numbers from 0 to 4
+- Numbers from 2 to 4
+- Odd numbers from 5 to 10</p>
+<hr />
+<h1 id="unit-4-tuples">UNIT 4 — Tuples</h1>
+<h2 id="section-a-short-theory-questions-2-marks_9">Section A — Short Theory Questions (2 marks)</h2>
+<p><strong>Q214.</strong> 🔵 What is a tuple? How is it different from a list?</p>
+<p><strong>Q215.</strong> 🔵 Why is <code>(42)</code> not a tuple but <code>(42,)</code> is?</p>
+<p><strong>Q216.</strong> 🔵 Which methods are NOT available for tuples that are available for lists?</p>
+<p><strong>Q217.</strong> 🔵 State one advantage of tuples over lists.</p>
+<hr />
+<h2 id="section-b-long-theory-questions-5-marks_9">Section B — Long Theory Questions (5 marks)</h2>
+<p><strong>Q218.</strong> 🔵 ⭐ Compare lists and tuples in Python on at least 7 points in tabular format.</p>
+<p><strong>Q219.</strong> 🔵 Explain different ways to create tuples with examples. Include: standard, without parentheses, single-element, empty, from a list.</p>
+<hr />
+<h2 id="section-c-coding-questions_7">Section C — Coding Questions</h2>
+<p><strong>Q220.</strong> 🟢 Write a Python program to create a tuple <code>(10, 20, "abc", "xyz")</code> and perform:
+a) Print all elements
+b) Print first element
+c) Print first two elements
+d) Print second and third
+e) Print last element
+f) Print tuple two times
+g) Try to modify first element and observe the error</p>
+<p><strong>Q221.</strong> 🟢 ⭐ Predict the output:</p>
+<pre class="codehilite"><code class="language-python">tp = (10, 20, 30, 40, 50)
+print(tp[1:3])
+print(tp[::2])
+print(tp[::-1])
+print(len(tp))
+print(tp + (60, 70))
+print(tp * 2)
+print(30 in tp)
+print(99 not in tp)
+</code></pre>
+
+<p><strong>Q222.</strong> 🟢 Write a Python program to access all elements of a tuple using (a) <code>for</code> loop and (b) <code>while</code> loop.</p>
+<p><strong>Q223.</strong> 🟢 Predict the output:</p>
+<pre class="codehilite"><code class="language-python">def get_values():
+    return 10, 20, 30
+
+a, b, c = get_values()
+print(a, b, c)
+print(type(get_values()))
+</code></pre>
+
+<hr />
+<h1 id="strings">Strings</h1>
+<h2 id="section-a-short-theory-questions-2-marks_10">Section A — Short Theory Questions (2 marks)</h2>
+<p><strong>Q224.</strong> 🔵 How is a string created in Python? Can single and double quotes be used interchangeably?</p>
+<p><strong>Q225.</strong> 🔵 What is a raw string? What is the effect of adding <code>r</code> before a string?</p>
+<p><strong>Q226.</strong> 🔵 What is a Unicode string? How is a Unicode character specified?</p>
+<p><strong>Q227.</strong> 🔵 Why are strings immutable? Give two reasons.</p>
+<p><strong>Q228.</strong> 🔵 What does <code>rstrip()</code> do? How is it different from <code>strip()</code>?</p>
+<p><strong>Q229.</strong> 🔵 What is the difference between <code>find()</code> and <code>index()</code>?</p>
+<p><strong>Q230.</strong> 🔵 What does <code>split(',')</code> return? Give an example.</p>
+<p><strong>Q231.</strong> 🔵 What does <code>join()</code> do? Give the format.</p>
+<p><strong>Q232.</strong> 🔵 What is the difference between <code>isalpha()</code> and <code>isalnum()</code>?</p>
+<p><strong>Q233.</strong> 🔵 What does <code>swapcase()</code> do? Give an example.</p>
+<p><strong>Q234.</strong> 🔵 What is the difference between <code>startswith()</code> and <code>endswith()</code>?</p>
+<p><strong>Q235.</strong> 🔵 What is <code>title()</code> method? Give an example.</p>
+<hr />
+<h2 id="section-b-long-theory-questions-5-marks_10">Section B — Long Theory Questions (5 marks)</h2>
+<p><strong>Q236.</strong> 🔵 ⭐ Explain string indexing and slicing in Python with both positive and negative indices. Give at least 8 slicing examples.</p>
+<p><strong>Q237.</strong> 🔵 Explain why strings are immutable in Python. What happens when we write <code>s2 = s1</code>? Explain with <code>id()</code>.</p>
+<p><strong>Q238.</strong> 🔵 Explain <code>find()</code>, <code>rfind()</code>, <code>index()</code>, <code>rindex()</code> methods with their format, behavior when not found, and an example.</p>
+<p><strong>Q239.</strong> 🔵 Explain <code>split()</code> and <code>join()</code> methods with examples.</p>
+<p><strong>Q240.</strong> 🔵 ⭐ List and explain all string testing methods (at least 7) with examples.</p>
+<hr />
+<h2 id="section-c-coding-questions_8">Section C — Coding Questions</h2>
+<p><strong>Q241.</strong> 🟢 ⭐ Predict the output:</p>
+<pre class="codehilite"><code class="language-python">s = 'Core Python'
+print(s[0])
+print(s[-1])
+print(s[5])
+print(s[0:9:1])
+print(s[::2])
+print(s[::-1])
+print(s[-6::])
+print(s[-4:-1])
+</code></pre>
+
+<p><strong>Q242.</strong> 🟢 Write a Python program on the string <code>s = 'hello world'</code>:
+a) Display the first character
+b) Display <code>hello</code>
+c) Display <code>world</code>
+d) Display the last character
+e) Display the string in reverse</p>
+<p><strong>Q243.</strong> 🟢 Write a Python program to access each character of a string using:
+a) <code>while</code> loop with positive index
+b) <code>while</code> loop with negative index
+c) <code>for</code> loop
+d) <code>for</code> loop in reverse using slicing</p>
+<p><strong>Q244.</strong> 🟢 ⭐ Predict the output:</p>
+<pre class="codehilite"><code class="language-python">s = 'Core Python'
+print(s * 2)
+print(s[5:7] * 3)
+s1 = 'Core '
+s2 = 'Python'
+print(s1 + s2)
+</code></pre>
+
+<p><strong>Q245.</strong> 🟢 Write a Python program to check if a user-entered substring exists in the main string using <code>in</code> and <code>not in</code>.</p>
+<p><strong>Q246.</strong> 🟢 Write a Python program to compare two strings and determine which comes first in dictionary order.</p>
+<p><strong>Q247.</strong> 🟢 Write a Python program to remove leading, trailing, and both-side spaces from a string. Demonstrate <code>lstrip()</code>, <code>rstrip()</code>, <code>strip()</code>.</p>
+<p><strong>Q248.</strong> 🟢 ⭐ Write a Python program (Program 4-style) to find the <strong>first occurrence</strong> of a substring in a main string using <code>find()</code>. Display its 1-based position or "not found".</p>
+<p><strong>Q249.</strong> 🟢 Write the same program using <code>index()</code> and handle <code>ValueError</code> with <code>try-except</code>.</p>
+<p><strong>Q250.</strong> 🟢 ⭐ Write a Python program to find and display <strong>all positions</strong> of a substring in a main string (Program 6/7 style — two versions).</p>
+<p><strong>Q251.</strong> 🟢 Write a Python program using <code>count()</code> to:
+a) Count occurrences of <code>'Delhi'</code> in <code>'New Delhi is in Delhi'</code>
+b) Count <code>'e'</code> from 0 to 2 in the same string
+c) Count <code>'e'</code> in the full string</p>
+<p><strong>Q252.</strong> 🟢 Predict the output:</p>
+<pre class="codehilite"><code class="language-python">s = 'abcd'
+print(s[0])
+s2 = 'one'
+s1 = 'two'
+s1 = s2
+print(s1)
+print(s2)
+print(s1 is s2)
+</code></pre>
+
+<p><strong>Q253.</strong> 🟢 Write a Python program to replace <code>'girl'</code> with <code>'flower'</code> in the string <code>'That is a beautiful girl'</code>. Print both original and new string.</p>
+<p><strong>Q254.</strong> 🟢 Write a Python program to split <code>'one, two, three, four'</code> at commas and display each part.</p>
+<p><strong>Q255.</strong> 🟢 Write a Python program to:
+a) Join <code>('one', 'two', 'three')</code> with hyphen
+b) Join <code>['apple', 'guava', 'grapes', 'mango']</code> with colon</p>
+<p><strong>Q256.</strong> 🟢 ⭐ Predict the output:</p>
+<pre class="codehilite"><code class="language-python">s = 'Python is the future'
+print(s.upper())
+print(s.lower())
+print(s.swapcase())
+print(s.title())
+</code></pre>
+
+<p><strong>Q257.</strong> 🟢 Predict the output:</p>
+<pre class="codehilite"><code class="language-python">s = 'This is Python'
+print(s.startswith('This'))
+print(s.startswith('Hello'))
+print(s.endswith('Python'))
+print(s.endswith('Java'))
+</code></pre>
+
+<p><strong>Q258.</strong> 🟢 ⭐ Predict the output:</p>
+<pre class="codehilite"><code class="language-python">print('Python3'.isalnum())
+print('Python'.isalpha())
+print('12345'.isdigit())
+print('hello'.islower())
+print('HELLO'.isupper())
+print('Hello World'.istitle())
+print('   '.isspace())
+print('Hello3'.isalpha())
+</code></pre>
+
+<p><strong>Q259.</strong> 🟢 Write a Python program that accepts a string from the user and prints:
+- Its length
+- First and last character
+- String in reverse
+- Whether it starts with a capital letter (using <code>isupper()</code> on <code>s[0]</code>)
+- Number of characters using <code>len()</code></p>
+<p><strong>Q260.</strong> 🟢 Write a Python program to accept a group of numbers separated by spaces from the user, split them into a list, and display each number on a new line.</p>
+<hr />
+<h1 id="mixed-application-questions">Mixed / Application Questions</h1>
+<p><strong>Q261.</strong> 🟢 ⭐ Predict the complete output:</p>
+<pre class="codehilite"><code class="language-python">lst = [1, 2, 3, 4, 5]
+tp  = (1, 2, 3, 4, 5)
+s   = &quot;12345&quot;
+
+print(lst[2])
+print(tp[2])
+print(s[2])
+print(type(lst[2]))
+print(type(tp[2]))
+print(type(s[2]))
+</code></pre>
+
+<p><strong>Q262.</strong> 🟢 Predict the output:</p>
+<pre class="codehilite"><code class="language-python">def func(a, b=10, *args, **kwargs):
+    print(a, b)
+    print(args)
+    print(kwargs)
+
+func(1, 2, 3, 4, x=5, y=6)
+</code></pre>
+
+<p><strong>Q263.</strong> 🟢 ⭐ Write a complete Python program that:
+- Defines a function <code>process(nums)</code> that accepts a list
+- Finds and returns: total, average, maximum, minimum, and sorted list
+- Calls the function with <code>[45, 12, 78, 34, 90, 5]</code> and prints all results</p>
+<p><strong>Q264.</strong> 🟢 Predict the output:</p>
+<pre class="codehilite"><code class="language-python">s = &quot;Hello World Python&quot;
+words = s.split()
+print(len(words))
+print(words[0])
+print(words[-1])
+result = '-'.join(words)
+print(result)
+</code></pre>
+
+<p><strong>Q265.</strong> 🟢 ⭐ Write a Python program to check if a given string is a palindrome (reads the same forward and backward). Examples: <code>"madam"</code>, <code>"racecar"</code>, <code>"python"</code>.</p>
+<p><strong>Q266.</strong> 🟢 Write a Python program to count the number of vowels in a given string.</p>
+<p><strong>Q267.</strong> 🟢 Write a Python program to find the factorial of a number using a <code>while</code> loop (without a function).</p>
+<p><strong>Q268.</strong> 🟢 Write a Python program to display all prime numbers between 1 and 100.</p>
+<p><strong>Q269.</strong> 🟢 ⭐ Write a Python program to:
+- Create a list of numbers from 1 to 20
+- Display only even numbers
+- Display only odd numbers
+- Find sum of even and sum of odd numbers separately</p>
+<p><strong>Q270.</strong> 🟢 Predict the output:</p>
+<pre class="codehilite"><code class="language-python">for i in range(1, 6):
+    for j in range(1, i + 1):
+        print(j, end=&quot; &quot;)
+    print()
+</code></pre>
+
+<p><strong>Q271.</strong> 🟢 Write a Python program to find the second largest element in a list without using <code>sort()</code>.</p>
+<p><strong>Q272.</strong> 🟢 Predict the output:</p>
+<pre class="codehilite"><code class="language-python">from array import *
+a = array('i', [10, 20, 30, 40, 50])
+b = a[1:4]
+a[1:3] = array('i', [200, 300])
+print(list(a))
+print(list(b))
+</code></pre>
+
+<p><strong>Q273.</strong> 🟢 Write a Python program that uses a dictionary to store names as keys and marks as values. Then:
+- Display all student names
+- Display all marks
+- Find the student with the highest marks</p>
+<p><strong>Q274.</strong> 🟢 ⭐ Predict the output:</p>
+<pre class="codehilite"><code class="language-python">def is_prime(n):
+    x = 1
+    for i in range(2, n):
+        if n % i == 0:
+            x = 0
+            break
+    return x
+
+for num in range(2, 20):
+    if is_prime(num):
+        print(num, end=&quot; &quot;)
+</code></pre>
+
+<p><strong>Q275.</strong> 🟢 Write a Python program to remove all duplicate elements from a list (use set conversion).</p>
+<hr />
+<h1 id="tricky-higher-order-questions">Tricky / Higher-Order Questions</h1>
+<p><strong>Q276.</strong> 🟢 ⭐ What is the output? Explain:</p>
+<pre class="codehilite"><code class="language-python">a = [1, 2, 3]
+b = a
+b.append(4)
+print(a)
+print(b)
+print(a is b)
+</code></pre>
+
+<p><strong>Q277.</strong> 🟢 What is the output? Explain the difference:</p>
+<pre class="codehilite"><code class="language-python">a = (1, 2, 3)
+b = a
+print(a is b)
+
+lst = [1, 2, 3]
+tp = tuple(lst)
+print(lst == list(tp))
+print(type(lst), type(tp))
+</code></pre>
+
+<p><strong>Q278.</strong> 🔵 ⭐ A student wrote: <code>t = (42)</code>. They expected a tuple but got an integer. Explain why, and how to fix it.</p>
+<p><strong>Q279.</strong> 🔵 Explain what happens in memory when the following code runs. Use <code>id()</code> to justify:</p>
+<pre class="codehilite"><code class="language-python">s1 = 'one'
+s2 = 'two'
+s2 = s1
+</code></pre>
+
+<p><strong>Q280.</strong> 🟢 ⭐ Find the output and explain the precedence:</p>
+<pre class="codehilite"><code class="language-python">print(2 ** 3 ** 2)       # right-to-left
+print((2 ** 3) ** 2)     # left-to-right
+print(10 - 3 - 2)        # left-to-right
+print(not True or False and True)
+</code></pre>
+
+<hr />
+<p><em>End of Question Bank — 280 Questions</em></p>
+</body>
+</html>
