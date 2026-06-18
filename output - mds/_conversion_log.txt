@@ -1,0 +1,102 @@
+==============================================================================
+  InputToOutputMachine -- PDF -> Markdown + Obsidian-dark HTML
+==============================================================================
+  Base dir : C:\Users\Originalsin\Desktop\GodheadComplex\MadGodsDisease
+  Input    : C:\Users\Originalsin\Desktop\GodheadComplex\MadGodsDisease\input
+  Out (md) : C:\Users\Originalsin\Desktop\GodheadComplex\MadGodsDisease\output - mds
+  Out (html): C:\Users\Originalsin\Desktop\GodheadComplex\MadGodsDisease\output - html
+
+  Found 14 PDF(s) to convert:
+
+    - 8 limbs of vastu shastra.pdf
+    - IKS UNI-II 26 1.pdf
+    - IKS UNI-II. Town planning. vastushstra.pdf
+    - IKS UNI-IV - revised.pdf
+    - IKS UNIT-I. PDF. NOTES (1).pdf
+    - IKS UNIT-II. PDF. NOTES (1).pdf
+    - IKS_IT2_SHORTNOTES.pdf
+    - Iks_Vedas.pdf
+    - IT_3_Portion_KP_IKS_UNIT_3_July_Dec_2025.pdf
+    - UNIT 2_VEDAS_123731.pdf
+    - Unit II - Town Planning.pdf
+    - Unit II -Architechture.pdf
+    - unit.2. it.2.pdf
+    - Upanishads and Vedantas.pdf
+
+------------------------------------------------------------------------------
+  Processing: 8 limbs of vastu shastra.pdf
+    -> wrote 8 limbs of vastu shastra.md  (pages ok: 1/1, tables: 0, images: 1)
+    -> wrote 8 limbs of vastu shastra.html
+------------------------------------------------------------------------------
+  Processing: IKS UNI-II 26 1.pdf
+    -> wrote IKS UNI-II 26 1.md  (pages ok: 40/40, tables: 62, images: 75)
+    -> wrote IKS UNI-II 26 1.html
+------------------------------------------------------------------------------
+  Processing: IKS UNI-II. Town planning. vastushstra.pdf
+    -> wrote IKS UNI-II. Town planning. vastushstra.md  (pages ok: 10/10, tables: 15, images: 10)
+    -> wrote IKS UNI-II. Town planning. vastushstra.html
+------------------------------------------------------------------------------
+  Processing: IKS UNI-IV - revised.pdf
+    -> wrote IKS UNI-IV - revised.md  (pages ok: 25/25, tables: 4, images: 33)
+    -> wrote IKS UNI-IV - revised.html
+------------------------------------------------------------------------------
+  Processing: IKS UNIT-I. PDF. NOTES (1).pdf
+    -> wrote IKS UNIT-I. PDF. NOTES (1).md  (pages ok: 33/33, tables: 40, images: 41)
+    -> wrote IKS UNIT-I. PDF. NOTES (1).html
+------------------------------------------------------------------------------
+  Processing: IKS UNIT-II. PDF. NOTES (1).pdf
+    -> wrote IKS UNIT-II. PDF. NOTES (1).md  (pages ok: 17/17, tables: 27, images: 13)
+    -> wrote IKS UNIT-II. PDF. NOTES (1).html
+------------------------------------------------------------------------------
+  Processing: IKS_IT2_SHORTNOTES.pdf
+    -> wrote IKS_IT2_SHORTNOTES.md  (pages ok: 3/3, tables: 1, images: 0)
+    -> wrote IKS_IT2_SHORTNOTES.html
+------------------------------------------------------------------------------
+  Processing: Iks_Vedas.pdf
+    -> wrote Iks_Vedas.md  (pages ok: 9/9, tables: 0, images: 3)
+    -> wrote Iks_Vedas.html
+------------------------------------------------------------------------------
+  Processing: IT_3_Portion_KP_IKS_UNIT_3_July_Dec_2025.pdf
+    -> wrote IT_3_Portion_KP_IKS_UNIT_3_July_Dec_2025.md  (pages ok: 101/101, tables: 7, images: 27)
+    -> wrote IT_3_Portion_KP_IKS_UNIT_3_July_Dec_2025.html
+------------------------------------------------------------------------------
+  Processing: UNIT 2_VEDAS_123731.pdf
+    -> wrote UNIT 2_VEDAS_123731.md  (pages ok: 28/28, tables: 0, images: 86)
+    -> wrote UNIT 2_VEDAS_123731.html
+------------------------------------------------------------------------------
+  Processing: Unit II - Town Planning.pdf
+    -> wrote Unit II - Town Planning.md  (pages ok: 16/16, tables: 0, images: 25)
+    -> wrote Unit II - Town Planning.html
+------------------------------------------------------------------------------
+  Processing: Unit II -Architechture.pdf
+    -> wrote Unit II -Architechture.md  (pages ok: 20/20, tables: 0, images: 21)
+    -> wrote Unit II -Architechture.html
+------------------------------------------------------------------------------
+  Processing: unit.2. it.2.pdf
+    -> wrote unit.2. it.2.md  (pages ok: 24/24, tables: 3, images: 28)
+    -> wrote unit.2. it.2.html
+------------------------------------------------------------------------------
+  Processing: Upanishads and Vedantas.pdf
+    -> wrote Upanishads and Vedantas.md  (pages ok: 3/3, tables: 0, images: 1)
+    -> wrote Upanishads and Vedantas.html
+
+==============================================================================
+SUMMARY
+==============================================================================
+  [  OK   ] 8 limbs of vastu shastra.pdf                  pages_ok=1    pages_failed=0   tables=0   images=1   
+  [  OK   ] IKS UNI-II 26 1.pdf                           pages_ok=40   pages_failed=0   tables=62  images=75  
+  [  OK   ] IKS UNI-II. Town planning. vastushstra.pdf    pages_ok=10   pages_failed=0   tables=15  images=10  
+  [  OK   ] IKS UNI-IV - revised.pdf                      pages_ok=25   pages_failed=0   tables=4   images=33  
+  [  OK   ] IKS UNIT-I. PDF. NOTES (1).pdf                pages_ok=33   pages_failed=0   tables=40  images=41  
+  [  OK   ] IKS UNIT-II. PDF. NOTES (1).pdf               pages_ok=17   pages_failed=0   tables=27  images=13  
+  [  OK   ] IKS_IT2_SHORTNOTES.pdf                        pages_ok=3    pages_failed=0   tables=1   images=0   
+  [  OK   ] Iks_Vedas.pdf                                 pages_ok=9    pages_failed=0   tables=0   images=3   
+  [  OK   ] IT_3_Portion_KP_IKS_UNIT_3_July_Dec_2025.pdf  pages_ok=101  pages_failed=0   tables=7   images=27  
+  [  OK   ] UNIT 2_VEDAS_123731.pdf                       pages_ok=28   pages_failed=0   tables=0   images=86  
+  [  OK   ] Unit II - Town Planning.pdf                   pages_ok=16   pages_failed=0   tables=0   images=25  
+  [  OK   ] Unit II -Architechture.pdf                    pages_ok=20   pages_failed=0   tables=0   images=21  
+  [  OK   ] unit.2. it.2.pdf                              pages_ok=24   pages_failed=0   tables=3   images=28  
+  [  OK   ] Upanishads and Vedantas.pdf                   pages_ok=3    pages_failed=0   tables=0   images=1   
+------------------------------------------------------------------------------
+  Total PDFs: 14  |  OK: 14  WARN: 0  FAIL: 0
+==============================================================================
